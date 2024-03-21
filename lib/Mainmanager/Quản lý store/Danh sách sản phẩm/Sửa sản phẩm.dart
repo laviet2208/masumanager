@@ -1,0 +1,407 @@
+
+import 'dart:typed_data';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:image_picker_web/image_picker_web.dart';
+import 'package:masumanager/OTHER/Button/Buttontype1.dart';
+import '../../../dataClass/Product.dart';
+import '../../../dataClass/Time.dart';
+import '../../../dataClass/accountShop.dart';
+import '../../../utils/utils.dart';
+
+
+
+class Suasanpham extends StatefulWidget {
+  final accountShop shop;
+  final Product product;
+  const Suasanpham({Key? key, required this.shop, required this.product}) : super(key: key);
+
+  @override
+  State<Suasanpham> createState() => _SuamonanState();
+}
+
+class _SuamonanState extends State<Suasanpham> {
+  final TextEditingController t1 = TextEditingController();
+  final TextEditingController t3 = TextEditingController();
+  final TextEditingController t2 = TextEditingController();
+  Uint8List? registrationImage;
+  bool loading = false;
+  String Downloadurl = 'https://firebasestorage.googleapis.com/v0/b/xekoship-a0057.appspot.com/o/favicon.png?alt=media&token=4c3d22bf-971b-45af-9ebe-9561bd74d469';
+  final picker = ImagePicker();
+
+  Future<Uint8List?> galleryImagePicker() async {
+    Uint8List? bytesFromPicker = await ImagePickerWeb.getImageAsBytes();
+    return bytesFromPicker;
+  }
+
+  static Future<void> pushData(Product food) async{
+    try {
+      DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
+      await databaseRef.child('Product').child(food.id).set(food.toJson());
+      toastMessage('sửa thành công');
+    } catch (error) {
+      print('Đã xảy ra lỗi khi đẩy catchOrder: $error');
+      throw error;
+    }
+  }
+
+  Future<void> uploadImageToFirebaseStorage(
+      Uint8List imageBytes, String imageName) async {
+    try {
+      // Tạo tham chiếu đến Firebase Storage
+      Reference storageReference =
+      FirebaseStorage.instance.ref().child('Product/$imageName.png');
+
+      // Đặt loại (MIME type) là 'image/png'
+      SettableMetadata metadata = SettableMetadata(contentType: 'image/png');
+
+      // Upload dữ liệu của ảnh lên Firebase Storage với metadata
+      UploadTask uploadTask = storageReference.putData(imageBytes, metadata);
+
+      // Lắng nghe sự kiện khi upload hoàn thành
+      await uploadTask.whenComplete(() => print('Upload completed'));
+
+      // Lấy URL của ảnh từ Firebase Storage
+      String imageUrl = await storageReference.getDownloadURL();
+      Downloadurl = imageUrl;
+      // In ra URL của ảnh
+      print('Image URL: $imageUrl');
+    } catch (e) {
+      print('Error uploading image: $e');
+    }
+  }
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    t1.text = widget.product.content;
+    t2.text = widget.product.name;
+    t3.text = widget.product.cost.toString();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 500,
+      height: 600,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ],
+          border: Border.all(
+            width: 1,
+            color: Colors.black,
+          )
+      ),
+
+      child: ListView(
+        children: <Widget>[
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Text(
+              'Tên sản phẩm *',
+              style: TextStyle(
+                  fontFamily: 'arial',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.redAccent
+              ),
+            ),
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Container(
+                height: 50,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.black,
+                    )
+                ),
+
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Form(
+                    child: TextFormField(
+                      controller: t1,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'arial',
+                      ),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Nhập tên sản phẩm',
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontFamily: 'arial',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Text(
+              'Mô tả sản phẩm *',
+              style: TextStyle(
+                  fontFamily: 'arial',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.redAccent
+              ),
+            ),
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Container(
+                height: 50,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.black,
+                    )
+                ),
+
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Form(
+                    child: TextFormField(
+                      controller: t2,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'arial',
+                      ),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Nhập tên sản phẩm',
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontFamily: 'arial',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Text(
+              'Giá tiền sản phẩm *',
+              style: TextStyle(
+                  fontFamily: 'arial',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.redAccent
+              ),
+            ),
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Container(
+                height: 50,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3),
+                      ),
+                    ],
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.black,
+                    )
+                ),
+
+                child: Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Form(
+                    child: TextFormField(
+                      controller: t3,
+                      keyboardType: TextInputType.number,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'arial',
+                      ),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Nhập giá sản phẩm',
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16,
+                          fontFamily: 'arial',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+          ),
+
+          Container(
+            height: 20,
+          ),
+
+          Container(
+            alignment: Alignment.center,
+            child: Text(
+              'Hình ảnh của sản phẩm',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontFamily: 'arial',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.redAccent
+              ),
+            ),
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+            padding: EdgeInsets.only(left: 150,right: 150),
+            child: GestureDetector(
+              child: Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(
+                    color: Colors.redAccent,
+                    width: 2,
+                  ),
+                ),
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.all(8),
+                  child:registrationImage == null
+                      ? Icon(Icons.add, size: 30.0, color: Colors.redAccent,)
+                      : Image.memory(registrationImage!, fit: BoxFit.fitHeight,),
+                ),
+              ),
+              onTap: () async {
+                final Uint8List? image = await galleryImagePicker();
+
+                if (image != null) {
+                  registrationImage = image;
+                  setState(() {});
+                }
+              },
+            ),
+          ),
+
+          Container(
+            height: 10,
+          ),
+
+          Padding(
+              padding: EdgeInsets.only(left: 10,right: 10),
+              child: ButtonType1(Height: 40, Width: 100, color: Colors.redAccent, radiusBorder: 20, title: 'Cập nhật sản phẩm', fontText: 'roboto', colorText: Colors.white,
+                onTap: () async {
+                  if(t1.text.isNotEmpty && t2.text.isNotEmpty && t3.text.isNotEmpty) {
+                    setState(() {
+                      loading = true;
+                    });
+                    if (registrationImage != null) {
+                      await uploadImageToFirebaseStorage(registrationImage!, widget.product.id);
+                    }
+                    if (registrationImage != null) {
+                      Product pro = Product(id: widget.product.id, name: t2.text.toString(), content: t1.text.toString(), owner: widget.shop, cost: double.parse(t3.text.toString()), imageList: Downloadurl,createTime: Time(second: DateTime.now().second, minute: DateTime.now().minute, hour: DateTime.now().hour, day: DateTime.now().day, month: DateTime.now().month, year: DateTime.now().year), OpenStatus: 0,);
+                      await pushData(pro);
+                    } else {
+                      Product pro = Product(id: widget.product.id, name: t2.text.toString(), content: t1.text.toString(), owner: widget.shop, cost: double.parse(t3.text.toString()), imageList: widget.product.imageList,createTime: Time(second: DateTime.now().second, minute: DateTime.now().minute, hour: DateTime.now().hour, day: DateTime.now().day, month: DateTime.now().month, year: DateTime.now().year), OpenStatus: 0,);
+                      await pushData(pro);
+                    }
+
+                    Navigator.of(context).pop();
+                  } else {
+                    toastMessage('điền đủ thông tin trước');
+                  }
+                }, loading: loading,
+              )
+          ),
+
+          Container(
+            height: 10,
+          ),
+        ],
+      ),
+    );
+  }
+}
