@@ -71,7 +71,8 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                     fontFamily: 'roboto',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
-                  ),                ),
+                  ),
+                ),
               ),
             ),
           ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:masumanager/MasuShipManager/mainManager/restaurant_manager/restaurant_directory_manager/restaurant_directory_manager.dart';
-import 'package:masumanager/MasuShipManager/mainManager/restaurant_manager/restaurant_manager_page/free_restaurant_manager.dart';
-import 'package:masumanager/MasuShipManager/mainManager/restaurant_manager/restaurant_manager_page/partner_restaurant_manager.dart';
+import 'ads_manager/ads_manager.dart';
 import 'area_manager/area_manager_page.dart';
 import 'catch_order_manager/catch_order_manager_page.dart';
 import 'customer_manager/customer_manager_main/customer_manager_main.dart';
 import 'request_buy_order_manager/request_buy_order_manager_page.dart';
+import 'restaurant_manager/restaurant_directory_manager/restaurant_directory_manager.dart';
+import 'restaurant_manager/restaurant_manager_page/free_restaurant_manager.dart';
+import 'restaurant_manager/restaurant_manager_page/partner_restaurant_manager.dart';
 import 'shipper_manager/history_transaction/history_transaction_manager.dart';
 import 'shipper_manager/shipper_manager_main/shipper_manager_main_page.dart';
 
@@ -18,7 +19,7 @@ class main_screen extends StatefulWidget {
 }
 
 class _main_screenState extends State<main_screen> {
-  int selectButton = 10;
+  int selectButton = 11;
 
   Widget getWidget(int init, double width, double height) {
     if (init == 2) {
@@ -55,6 +56,10 @@ class _main_screenState extends State<main_screen> {
 
     if (init == 10) {
       return restaurant_directory_manager();
+    }
+
+    if (init == 11) {
+      return ads_manager();
     }
 
     return Container();
@@ -776,6 +781,72 @@ class _main_screenState extends State<main_screen> {
                                   onTap: () {
                                     setState(() {
                                       selectButton = 10;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+
+                            Container(
+                              height: 1,
+                              decoration: BoxDecoration(
+                                  color: Colors.white
+                              ),
+                            ),
+
+                            ExpansionTile(
+                              leading: Icon(
+                                Icons.ads_click,
+                                color: Colors.white,
+                              ),
+                              iconColor: Colors.white,
+                              collapsedIconColor: Colors.white,
+                              title: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child : Padding(
+                                    padding: EdgeInsets.only(top: 15,bottom: 15),
+                                    child: Text(
+                                      'Quản lý quảng cáo',
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontFamily: 'roboto',
+                                        fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  )
+                              ),
+                              children: [
+                                GestureDetector(
+                                  child: Container(
+                                    height: 60,
+                                    color: (selectButton == 11) ? Colors.red : Colors.transparent,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          left: 10,
+                                          top: 0,
+                                          bottom: 0,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              'Danh sách quảng cáo',
+                                              style: TextStyle(
+                                                  fontFamily: 'arial',
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      selectButton = 11;
                                     });
                                   },
                                 ),
