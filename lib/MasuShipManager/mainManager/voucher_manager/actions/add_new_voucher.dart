@@ -1,27 +1,21 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:masumanager/dataClass/FinalClass.dart';
-import 'package:masumanager/dataClass/dataCheckManager.dart';
+import 'package:masumanager/MasuShipManager/Data/models/area_search/search_page_area.dart';
+import 'package:masumanager/MasuShipManager/Data/voucherData/Voucher.dart';
+import '../../../Data/areaData/Area.dart';
+import '../../../Data/otherData/Time.dart';
+import '../../../Data/otherData/Tool.dart';
+import 'package:firebase_database/firebase_database.dart';
 
-import '../../dataClass/Time.dart';
-import '../../dataClass/accountShop.dart';
-import '../../utils/utils.dart';
-import '../Quản lý khu vực và tài khoản admin/Area.dart';
-import '../Quản lý khu vực và tài khoản admin/Tài khoản admin khu vực/Page tìm kiếm.dart';
-import 'Page tìm nhà hàng.dart';
-import 'Voucher.dart';
+import '../../../Data/otherData/utils.dart';
 
-class Themvoucher extends StatefulWidget {
-  final double width;
-  final double height;
-  final int type;
-  const Themvoucher({Key? key, required this.width, required this.height, required this.type}) : super(key: key);
+class add_new_voucher extends StatefulWidget {
+  const add_new_voucher({super.key});
 
   @override
-  State<Themvoucher> createState() => _ThemvoucherState();
+  State<add_new_voucher> createState() => _add_new_voucherState();
 }
 
-class _ThemvoucherState extends State<Themvoucher> {
+class _add_new_voucherState extends State<add_new_voucher> {
   final tenchuongtrinhcontrol = TextEditingController();
   final macodecontrol = TextEditingController();
   final ngaybatdaucontrol = TextEditingController();
@@ -31,92 +25,51 @@ class _ThemvoucherState extends State<Themvoucher> {
   final toidacontrol = TextEditingController();
   final moikhachcontrol = TextEditingController();
   final toidatiencontrol = TextEditingController();
+
+  List<String> TypeList = ['Giảm theo phần trăm', 'Giảm theo tiền cứng',];
+  String chosenType = '';
+  
   bool loading = false;
-  List<Area> areaList = [];
-  List<accountShop> shopList = [];
   Area area = Area(id: '', name: '', money: 0, status: 0);
-  final accountShop shop = accountShop(openTime: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0), closeTime: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0), phoneNum: '', location: '', name: '', id: '', status: 1, avatarID: '', createTime: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0), password: '', isTop: 0, Type: 0, ListDirectory: [], Area: '', OpenStatus: 0);
-  List<String> TypeList = ['Giảm theo tiền cứng', 'Giảm theo phần trăm'];
-  String chosenType = 'Giảm theo tiền cứng';
-  int Typeindex = 0;
-
-  Future<void> _selectDate(BuildContext context) async {
-    DateTime selectedDate = DateTime.now();
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: selectedDate,
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
-    );
-    if (picked != null && picked != selectedDate) {
-      setState(() {
-        selectedDate = picked;
-        ngaybatdaucontrol.text = selectedDate.day.toString() + '/' + selectedDate.month.toString() + '/' + selectedDate.year.toString();
-      });
-    }
-  }
-
-  Future<void> _selectDate1(BuildContext context) async {
-    DateTime selectedDate = DateTime.now();
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: selectedDate,
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2101),
-    );
-    if (picked != null && picked != selectedDate) {
-      setState(() {
-        selectedDate = picked;
-        ngayketthuccontrol.text = selectedDate.day.toString() + '/' + selectedDate.month.toString() + '/' + selectedDate.year.toString();
-      });
-    }
-  }
-
-  void getData1() {
-    final reference = FirebaseDatabase.instance.reference();
-    reference.child("Area").onValue.listen((event) {
-      areaList.clear();
-      final dynamic orders = event.snapshot.value;
-      orders.forEach((key, value) {
-        Area area= Area.fromJson(value);
-        areaList.add(area);
-      });
-      setState(() {
-
-      });
-    });
-  }
-
-  void getData2() {
-    final reference = FirebaseDatabase.instance.reference();
-    reference.child("Restaurant").onValue.listen((event) {
-      shopList.clear();
-      final dynamic orders = event.snapshot.value;
-      orders.forEach((key, value) {
-        accountShop area= accountShop.fromJson(value);
-        shopList.add(area);
-      });
-      setState(() {
-
-      });
-    });
-  }
-
+  Voucher voucher = Voucher(id: '', Money: 0, mincost: 0, startTime: getCurrentTime(), endTime: getCurrentTime(), useCount: 0, maxCount: 0, eventName: '', LocationId: '', type: 0, Otype: '', perCustom: 1, CustomList: [], maxSale: 0, area: '');
+  
+  //Sự kiện chọn loại voucher
+  int typeIndex = 0;
   void dropdownCallback(String? selectedValue) {
     if (selectedValue is String) {
       chosenType = selectedValue;
-      if (chosenType == 'Giảm theo tiền cứng') {
-        Typeindex = 0;
+      if (chosenType == 'Giảm theo phần trăm') {
+        typeIndex = 0;
       } else {
-        Typeindex = 1;
+        typeIndex = 1;
       }
     }
     setState(() {
 
     });
   }
+  
+  // hàm chọn ngày
+  Future<void> _selectDate(BuildContext context, TextEditingController controller, Time time) async {
+    DateTime selectedDate = DateTime.now();
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: selectedDate,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2101),
+    );
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+        time.day = selectedDate.day;
+        time.month = selectedDate.month;
+        time.year = selectedDate.year;
+        controller.text = selectedDate.day.toString() + '/' + selectedDate.month.toString() + '/' + selectedDate.year.toString();
+      });
+    }
+  }
 
-  Future<void> pushData(Voucher voucher) async{
+  Future<void> push_voucher_data(Voucher voucher) async{
     try {
       DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
       await databaseRef.child('VoucherStorage').child(voucher.id).set(voucher.toJson());
@@ -125,51 +78,34 @@ class _ThemvoucherState extends State<Themvoucher> {
       });
       toastMessage('đăng voucher thành công');
     } catch (error) {
+      toastMessage('Lỗi dữ liệu');
+      Navigator.of(context).pop();
       print('Đã xảy ra lỗi khi đẩy catchOrder: $error');
       throw error;
     }
   }
 
-  int extractData(String dateString,int index) {
-    List<String> dateParts = dateString.split('/');
-    if (dateParts.length == 3) {
-      return int.tryParse(dateParts[index]) ?? 0;
-    }
-    return 0;
-  }
-
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    toidatiencontrol.text = '0';
-    getData1();
-    getData2();
+    chosenType = TypeList.first;
   }
-
+  
   @override
   Widget build(BuildContext context) {
-    // chosenType = TypeList.first;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return AlertDialog(
-      title: Text((widget.type == 1) ? 'Thêm voucher khách hàng' : 'Thêm voucher nhà hàng'),
+      title: Text(
+        'Thêm voucher mới',
+        style: TextStyle(fontFamily: 'roboto',),
+      ),
       content: Container(
-        width: widget.width * (1.5/3), // Đặt kích thước chiều rộng theo ý muốn
-        height: widget.height * (2/3), // Đặt kích thước chiều cao theo ý muốn
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.2), // màu của shadow
-              spreadRadius: 5, // bán kính của shadow
-              blurRadius: 7, // độ mờ của shadow
-              offset: Offset(0, 3), // vị trí của shadow
-            ),
-          ],
-        ),
-
+        width: width/2,
+        height: height/3*2,
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
             Container(
               height: 10,
@@ -368,7 +304,7 @@ class _ThemvoucherState extends State<Themvoucher> {
                       ),
                     ),
                     onTap: () {
-                      _selectDate(context);
+                      _selectDate(context, ngaybatdaucontrol, voucher.startTime);
                     },
                   ),
                 ),
@@ -438,7 +374,7 @@ class _ThemvoucherState extends State<Themvoucher> {
                           ),
                         ),
                         onTap: () {
-                          _selectDate1(context);
+                          _selectDate(context, ngayketthuccontrol, voucher.endTime);
                         },
                       ),
                     ),
@@ -693,7 +629,7 @@ class _ThemvoucherState extends State<Themvoucher> {
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                Typeindex == 0 ? 'Số tiền giảm (Đơn vị : VNĐ)*' : 'Số phần trăm giảm (không có phần thập phân)*',
+                typeIndex == 1 ? 'Số tiền giảm (Đơn vị : VNĐ)*' : 'Số phần trăm giảm (không có phần thập phân)*',
                 style: TextStyle(
                     fontFamily: 'roboto',
                     fontSize: 14,
@@ -741,7 +677,7 @@ class _ThemvoucherState extends State<Themvoucher> {
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: Typeindex == 0 ? 'Số tiền cứng giảm (chỉ nhập số, không có các kí tự như . hoặc ,)*' : 'Số phần trăm giảm (không có phần thập phân , ví dụ 10 , 20 ,...)*',
+                          hintText: typeIndex == 1 ? 'Số tiền cứng giảm (chỉ nhập số, không có các kí tự như . hoặc ,)*' : 'Số phần trăm giảm (không có phần thập phân , ví dụ 10 , 20 ,...)*',
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
@@ -755,7 +691,7 @@ class _ThemvoucherState extends State<Themvoucher> {
             ),
 
             Container(
-              height: Typeindex == 1 ? 20 : 0,
+              height: typeIndex == 0 ? 20 : 0,
             ),
 
             Padding(
@@ -764,7 +700,7 @@ class _ThemvoucherState extends State<Themvoucher> {
                 'Số tiền giảm tối đa(VNĐ)',
                 style: TextStyle(
                     fontFamily: 'roboto',
-                    fontSize: Typeindex == 1 ? 14 : 0,
+                    fontSize: typeIndex == 0 ? 14 : 0,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
                 ),
@@ -772,13 +708,13 @@ class _ThemvoucherState extends State<Themvoucher> {
             ),
 
             Container(
-              height: Typeindex == 1 ? 10 : 0,
+              height: typeIndex == 0 ? 10 : 0,
             ),
 
             Padding(
                 padding: EdgeInsets.only(left: 10, right: 10),
                 child: Container(
-                  height: Typeindex == 1 ? 50 : 0,
+                  height: typeIndex == 0 ? 50 : 0,
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -804,7 +740,7 @@ class _ThemvoucherState extends State<Themvoucher> {
                         controller: toidatiencontrol,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: Typeindex == 1 ? 16 : 0,
+                          fontSize: typeIndex == 0 ? 16 : 0,
                           fontFamily: 'roboto',
                         ),
                         decoration: InputDecoration(
@@ -812,7 +748,7 @@ class _ThemvoucherState extends State<Themvoucher> {
                           hintText: 'Số tiền được trừ tối đa khi giảm theo phần trăm*',
                           hintStyle: TextStyle(
                             color: Colors.grey,
-                            fontSize: Typeindex == 1 ? 16 : 0,
+                            fontSize: typeIndex == 0 ? 16 : 0,
                             fontFamily: 'roboto',
                           ),
                         ),
@@ -823,16 +759,16 @@ class _ThemvoucherState extends State<Themvoucher> {
             ),
 
             Container(
-              height: (widget.type == 1 && currentAccount.provinceCode == '0') ? 20 : 0,
+              height: 20,
             ),
 
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                (widget.type == 1) ? 'Chọn khu vực' : 'Chọn nhà hàng',
+                'Chọn khu vực',
                 style: TextStyle(
                     fontFamily: 'roboto',
-                    fontSize: (widget.type == 1 && currentAccount.provinceCode == '0') ? 14 : 0,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
                 ),
@@ -840,14 +776,14 @@ class _ThemvoucherState extends State<Themvoucher> {
             ),
 
             Container(
-              height: (widget.type == 1 && currentAccount.provinceCode == '0') ? 10 : 0,
+              height: 10,
             ),
 
             Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
               child: Container(
-                height: (widget.type == 1 && currentAccount.provinceCode == '0') ? 150 : 0,
-                child: (widget.type == 1) ? searchPageArea(list: areaList, area: area,) : searchResArea(list: shopList, shop: shop),
+                height: 150,
+                child: search_page_area(area: area),
               ),
             ),
 
@@ -858,58 +794,57 @@ class _ThemvoucherState extends State<Themvoucher> {
         ),
       ),
       actions: <Widget>[
-        TextButton(
-          child: Text('Hủy'),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-
-        TextButton(
-          child: loading ? CircularProgressIndicator() : Text('Lưu'),
-          onPressed: loading ? null : () async {
-            setState(() {
-              loading = true;
-            });
-
-            if (tenchuongtrinhcontrol.text.isNotEmpty && macodecontrol.text.isNotEmpty && ngaybatdaucontrol.text.isNotEmpty && area.id != ''
-                && ngayketthuccontrol.text.isNotEmpty && sotiengiamcontrol.text.isNotEmpty && toithieugiamcontrol.text.isNotEmpty && toidacontrol.text.isNotEmpty && moikhachcontrol.text.isNotEmpty) {
-              if (dataCheckManager.isPositiveDouble(toithieugiamcontrol.text.toString()) && dataCheckManager.isPositiveDouble(sotiengiamcontrol.text.toString())
-                  && dataCheckManager.isPositiveInteger(toidacontrol.text.toString()) && dataCheckManager.isValidDateFormat(ngaybatdaucontrol.text.toString()) && dataCheckManager.isValidDateFormat(ngayketthuccontrol.text.toString())) {
-                Voucher voucher = Voucher(
-                  id: macodecontrol.text.toString(),
-                  totalmoney: double.parse(sotiengiamcontrol.text.toString()),
-                  mincost: double.parse(toithieugiamcontrol.text.toString()),
-                  startTime: Time(second: 0, minute: 0, hour: 0, day: extractData(ngaybatdaucontrol.text.toString(),0), month: extractData(ngaybatdaucontrol.text.toString(),1), year: extractData(ngaybatdaucontrol.text.toString(),2)),
-                  endTime: Time(second: 0, minute: 0, hour: 0, day: extractData(ngayketthuccontrol.text.toString(),0), month: extractData(ngayketthuccontrol.text.toString(),1), year: extractData(ngayketthuccontrol.text.toString(),2)),
-                  useCount: 0,
-                  maxCount: int.parse(toidacontrol.text.toString()),
-                  tenchuongtrinh: tenchuongtrinhcontrol.text.toString(),
-                  LocationId: area.id,
-                  type: Typeindex,
-                  Otype: widget.type.toString(),
-                  perCustom: int.parse(moikhachcontrol.text.toString()),
-                  CustomList: [],
-                  maxSale: double.parse(toidatiencontrol.text.toString()),
-                );
-                await pushData(voucher);
+        loading ? CircularProgressIndicator(color: Colors.blueAccent,) : TextButton(
+          onPressed: () async {
+            if (tenchuongtrinhcontrol.text.isNotEmpty && macodecontrol.text.isNotEmpty && ngaybatdaucontrol.text.isNotEmpty && area.id != '' && ngayketthuccontrol.text.isNotEmpty && sotiengiamcontrol.text.isNotEmpty && toithieugiamcontrol.text.isNotEmpty && toidacontrol.text.isNotEmpty && moikhachcontrol.text.isNotEmpty && area.id != '') {
+              if (isPositiveDouble(toithieugiamcontrol.text.toString()) && isPositiveDouble(sotiengiamcontrol.text.toString()) && isPositiveInteger(toidacontrol.text.toString())) {
                 setState(() {
-                  loading = false; // Đặt biến loading lại thành false sau khi hoàn thành
+                  loading = true;
+                });
+                voucher.eventName = tenchuongtrinhcontrol.text.toString();
+                voucher.id = macodecontrol.text.toString();
+                voucher.area = area.id;
+                voucher.type = typeIndex;
+                voucher.Money = double.parse(sotiengiamcontrol.text.toString());
+                voucher.mincost = double.parse(toithieugiamcontrol.text.toString());
+                if (toidatiencontrol.text.isNotEmpty) {
+                  voucher.maxSale = double.parse(toidatiencontrol.text.toString());
+                }
+                voucher.perCustom = int.parse(moikhachcontrol.text.toString());
+                voucher.maxCount = int.parse(toidacontrol.text.toString());
+                await push_voucher_data(voucher);
+                setState(() {
+                  loading = false;
                 });
                 Navigator.of(context).pop();
               } else {
-                toastMessage('Phải nhập đúng định dạng');
-                setState(() {
-                  loading = false; // Đặt biến loading lại thành false sau khi hoàn thành
-                });
+                toastMessage('Chú ý đúng định dạng');
               }
             } else {
-              toastMessage('Phải nhập đủ thông tin');
-              setState(() {
-                loading = false; // Đặt biến loading lại thành false sau khi hoàn thành
-              });
+              toastMessage('Chú ý đúng định dạng');
             }
+
           },
+          child: Text(
+            'Thêm voucher mới',
+            style: TextStyle(
+                fontFamily: 'arial',
+                color: Colors.blueAccent
+            ),
+          ),
+        ),
+
+        loading ? CircularProgressIndicator(color: Colors.redAccent,) : TextButton(
+          onPressed: () async {
+            Navigator.of(context).pop();
+          },
+          child: Text(
+            'Hủy',
+            style: TextStyle(
+                fontFamily: 'arial',
+                color: Colors.redAccent
+            ),
+          ),
         ),
       ],
     );

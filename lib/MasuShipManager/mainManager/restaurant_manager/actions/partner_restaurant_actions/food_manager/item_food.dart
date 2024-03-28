@@ -21,7 +21,6 @@ class _item_foodState extends State<item_food> {
   Future<String> _getImageURL(String imagePath) async {
     final ref = FirebaseStorage.instance.ref().child('Food').child(imagePath);
     final url = await ref.getDownloadURL();
-    print(url);
     return url;
   }
 

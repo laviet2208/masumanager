@@ -68,11 +68,11 @@ class _shipper_itemState extends State<shipper_item> {
       width: width,
       height: 130,
       decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-              color: Colors.grey,
-              width: 1
-          )
+        color: widget.index % 2 == 0 ? Colors.white : Color.fromARGB(255, 247, 250, 255),
+        border: Border.all(
+          color: Color.fromARGB(255, 240, 240, 240),
+          width: 1.0,
+        ),
       ),
       child: ListView(
         physics: NeverScrollableScrollPhysics(),

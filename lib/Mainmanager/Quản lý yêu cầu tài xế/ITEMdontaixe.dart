@@ -37,7 +37,6 @@ class _ITEMdontaixeState extends State<ITEMdontaixe> {
   Future<String> _getImageURL(String imagePath) async {
     final ref = FirebaseStorage.instance.ref().child('CCCD').child(imagePath);
     final url = await ref.getDownloadURL();
-    print(url);
     return url;
   }
 

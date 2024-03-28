@@ -28,7 +28,6 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
   Future<String> _getImageURL(String imagePath) async {
     final ref = FirebaseStorage.instance.ref().child('CCCD').child(imagePath);
     final url = await ref.getDownloadURL();
-    print(url);
     return url;
   }
 

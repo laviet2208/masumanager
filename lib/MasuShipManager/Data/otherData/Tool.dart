@@ -165,3 +165,31 @@ final double distance = earthRadius * c;
 
 return distance;
 }
+
+bool isPositiveDouble(String input) {
+if (input == null) {
+return false;
+}
+
+// Sử dụng try-catch để kiểm tra xem chuỗi có thể chuyển thành double không
+try {
+double.parse(input);
+return true;
+} catch (e) {
+return false;
+}
+}
+
+bool isPositiveInteger(String input) {
+if (input == null || input.isEmpty) {
+return false;
+}
+
+// Sử dụng try-catch để kiểm tra xem chuỗi có thể chuyển thành số nguyên dương không
+try {
+int number = int.parse(input);
+return number > 0;
+} catch (e) {
+return false;
+}
+}

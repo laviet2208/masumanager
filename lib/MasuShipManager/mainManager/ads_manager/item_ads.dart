@@ -25,7 +25,6 @@ class _item_adsState extends State<item_ads> {
   Future<String> _getImageURL(String imagePath) async {
     final ref = FirebaseStorage.instance.ref().child('Ads').child(imagePath);
     final url = await ref.getDownloadURL();
-    print(url);
     return url;
   }
 
