@@ -203,7 +203,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm giao dịch',
@@ -211,7 +211,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -286,7 +286,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                           'Mã giao dịch',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -319,7 +319,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                                   'Thời gian giao dịch',
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       color: Colors.black,
                                       fontSize: 100
                                   ),
@@ -365,7 +365,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                           'Số tiền giao dịch',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -389,7 +389,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                           'Người thụ hưởng',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -414,7 +414,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

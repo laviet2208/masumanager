@@ -53,7 +53,7 @@ class _upload_imageState extends State<upload_image> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return AlertDialog(
-      title: Text(widget.title, style: TextStyle(fontSize: 14, color: Colors.black, fontFamily: 'roboto'),),
+      title: Text(widget.title, style: TextStyle(fontSize: 14, color: Colors.black, fontFamily: 'muli'),),
       content: Container(
         width: width/6,
         child: Column(
@@ -105,7 +105,7 @@ class _upload_imageState extends State<upload_image> {
                 child: Text(
                   'Cập nhật ảnh',
                   style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontSize: 13,
                     fontWeight: FontWeight.bold

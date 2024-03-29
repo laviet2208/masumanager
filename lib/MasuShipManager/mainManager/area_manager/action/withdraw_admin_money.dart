@@ -64,7 +64,7 @@ class _withdraw_admin_moneyState extends State<withdraw_admin_money> {
         child: Text(
           'Trừ tiền admin',
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 13

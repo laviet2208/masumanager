@@ -167,7 +167,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                           'Tên nhà hàng',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -200,7 +200,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                                   'Thời gian tạo',
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       color: Colors.black,
                                       fontSize: 100
                                   ),
@@ -246,7 +246,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                           'Thời gian hoạt động',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -270,7 +270,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                           'Trạng thái tài khoản',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -293,7 +293,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -327,7 +327,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm cửa hàng',
@@ -335,7 +335,7 @@ class _PageQuanlyshopState extends State<PageQuanlystore> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),

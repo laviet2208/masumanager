@@ -664,7 +664,7 @@ class _add_free_restaurantState extends State<add_free_restaurant> {
           child: Text(
             'Lưu nhà hàng',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.blueAccent
             ),
           ),
@@ -677,7 +677,7 @@ class _add_free_restaurantState extends State<add_free_restaurant> {
           child: Text(
             'Hủy',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.redAccent
             ),
           ),

@@ -122,7 +122,7 @@ class _QuanlydieukhoanState extends State<Quanlydieukhoan> {
                           'Thời gian khởi tạo',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -145,7 +145,7 @@ class _QuanlydieukhoanState extends State<Quanlydieukhoan> {
                           'Tên điều khoản',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -168,7 +168,7 @@ class _QuanlydieukhoanState extends State<Quanlydieukhoan> {
                           'Nội dung điều khoản',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -192,7 +192,7 @@ class _QuanlydieukhoanState extends State<Quanlydieukhoan> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

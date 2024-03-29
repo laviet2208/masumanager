@@ -79,7 +79,7 @@ class _item_restaurant_in_directoryState extends State<item_restaurant_in_direct
                   (widget.index + 1).toString(),
                   style: TextStyle(
                     fontSize: 14,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
                   ),
@@ -112,7 +112,7 @@ class _item_restaurant_in_directoryState extends State<item_restaurant_in_direct
                             text: 'Tên nhà hàng: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -120,7 +120,7 @@ class _item_restaurant_in_directoryState extends State<item_restaurant_in_direct
                             text: account.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -140,7 +140,7 @@ class _item_restaurant_in_directoryState extends State<item_restaurant_in_direct
                             text: 'Tên đăng nhập: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -148,7 +148,7 @@ class _item_restaurant_in_directoryState extends State<item_restaurant_in_direct
                             text: account.phone, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),

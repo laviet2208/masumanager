@@ -43,7 +43,7 @@ class _view_restaurant_in_directoryState extends State<view_restaurant_in_direct
                         fontSize: 12,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'roboto'
+                        fontFamily: 'muli'
                       ),
                     ),
                   ),

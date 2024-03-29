@@ -96,7 +96,7 @@ class _ITEMadminaccountState extends State<ITEMadminaccount> {
                   child: AutoSizeText(
                     statusText,
                     style: TextStyle(
-                        fontFamily: 'Roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.normal,
                         color: statusColor,
                         fontSize: 100
@@ -125,7 +125,7 @@ class _ITEMadminaccountState extends State<ITEMadminaccount> {
                   child: Text(
                     widget.adminAccount.username,
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.normal,
                         color: Colors.purple,
                         fontSize: 16
@@ -154,7 +154,7 @@ class _ITEMadminaccountState extends State<ITEMadminaccount> {
                   child: Text(
                     widget.adminAccount.password,
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.normal,
                         color: Colors.purple,
                         fontSize: 16
@@ -183,7 +183,7 @@ class _ITEMadminaccountState extends State<ITEMadminaccount> {
                   child: Text(
                     widget.adminAccount.provinceCode == '0' ? 'Admin cao nhất' : area.name,
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.normal,
                         color: Colors.black,
                         fontSize: 16
@@ -224,7 +224,7 @@ class _ITEMadminaccountState extends State<ITEMadminaccount> {
                         child: Text(
                           'Cập nhật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 13,
                               color: Colors.white,
                               fontWeight: FontWeight.normal
@@ -260,7 +260,7 @@ class _ITEMadminaccountState extends State<ITEMadminaccount> {
                         child: Text(
                           'Xóa tài khoản',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 13,
                               color: Colors.redAccent,
                               fontWeight: FontWeight.normal

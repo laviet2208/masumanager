@@ -163,7 +163,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: Colors.white,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       fontSize: 14
                   ),
                 ),
@@ -200,7 +200,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                 child: Text(
                                   'Tiêu đề thông báo *',
                                   style: TextStyle(
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.redAccent
@@ -242,7 +242,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 16,
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                           ),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
@@ -250,7 +250,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                             hintStyle: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 16,
-                                              fontFamily: 'roboto',
+                                              fontFamily: 'muli',
                                             ),
                                           ),
                                         ),
@@ -268,7 +268,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                 child: Text(
                                   'Tiêu đề phụ thông báo *',
                                   style: TextStyle(
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.redAccent
@@ -310,7 +310,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 16,
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                           ),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
@@ -318,7 +318,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                             hintStyle: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 16,
-                                              fontFamily: 'roboto',
+                                              fontFamily: 'muli',
                                             ),
                                           ),
                                         ),
@@ -336,7 +336,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                 child: Text(
                                   'Nội dung thông báo *',
                                   style: TextStyle(
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.redAccent
@@ -378,7 +378,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontSize: 16,
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                           ),
                                           decoration: InputDecoration(
                                             border: InputBorder.none,
@@ -386,7 +386,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                             hintStyle: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 16,
-                                              fontFamily: 'roboto',
+                                              fontFamily: 'muli',
                                             ),
                                           ),
                                         ),
@@ -404,7 +404,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                 child: Text(
                                   'Chọn loại người nhận *',
                                   style: TextStyle(
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.redAccent
@@ -430,7 +430,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                                 child: Text(
                                   'Chọn khu vực quản lý *',
                                   style: TextStyle(
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.redAccent
@@ -524,7 +524,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm theo tiêu đề và nội dung',
@@ -532,7 +532,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -584,7 +584,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                           'Tiêu đề và nội dung',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -607,7 +607,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                           'Đối tượng nhận',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -630,7 +630,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                           'Thời gian',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -653,7 +653,7 @@ class _PagequanlythongbaoState extends State<Pagequanlythongbao> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

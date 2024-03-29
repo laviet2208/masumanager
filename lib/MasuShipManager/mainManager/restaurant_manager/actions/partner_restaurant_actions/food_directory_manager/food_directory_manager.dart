@@ -49,7 +49,7 @@ class _food_directory_managerState extends State<food_directory_manager> {
     double width = MediaQuery.of(context).size.width - 200;
     double height = MediaQuery.of(context).size.height/3*4;
     return AlertDialog(
-      title: Text('Quản lý danh mục món ăn',style: TextStyle(fontFamily: 'roboto', fontSize: 14, fontWeight: FontWeight.bold),),
+      title: Text('Quản lý danh mục món ăn',style: TextStyle(fontFamily: 'muli', fontSize: 14, fontWeight: FontWeight.bold),),
       content: Container(
         width: width,
         height: height,
@@ -72,7 +72,7 @@ class _food_directory_managerState extends State<food_directory_manager> {
                     child: Text(
                       'Thêm danh mục',
                       style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         fontSize: 12,

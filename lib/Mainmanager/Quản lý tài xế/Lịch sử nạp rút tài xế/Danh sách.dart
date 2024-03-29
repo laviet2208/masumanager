@@ -150,7 +150,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm giao dịch',
@@ -158,7 +158,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -210,7 +210,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                           'Mã giao dịch',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -243,7 +243,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                                   'Thời gian giao dịch',
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       color: Colors.black,
                                       fontSize: 100
                                   ),
@@ -289,7 +289,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                           'Số tiền giao dịch',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -313,7 +313,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                           'Người thụ hưởng',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -338,7 +338,7 @@ class _DanhsachnapruttaixeState extends State<Danhsachnapruttaixe> {
                             'Thao tác',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),

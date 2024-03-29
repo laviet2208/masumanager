@@ -29,7 +29,7 @@ String getTimeHour(Time time) {
 
 //chuyển 1 biến time qua String dưới dạng giờ phút giây ngày tháng năm
 String getAllTimeString(Time time) {
-  return (time.hour >= 10 ? time.hour.toString() : '0' + time.hour.toString()) + ":" + (time.minute >= 10 ? time.minute.toString() : '0' + time.minute.toString()) + " " + (time.day >= 10 ? time.day.toString() : '0' + time.day.toString()) + "/" + (time.month >= 10 ? time.month.toString() : '0' + time.month.toString()) + "/" + time.year.toString();
+  return (time.hour >= 10 ? time.hour.toString() : '0' + time.hour.toString()) + ":" + (time.minute >= 10 ? time.minute.toString() : '0' + time.minute.toString()) + ":" + (time.second >= 10 ? time.second.toString() : '0' + time.second.toString()) + " " + (time.day >= 10 ? time.day.toString() : '0' + time.day.toString()) + "/" + (time.month >= 10 ? time.month.toString() : '0' + time.month.toString()) + "/" + time.year.toString();
 }
 
 //chuyển 1 biến double qua string , phân tách hàng nghìn

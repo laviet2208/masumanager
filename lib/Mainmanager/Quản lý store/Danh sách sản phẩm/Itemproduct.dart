@@ -102,7 +102,7 @@ class ItemProduct extends StatelessWidget {
                               text: 'Tên món: ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -110,7 +110,7 @@ class ItemProduct extends StatelessWidget {
                               text: product.name, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -133,7 +133,7 @@ class ItemProduct extends StatelessWidget {
                               text: 'Mô tả : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -141,7 +141,7 @@ class ItemProduct extends StatelessWidget {
                               text: product.content, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -175,7 +175,7 @@ class ItemProduct extends StatelessWidget {
                   dataCheckManager.getStringNumber(product.cost),
                   textAlign: TextAlign.end,
                   style: TextStyle(
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       fontSize: 16
                   ),
                 )
@@ -213,7 +213,7 @@ class ItemProduct extends StatelessWidget {
                         child: Text(
                           'Cập nhật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white
                           ),
@@ -251,7 +251,7 @@ class ItemProduct extends StatelessWidget {
                         child: Text(
                           'Xem ảnh',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),
@@ -281,7 +281,7 @@ class ItemProduct extends StatelessWidget {
                         child: Text(
                           'Xóa sản phẩm',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white
                           ),
@@ -308,7 +308,7 @@ class ItemProduct extends StatelessWidget {
                         child: Text(
                           product.OpenStatus == 0 ? 'Đang tắt' : 'Đang bật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white
                           ),

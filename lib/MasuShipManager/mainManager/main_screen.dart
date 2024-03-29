@@ -71,10 +71,16 @@ class _main_screenState extends State<main_screen> {
   }
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
+    print(MediaQuery.of(context).size.width.toString() + ' ' + MediaQuery.of(context).size.height.toString());
     return WillPopScope(
         child: Scaffold(
           body: Container(
@@ -147,7 +153,7 @@ class _main_screenState extends State<main_screen> {
                                     child: Text(
                                       'Admin hệ thống',
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh font size theo nhu cầu
                                         fontWeight: FontWeight.normal,
                                         color: Colors.blueAccent,
@@ -286,7 +292,7 @@ class _main_screenState extends State<main_screen> {
                                       'Qlý đơn hàng',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -451,7 +457,7 @@ class _main_screenState extends State<main_screen> {
                                       'Quản lý tài xế',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -550,7 +556,7 @@ class _main_screenState extends State<main_screen> {
                                       'Quản lý khách hàng',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -616,7 +622,7 @@ class _main_screenState extends State<main_screen> {
                                       'Quản lý khu vực',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -682,7 +688,7 @@ class _main_screenState extends State<main_screen> {
                                       'Quản lý nhà hàng',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -814,7 +820,7 @@ class _main_screenState extends State<main_screen> {
                                       'Quản lý quảng cáo',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -880,7 +886,7 @@ class _main_screenState extends State<main_screen> {
                                       'Quản lý voucher',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,

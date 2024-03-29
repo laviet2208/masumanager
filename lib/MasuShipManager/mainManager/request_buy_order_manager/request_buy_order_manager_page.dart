@@ -196,7 +196,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm đơn mua tự do',
@@ -204,7 +204,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),

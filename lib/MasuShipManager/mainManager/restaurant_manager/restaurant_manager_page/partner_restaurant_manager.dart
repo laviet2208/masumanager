@@ -202,7 +202,7 @@ class _partner_restaurant_managerState extends State<partner_restaurant_manager>
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm nhà hàng',
@@ -210,7 +210,7 @@ class _partner_restaurant_managerState extends State<partner_restaurant_manager>
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -232,7 +232,7 @@ class _partner_restaurant_managerState extends State<partner_restaurant_manager>
                   child: Text(
                     'Thêm nhà hàng',
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         color: Colors.black,
                         fontSize: 13,
                         fontWeight: FontWeight.bold

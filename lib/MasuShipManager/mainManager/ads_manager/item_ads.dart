@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:masumanager/MasuShipManager/Data/adsData/restaurantAdsData.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:masumanager/MasuShipManager/Data/otherData/Tool.dart';
 import 'package:masumanager/MasuShipManager/mainManager/ads_manager/actions/delete_ads.dart';
 import 'package:masumanager/MasuShipManager/mainManager/ads_manager/actions/edit_ads.dart';
 import 'package:masumanager/MasuShipManager/mainManager/ads_manager/actions/on_off_ads.dart';
@@ -86,7 +87,7 @@ class _item_adsState extends State<item_ads> {
     double height = 100;
     return Container(
       width: width,
-      height: 120,
+      height: 150,
       decoration: BoxDecoration(
         color: widget.index % 2 == 0 ? Colors.white : Color.fromARGB(255, 247, 250, 255),
         border: Border.all(
@@ -107,7 +108,7 @@ class _item_adsState extends State<item_ads> {
                   (widget.index + 1).toString(),
                   style: TextStyle(
                     fontSize: 14,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
                   ),                ),
@@ -123,7 +124,7 @@ class _item_adsState extends State<item_ads> {
           ),
 
           Container(
-            width: (width - 50)/4 - 1,
+            width: (width - 50)/5 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10,),
               child: ListView(
@@ -139,7 +140,7 @@ class _item_adsState extends State<item_ads> {
                             text: 'Khu vực: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -147,7 +148,7 @@ class _item_adsState extends State<item_ads> {
                             text: area_name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -176,7 +177,7 @@ class _item_adsState extends State<item_ads> {
                           if (snapshot.hasError) {
                             return Container(
                               alignment: Alignment.center,
-                              child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                              child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                             );                                                        }
 
                           if (!snapshot.hasData) {
@@ -199,7 +200,7 @@ class _item_adsState extends State<item_ads> {
                         child: Text(
                           'Chỉnh sửa ảnh',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 10,
                               color: Colors.blueAccent
                           ),
@@ -228,7 +229,7 @@ class _item_adsState extends State<item_ads> {
           ),
 
           Container(
-            width: (width - 50)/4 - 1,
+            width: (width - 50)/5 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10,),
               child: ListView(
@@ -244,7 +245,7 @@ class _item_adsState extends State<item_ads> {
                             text: 'Tên nhà tài trợ: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -252,7 +253,7 @@ class _item_adsState extends State<item_ads> {
                             text: resName, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.redAccent,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -273,7 +274,7 @@ class _item_adsState extends State<item_ads> {
                             text: 'Số điện thoại: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -281,7 +282,7 @@ class _item_adsState extends State<item_ads> {
                             text: resPhone, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.purple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -303,7 +304,113 @@ class _item_adsState extends State<item_ads> {
           ),
 
           Container(
-            width: (width - 50)/4 - 1,
+            width: (width - 50)/5 - 1,
+            child: Padding(
+              padding: EdgeInsets.only(left: 10, right: 10,),
+              child: ListView(
+                children: [
+                  Container(height: 8,),
+
+                  Container(
+                    child: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Lần cuối khả dụng: ',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              fontWeight: FontWeight.bold, // Để in đậm
+                            ),
+                          ),
+                          TextSpan(
+                            text: getAllTimeString(widget.data.pushTime), // Phần còn lại viết bình thường
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal, // Để viết bình thường
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Container(height: 8,),
+
+                  Container(
+                    child: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Lần cuối dừng: ',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              fontWeight: FontWeight.bold, // Để in đậm
+                            ),
+                          ),
+                          TextSpan(
+                            text: getAllTimeString(widget.data.endTime), // Phần còn lại viết bình thường
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal, // Để viết bình thường
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Container(height: 8,),
+
+                  Container(
+                    child: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: 'Lần cuối chỉnh sửa: ',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              fontWeight: FontWeight.bold, // Để in đậm
+                            ),
+                          ),
+                          TextSpan(
+                            text: getAllTimeString(widget.data.editTime), // Phần còn lại viết bình thường
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal, // Để viết bình thường
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Container(height: 8,),
+                ],
+              ),
+            ),
+          ),
+
+          Container(
+            width: 1,
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 225, 225, 226)
+            ),
+          ),
+
+          Container(
+            width: (width - 50)/5 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10,),
               child: ListView(
@@ -319,7 +426,7 @@ class _item_adsState extends State<item_ads> {
                             text: 'Xuất hiện tại vị trí: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -327,7 +434,7 @@ class _item_adsState extends State<item_ads> {
                             text: direction_list[widget.data.direction - 1], // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.blueAccent,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -348,7 +455,7 @@ class _item_adsState extends State<item_ads> {
                             text: 'Trạng thái: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -356,7 +463,7 @@ class _item_adsState extends State<item_ads> {
                             text: widget.data.status == 0 ? 'Không khả dụng' : 'Đang kích hoạt', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: widget.data.status == 0 ? Colors.redAccent : Colors.green,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -380,7 +487,7 @@ class _item_adsState extends State<item_ads> {
           ),
 
           Container(
-            width: (width - 50)/4 - 1,
+            width: (width - 50)/5 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 20,),
               child: ListView(
@@ -398,7 +505,7 @@ class _item_adsState extends State<item_ads> {
                         child: Text(
                           'Xóa quảng cáo',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
@@ -429,7 +536,7 @@ class _item_adsState extends State<item_ads> {
                         child: Text(
                           'Cập nhật quảng cáo',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
@@ -460,7 +567,7 @@ class _item_adsState extends State<item_ads> {
                         child: Text(
                           'Tắt/Bật quảng cáo',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 11,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,

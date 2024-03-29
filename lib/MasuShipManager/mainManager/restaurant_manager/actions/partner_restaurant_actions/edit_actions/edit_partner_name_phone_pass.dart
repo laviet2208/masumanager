@@ -347,7 +347,7 @@ class _edit_partner_name_phone_passState extends State<edit_partner_name_phone_p
           child: Text(
             'Lưu nhà hàng',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.blueAccent
             ),
           ),

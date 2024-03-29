@@ -189,7 +189,7 @@ class _item_configurationState extends State<item_configuration> {
             ),
             alignment: Alignment.center,
             child: TextButton(
-              child: Text('Cập nhật', style: TextStyle(fontFamily: 'roboto', color: Colors.blueAccent, fontSize: 13),),
+              child: Text('Cập nhật', style: TextStyle(fontFamily: 'muli', color: Colors.blueAccent, fontSize: 13),),
               onPressed: () {
                 showDialog(context: context, builder: (context) {
                   return change_configuration(id: widget.id, index: widget.index, cost: widget.cost);

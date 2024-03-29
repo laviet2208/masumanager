@@ -355,7 +355,7 @@ class _change_configurationState extends State<change_configuration> {
           child: !loading ? Text(
             'Đồng ý',
             style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.blueAccent
             ),
           ) : CircularProgressIndicator(color: Colors.blueAccent,),

@@ -114,7 +114,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Số điện thoại : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -122,7 +122,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: acc.phoneNum[0] == '0' ? acc.phoneNum : '0' + acc.phoneNum, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -142,7 +142,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Tên trong app : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -150,7 +150,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: acc.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.purple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -191,7 +191,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Tên tài xế : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -199,7 +199,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: acc1.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -219,7 +219,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'SĐT tài xế : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -227,7 +227,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: acc1.phoneNum[0] == '0' ? acc1.phoneNum : '0' + acc1.phoneNum, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -267,7 +267,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Số sao : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -275,7 +275,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: widget.evaluate.star.toString(), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -295,7 +295,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Nội dung đánh giá : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -303,7 +303,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: widget.evaluate.content, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -343,7 +343,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Tên khu vực : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -351,7 +351,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: area.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.purple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -392,7 +392,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Giờ khởi tạo : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -400,7 +400,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: (widget.evaluate.creatTime.hour >= 10 ? widget.evaluate.creatTime.hour.toString() : '0' + widget.evaluate.creatTime.hour.toString()) + ":" + (widget.evaluate.creatTime.minute < 10 ? '0' + widget.evaluate.creatTime.minute.toString() : widget.evaluate.creatTime.minute.toString()) + ":" + (widget.evaluate.creatTime.second < 10 ? '0' + widget.evaluate.creatTime.second.toString() : widget.evaluate.creatTime.second.toString()),
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -421,7 +421,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: 'Ngày : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -429,7 +429,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                             text: "Ngày " + widget.evaluate.creatTime.day.toString() + "/" + widget.evaluate.creatTime.month.toString() + "/" + widget.evaluate.creatTime.year.toString(), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -472,7 +472,7 @@ class _ItemdanhgianhahangState extends State<Itemdanhgiataixe> {
                         'Xóa đánh giá',
                         style: TextStyle(
                           fontSize: 13,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.white,
                         ),
                       ),

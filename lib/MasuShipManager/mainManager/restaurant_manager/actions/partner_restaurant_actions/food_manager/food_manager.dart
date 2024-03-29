@@ -68,7 +68,7 @@ class _food_managerState extends State<food_manager> {
       insetPadding: EdgeInsets.zero,
       contentPadding: EdgeInsets.zero,
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      title: Text('Quản lý danh sách món ăn',style: TextStyle(fontFamily: 'roboto', fontSize: 14, fontWeight: FontWeight.bold),),
+      title: Text('Quản lý danh sách món ăn',style: TextStyle(fontFamily: 'muli', fontSize: 14, fontWeight: FontWeight.bold),),
 
       content: Container(
         width: MediaQuery.of(context).size.width - 100,
@@ -94,7 +94,7 @@ class _food_managerState extends State<food_manager> {
                         child: Text(
                           'Thêm món ăn',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                             fontSize: 12,

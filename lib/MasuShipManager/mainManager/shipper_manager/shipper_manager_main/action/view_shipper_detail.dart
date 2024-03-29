@@ -85,7 +85,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
         child: Text(
           'Thông tin shipper',
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 13
@@ -125,7 +125,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                       child: Text(
                         'Tên trong app',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -167,7 +167,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -175,7 +175,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),
@@ -193,7 +193,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                       child: Text(
                         'Số dư(VNĐ)',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -235,7 +235,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -243,7 +243,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),
@@ -261,7 +261,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                       child: Text(
                         'Biển số xe',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -303,7 +303,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -311,7 +311,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),
@@ -329,7 +329,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                       child: Text(
                         'Loại phương tiện',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -368,7 +368,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                       child: Text(
                         'Ảnh thông tin',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -408,7 +408,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                     if (snapshot.hasError) {
                                       return Container(
                                         alignment: Alignment.center,
-                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                                       );                                                        }
 
                                     if (!snapshot.hasData) {
@@ -431,7 +431,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   child: Text(
                                     'Mặt sau Giấy phép',
                                     style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 14,
                                         color: Colors.redAccent
                                     ),
@@ -458,7 +458,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   child: Text(
                                     'Mặt trước Giấy phép',
                                     style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 14,
                                         color: Colors.redAccent
                                     ),
@@ -497,7 +497,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                     if (snapshot.hasError) {
                                       return Container(
                                         alignment: Alignment.center,
-                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                                       );                                                        }
 
                                     if (!snapshot.hasData) {
@@ -546,7 +546,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                     if (snapshot.hasError) {
                                       return Container(
                                         alignment: Alignment.center,
-                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                                       );                                                        }
 
                                     if (!snapshot.hasData) {
@@ -569,7 +569,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   child: Text(
                                     'Mặt sau CCCD',
                                     style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 14,
                                         color: Colors.redAccent
                                     ),
@@ -596,7 +596,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   child: Text(
                                     'Mặt trước CCCD',
                                     style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 14,
                                         color: Colors.redAccent
                                     ),
@@ -635,7 +635,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                     if (snapshot.hasError) {
                                       return Container(
                                         alignment: Alignment.center,
-                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                                       );                                                        }
 
                                     if (!snapshot.hasData) {
@@ -684,7 +684,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                     if (snapshot.hasError) {
                                       return Container(
                                         alignment: Alignment.center,
-                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                                        child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                                       );
                                     }
 
@@ -708,7 +708,7 @@ class _view_shipper_detailState extends State<view_shipper_detail> {
                                   child: Text(
                                     'Ảnh đại diện',
                                     style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 14,
                                         color: Colors.redAccent
                                     ),

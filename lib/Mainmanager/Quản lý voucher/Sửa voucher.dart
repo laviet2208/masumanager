@@ -196,7 +196,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Tên chương trình *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -238,7 +238,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -246,7 +246,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -264,7 +264,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Mã code *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -307,7 +307,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -315,7 +315,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -333,7 +333,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Ngày bắt đầu *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -373,7 +373,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                     ),
                     decoration: InputDecoration(
                       border: InputBorder.none,
@@ -381,7 +381,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                       hintStyle: TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                       ),
                     ),
                     onTap: () {
@@ -401,7 +401,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Ngày kết thúc *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -443,7 +443,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -451,7 +451,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                         onTap: () {
@@ -472,7 +472,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Áp dụng cho đơn từ *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -514,7 +514,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -522,7 +522,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -540,7 +540,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Số lượng tối đa *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -582,7 +582,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -590,7 +590,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -608,7 +608,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Số lượng tối đa mỗi khách*',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -650,7 +650,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -658,7 +658,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -676,7 +676,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Kiểu giảm giá *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -712,7 +712,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 Typeindex == 0 ? 'Số tiền giảm (Đơn vị : VNĐ)*' : 'Số phần trăm giảm (không có phần thập phân)*',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -754,7 +754,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -762,7 +762,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -780,7 +780,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 'Số tiền giảm tối đa(VNĐ)',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: Typeindex == 1 ? 14 : 0,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -822,7 +822,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: Typeindex == 1 ? 16 : 0,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -830,7 +830,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: Typeindex == 1 ? 16 : 0,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -848,7 +848,7 @@ class _CapnhatvoucherState extends State<Capnhatvoucher> {
               child: Text(
                 (widget.type == 1) ? 'Chọn khu vực' : 'Chọn nhà hàng',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: (widget.type == 1 && currentAccount.provinceCode == '0') ? 14 : 0,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent

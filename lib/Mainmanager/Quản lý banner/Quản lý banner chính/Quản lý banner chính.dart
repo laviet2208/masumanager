@@ -97,7 +97,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
                       color: Colors.white,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       fontSize: 14
                   ),
                 ),
@@ -121,7 +121,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                               child: Text(
                                 'URL banner top (1920x668) *',
                                 style: TextStyle(
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.redAccent
@@ -163,7 +163,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 16,
-                                          fontFamily: 'roboto',
+                                          fontFamily: 'muli',
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -171,7 +171,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                                           hintStyle: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 16,
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                           ),
                                         ),
                                       ),
@@ -189,7 +189,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                               child: Text(
                                 'URL liên kết của banner *',
                                 style: TextStyle(
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.redAccent
@@ -231,7 +231,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontSize: 16,
-                                          fontFamily: 'roboto',
+                                          fontFamily: 'muli',
                                         ),
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -239,7 +239,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                                           hintStyle: TextStyle(
                                             color: Colors.grey,
                                             fontSize: 16,
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                           ),
                                         ),
                                       ),
@@ -300,7 +300,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                           'Ngày tạo Banner',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -323,7 +323,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                           'Liên kết ảnh',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -346,7 +346,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                           'Liên kết đích',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -370,7 +370,7 @@ class _QuanlybannerchinhtrencungState extends State<Quanlybannerchinhtrencung> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

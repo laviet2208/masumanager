@@ -102,7 +102,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
               child: Text(
                 'Tên sự kiện *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -144,7 +144,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -152,7 +152,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -170,7 +170,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
               child: Text(
                 'Dòng mô tả sự kiện *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -212,7 +212,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -220,7 +220,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -238,7 +238,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
               child: Text(
                 'Liên kết ảnh đại diện *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -280,7 +280,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -288,7 +288,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -306,7 +306,7 @@ class _SuaBannerShopState extends State<SuaBannerShop> {
               child: Text(
                 'Chọn nhà hàng *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent

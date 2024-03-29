@@ -410,7 +410,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                           'ID danh mục',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -433,7 +433,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                           'Tiêu đề chính',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -456,7 +456,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                           'Tiêu đề phụ',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -480,7 +480,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                           'Số lượng nhà hàng',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -503,7 +503,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

@@ -93,7 +93,7 @@ class _ItemdieukhoanState extends State<Itemdieukhoan> {
                   (widget.policy.createTime.hour < 10 ?'0' + widget.policy.createTime.hour.toString() : widget.policy.createTime.hour.toString()) + ":" + (widget.policy.createTime.minute < 10 ?'0' + widget.policy.createTime.minute.toString() : widget.policy.createTime.minute.toString()) + ":" + (widget.policy.createTime.second < 10 ?'0' + widget.policy.createTime.second.toString() : widget.policy.createTime.second.toString()) + " Ngày 0" + widget.policy.createTime.day.toString() + "/" + widget.policy.createTime.month.toString() + "/" + widget.policy.createTime.year.toString(),
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 16
                   ),
@@ -117,7 +117,7 @@ class _ItemdieukhoanState extends State<Itemdieukhoan> {
                   widget.policy.title,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.purple,
                       fontSize: 16
                   ),
@@ -143,7 +143,7 @@ class _ItemdieukhoanState extends State<Itemdieukhoan> {
                       widget.policy.content,
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 16
                       ),
@@ -181,7 +181,7 @@ class _ItemdieukhoanState extends State<Itemdieukhoan> {
                         child: Text(
                           'Cập nhật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.white,
                               fontSize: 12
                           ),
@@ -377,7 +377,7 @@ class _ItemdieukhoanState extends State<Itemdieukhoan> {
                         child: Text(
                           'Xóa điều khoản',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.redAccent,
                               fontSize: 12
                           ),

@@ -136,7 +136,7 @@ class _restaurant_directory_managerState extends State<restaurant_directory_mana
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm danh mục nhà hàng',
@@ -144,7 +144,7 @@ class _restaurant_directory_managerState extends State<restaurant_directory_mana
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -187,7 +187,7 @@ class _restaurant_directory_managerState extends State<restaurant_directory_mana
                   child: Text(
                     'Thêm danh mục',
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         color: Colors.black,
                         fontSize: 13,
                         fontWeight: FontWeight.bold

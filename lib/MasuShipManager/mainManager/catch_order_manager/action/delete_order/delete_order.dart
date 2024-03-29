@@ -33,7 +33,7 @@ class _delete_orderState extends State<delete_order> {
         child: Text(
           'Xóa đơn',
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 13
@@ -85,7 +85,7 @@ class _delete_orderState extends State<delete_order> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -93,7 +93,7 @@ class _delete_orderState extends State<delete_order> {
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),

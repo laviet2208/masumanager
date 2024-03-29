@@ -111,7 +111,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),
@@ -191,7 +191,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: 'Số điện thoại : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -199,7 +199,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: (widget.account.phoneNum == '0') ? widget.account.phoneNum : ('0' + widget.account.phoneNum), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -219,7 +219,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: 'Tên trong app : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -227,7 +227,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: widget.account.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -248,7 +248,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: 'Số dư : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -256,7 +256,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: dataCheckManager.getStringNumber(widget.account.totalMoney)+'đ', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -296,7 +296,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: 'Vị trí hiện tại : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -304,7 +304,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: widget.account.locationHis.firstText + " " + widget.account.locationHis.secondaryText, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -343,7 +343,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                 child: Text(
                   (widget.account.status == 1) ? 'Đang kích hoạt' : 'Đã bị khóa',
                   style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     color:  Colors.black,
                     fontWeight: FontWeight.bold
@@ -375,7 +375,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                   child: Text(
                     (widget.account.WorkStatus == 0) ? 'Offline' : 'Online',
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14,
                         color:  Colors.black,
                         fontWeight: FontWeight.bold
@@ -400,7 +400,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                   area.name,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 100
                   ),
@@ -432,7 +432,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: 'Giờ khởi tạo : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -440,7 +440,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: widget.account.createTime.hour.toString() + ":" + widget.account.createTime.minute.toString() + ":" + widget.account.createTime.second.toString(),
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -461,7 +461,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: 'Ngày : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -469,7 +469,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                             text: "Ngày " + widget.account.createTime.day.toString() + "/" + widget.account.createTime.month.toString() + "/" + widget.account.createTime.year.toString(), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -549,7 +549,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                       child: Text(
                                         'Số tiền cần trừ *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -591,7 +591,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -599,7 +599,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),
@@ -617,7 +617,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                       child: Text(
                                         'Nội dung trừ tiền *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -659,7 +659,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -667,7 +667,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),
@@ -780,7 +780,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                           child: Text(
                                             'Số tiền cần nạp *',
                                             style: TextStyle(
-                                                fontFamily: 'roboto',
+                                                fontFamily: 'muli',
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.redAccent
@@ -822,7 +822,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 16,
-                                                      fontFamily: 'roboto',
+                                                      fontFamily: 'muli',
                                                     ),
                                                     decoration: InputDecoration(
                                                       border: InputBorder.none,
@@ -830,7 +830,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                       hintStyle: TextStyle(
                                                         color: Colors.grey,
                                                         fontSize: 16,
-                                                        fontFamily: 'roboto',
+                                                        fontFamily: 'muli',
                                                       ),
                                                     ),
                                                   ),
@@ -848,7 +848,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                           child: Text(
                                             'Nội dung nạp tiền *',
                                             style: TextStyle(
-                                                fontFamily: 'roboto',
+                                                fontFamily: 'muli',
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.bold,
                                                 color: Colors.redAccent
@@ -890,7 +890,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                     style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 16,
-                                                      fontFamily: 'roboto',
+                                                      fontFamily: 'muli',
                                                     ),
                                                     decoration: InputDecoration(
                                                       border: InputBorder.none,
@@ -898,7 +898,7 @@ class _ITEMdanhsachkhachhangState extends State<ITEMdanhsachtaixe> {
                                                       hintStyle: TextStyle(
                                                         color: Colors.grey,
                                                         fontSize: 16,
-                                                        fontFamily: 'roboto',
+                                                        fontFamily: 'muli',
                                                       ),
                                                     ),
                                                   ),

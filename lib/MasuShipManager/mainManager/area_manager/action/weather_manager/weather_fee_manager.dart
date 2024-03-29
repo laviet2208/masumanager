@@ -80,7 +80,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       'Trạng thái thời tiết',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -101,7 +101,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       'Phụ phí thời tiết',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -122,7 +122,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       'Cho phép áp dụng',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -143,7 +143,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       'Thao tác',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -178,7 +178,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       cost.weatherTitle,
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -199,7 +199,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       getStringNumber(cost.cost),
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -220,7 +220,7 @@ class _weather_fee_managerState extends State<weather_fee_manager> {
                       cost.available == 0 ? 'Không khả dụng' : 'Được áp dụng',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: cost.available == 0 ? Colors.redAccent : Colors.blueGrey,
                           fontSize: 13
                       ),

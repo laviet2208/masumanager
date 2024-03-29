@@ -97,7 +97,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
               child: Text(
                 'Tên sự kiện *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -139,7 +139,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -147,7 +147,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -165,7 +165,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
               child: Text(
                 'Dòng mô tả sự kiện *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -207,7 +207,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -215,7 +215,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -233,7 +233,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
               child: Text(
                 'Liên kết ảnh đại diện *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -275,7 +275,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -283,7 +283,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -301,7 +301,7 @@ class _AddShopBannerState extends State<AddShopBanner> {
               child: Text(
                 'Chọn nhà hàng *',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent

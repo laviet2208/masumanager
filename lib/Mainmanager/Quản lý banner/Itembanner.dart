@@ -46,7 +46,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),
@@ -81,7 +81,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                   widget.adStype1.id,
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 16
                   ),
@@ -115,7 +115,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: 'Tiêu đề chính : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -123,7 +123,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: widget.adStype1.mainContent, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -146,7 +146,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: 'Tiêu đề phụ : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -154,7 +154,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: widget.adStype1.secondaryText, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -194,7 +194,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: 'Tên nhà hàng : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -202,7 +202,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: widget.adStype1.shop.name, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -225,7 +225,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: 'Số điện thoại : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -233,7 +233,7 @@ class _ITEMbannerState extends State<ITEMbanner> {
                               text: widget.adStype1.shop.phoneNum, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),

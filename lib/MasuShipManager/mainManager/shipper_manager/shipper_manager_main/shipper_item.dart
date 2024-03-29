@@ -115,7 +115,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: 'Số điện thoại : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -123,7 +123,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: (widget.account.phone[0] == '0') ? widget.account.phone : ('0' + widget.account.phone), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -143,7 +143,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: 'Tên trong app : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -151,7 +151,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: widget.account.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -172,7 +172,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: 'Số dư : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -180,7 +180,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: getStringNumber(widget.account.money)+'đ', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -220,7 +220,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: 'Đang ở gần : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -228,7 +228,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: locationName, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -275,7 +275,7 @@ class _shipper_itemState extends State<shipper_item> {
                       child: Text(
                         (widget.account.lockStatus == 1) ? 'Đang mở' : 'Đang khóa',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 13,
                             color: widget.account.lockStatus == 0 ? Colors.red : Colors.green,
                             fontWeight: FontWeight.bold
@@ -302,7 +302,7 @@ class _shipper_itemState extends State<shipper_item> {
                       child: Text(
                         (widget.account.onlineStatus == 1) ? 'Đang check-in' : 'Đang check-out',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 13,
                             color:  widget.account.onlineStatus == 0 ? Colors.red : Colors.blueAccent,
                             fontWeight: FontWeight.bold
@@ -329,7 +329,7 @@ class _shipper_itemState extends State<shipper_item> {
                       child: Text(
                         (widget.account.orderHaveStatus == 1) ? 'Đang chạy đơn' : 'Chưa có đơn',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 13,
                             color:  widget.account.orderHaveStatus == 0 ? Colors.black : Colors.green,
                             fontWeight: FontWeight.bold
@@ -366,7 +366,7 @@ class _shipper_itemState extends State<shipper_item> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 13
                   ),
@@ -398,7 +398,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: 'Giờ khởi tạo : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -406,7 +406,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: widget.account.createTime.hour.toString() + ":" + widget.account.createTime.minute.toString() + ":" + widget.account.createTime.second.toString(),
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -427,7 +427,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: 'Ngày : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -435,7 +435,7 @@ class _shipper_itemState extends State<shipper_item> {
                             text: "Ngày " + widget.account.createTime.day.toString() + "/" + widget.account.createTime.month.toString() + "/" + widget.account.createTime.year.toString(), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),

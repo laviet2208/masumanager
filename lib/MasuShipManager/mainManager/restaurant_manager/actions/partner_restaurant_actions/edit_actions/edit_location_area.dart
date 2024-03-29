@@ -125,7 +125,7 @@ class _edit_location_areaState extends State<edit_location_area> {
           child: Text(
             'Lưu nhà hàng',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.blueAccent
             ),
           ),
@@ -138,7 +138,7 @@ class _edit_location_areaState extends State<edit_location_area> {
           child: Text(
             'Hủy',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.redAccent
             ),
           ),

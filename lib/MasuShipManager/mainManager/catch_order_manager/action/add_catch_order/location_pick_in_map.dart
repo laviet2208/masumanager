@@ -248,7 +248,7 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
                         child: Text(
                           'Chọn vị trí',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.black,
                               fontWeight: FontWeight.normal

@@ -42,7 +42,7 @@ class ITEMbannerFacebook extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),
@@ -77,7 +77,7 @@ class ITEMbannerFacebook extends StatelessWidget {
                   adStype2.id,
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 16
                   ),
@@ -101,7 +101,7 @@ class ITEMbannerFacebook extends StatelessWidget {
                   adStype2.mainContent,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.purple,
                       fontSize: 16
                   ),
@@ -125,7 +125,7 @@ class ITEMbannerFacebook extends StatelessWidget {
                   adStype2.facebookLink,
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 16
                   ),

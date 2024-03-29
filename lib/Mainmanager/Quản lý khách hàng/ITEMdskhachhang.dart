@@ -106,7 +106,7 @@ Widget build(BuildContext context) {
                           text: 'Số điện thoại : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -114,7 +114,7 @@ Widget build(BuildContext context) {
                           text: (widget.account.phoneNum == '0') ? widget.account.phoneNum : ('0' + widget.account.phoneNum), // Phần còn lại viết bình thường
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
                         ),
@@ -134,7 +134,7 @@ Widget build(BuildContext context) {
                           text: 'Tên trong app : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -142,7 +142,7 @@ Widget build(BuildContext context) {
                           text: widget.account.name, // Phần còn lại viết bình thường
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             color: Colors.purple,
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
@@ -182,7 +182,7 @@ Widget build(BuildContext context) {
                           text: 'Vị trí hiện tại : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -190,7 +190,7 @@ Widget build(BuildContext context) {
                           text: widget.account.locationHis.firstText + " " + widget.account.locationHis.secondaryText, // Phần còn lại viết bình thường
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             color: Colors.purple,
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
@@ -232,7 +232,7 @@ Widget build(BuildContext context) {
                 child: Text(
                   (widget.account.status == 1) ? 'Đang kích hoạt' : 'Đã bị khóa',
                   style: TextStyle(
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       fontSize: 14,
                       color:  (widget.account.status == 1) ? Colors.green.withOpacity(1) : Colors.redAccent.withOpacity(1),
                       fontWeight: FontWeight.bold
@@ -267,7 +267,7 @@ Widget build(BuildContext context) {
                           text: 'Tên khu vực : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -275,7 +275,7 @@ Widget build(BuildContext context) {
                           text: area.name, // Phần còn lại viết bình thường
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             color: Colors.purple,
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
@@ -316,7 +316,7 @@ Widget build(BuildContext context) {
                           text: 'Giờ khởi tạo : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -324,7 +324,7 @@ Widget build(BuildContext context) {
                           text: widget.account.createTime.hour.toString() + ":" + (widget.account.createTime.minute < 10 ? '0' + widget.account.createTime.minute.toString() : widget.account.createTime.minute.toString()) + ":" + (widget.account.createTime.second < 10 ? '0' + widget.account.createTime.second.toString() : widget.account.createTime.second.toString()),
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             color: Colors.black,
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
@@ -345,7 +345,7 @@ Widget build(BuildContext context) {
                           text: 'Ngày : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -353,7 +353,7 @@ Widget build(BuildContext context) {
                           text: "Ngày " + widget.account.createTime.day.toString() + "/" + widget.account.createTime.month.toString() + "/" + widget.account.createTime.year.toString(), // Phần còn lại viết bình thường
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             color: Colors.black,
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),

@@ -176,7 +176,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                             text: 'Tiêu đề : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -184,7 +184,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                             text: widget.notice.Title, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -205,7 +205,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                             text: 'Tiêu đề phụ : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -213,7 +213,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                             text: widget.notice.Sub,
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -234,7 +234,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                             text: 'Nội dung : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -242,7 +242,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                             text: widget.notice.Content,
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -286,7 +286,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: 'Khu vực : ',
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -301,7 +301,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: area.name,
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   color: Colors.black,
                                   fontWeight: FontWeight.normal,
                                 ),
@@ -327,7 +327,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: 'Đối tượng : ',
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -342,7 +342,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: type,
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.normal,
                                 ),
@@ -388,7 +388,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: 'Ngày khởi tạo : ',
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -403,7 +403,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: (widget.notice.create.hour >= 10 ? widget.notice.create.hour.toString() : '0' + widget.notice.create.hour.toString()) + " giờ " + (widget.notice.create.minute >= 10 ? widget.notice.create.minute.toString() : '0' + widget.notice.create.minute.toString()) + ", " + "Ngày " + (widget.notice.create.day >= 10 ? widget.notice.create.day.toString() : '0' + widget.notice.create.day.toString()) + "/" + (widget.notice.create.month >= 10 ? widget.notice.create.month.toString() : '0' + widget.notice.create.month.toString()) + "/" + widget.notice.create.year.toString(),
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   color: Colors.black,
                                   fontWeight: FontWeight.normal,
                                 ),
@@ -429,7 +429,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: 'Gửi lần cuối lúc : ',
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -445,7 +445,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                 text: (widget.notice.send.hour >= 10 ? widget.notice.send.hour.toString() : '0' + widget.notice.send.hour.toString()) + " giờ " + (widget.notice.send.minute >= 10 ? widget.notice.send.minute.toString() : '0' + widget.notice.send.minute.toString()) + ", " + "Ngày " + (widget.notice.send.day >= 10 ? widget.notice.send.day.toString() : '0' + widget.notice.send.day.toString()) + "/" + (widget.notice.send.month >= 10 ? widget.notice.send.month.toString() : '0' + widget.notice.send.month.toString()) + "/" + widget.notice.send.year.toString(),
                                 style: TextStyle(
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                   color: Colors.black,
                                   fontWeight: FontWeight.normal,
                                 ),
@@ -491,7 +491,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                       child: Text(
                         status,
                         style: TextStyle(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'muli',
                             fontSize: 13,
                             fontWeight: FontWeight.normal,
                             color: Colors.white
@@ -525,7 +525,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                       child: Text(
                         'Xóa thông báo',
                         style: TextStyle(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'muli',
                             fontSize: 13,
                             fontWeight: FontWeight.normal,
                             color: Colors.redAccent
@@ -577,7 +577,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                       child: Text(
                         'Sửa thông báo',
                         style: TextStyle(
-                            fontFamily: 'Roboto',
+                            fontFamily: 'muli',
                             fontSize: 13,
                             fontWeight: FontWeight.normal,
                             color: Colors.redAccent
@@ -616,7 +616,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                       child: Text(
                                         'Tiêu đề thông báo *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -658,7 +658,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -666,7 +666,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),
@@ -684,7 +684,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                       child: Text(
                                         'Tiêu đề phụ thông báo *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -726,7 +726,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -734,7 +734,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),
@@ -752,7 +752,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                       child: Text(
                                         'Nội dung thông báo *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -794,7 +794,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -802,7 +802,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),
@@ -820,7 +820,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                       child: Text(
                                         'Chọn loại người nhận *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -846,7 +846,7 @@ class _ItemdanhsachState extends State<Itemdanhsachtb> {
                                       child: Text(
                                         'Chọn khu vực quản lý *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: currentAccount.provinceCode == '0' ? 14 : 0,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent

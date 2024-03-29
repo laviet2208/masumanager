@@ -94,7 +94,7 @@ class _ItemkhuvucState extends State<Itemkhuvuc> {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),

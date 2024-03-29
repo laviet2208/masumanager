@@ -72,7 +72,7 @@ class _ItemnhahangtrongdanhmucState extends State<Itemcuahangtrongdanhmuc> {
                                   text: 'Tên Cửa hàng : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -87,7 +87,7 @@ class _ItemnhahangtrongdanhmucState extends State<Itemcuahangtrongdanhmuc> {
                                   text: shop.name,
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.purple,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -113,7 +113,7 @@ class _ItemnhahangtrongdanhmucState extends State<Itemcuahangtrongdanhmuc> {
                                   text: 'Số điện thoại : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -128,7 +128,7 @@ class _ItemnhahangtrongdanhmucState extends State<Itemcuahangtrongdanhmuc> {
                                   text: shop.phoneNum,
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -168,7 +168,7 @@ class _ItemnhahangtrongdanhmucState extends State<Itemcuahangtrongdanhmuc> {
                         child: Text(
                           'Xóa Cửa hàng',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                             color: Colors.white

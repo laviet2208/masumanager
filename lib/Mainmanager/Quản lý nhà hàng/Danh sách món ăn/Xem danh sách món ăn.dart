@@ -133,7 +133,7 @@ class _XemdanhsachmonanState extends State<Xemdanhsachmonan> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: widget.data == 'Restaurant' ? 'Tìm kiếm món ăn' : 'Tìm kiếm sản phẩm',
@@ -141,7 +141,7 @@ class _XemdanhsachmonanState extends State<Xemdanhsachmonan> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -173,7 +173,7 @@ class _XemdanhsachmonanState extends State<Xemdanhsachmonan> {
                           'Hình ảnh',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -205,7 +205,7 @@ class _XemdanhsachmonanState extends State<Xemdanhsachmonan> {
                                     widget.data == 'Restaurant' ? 'Tên món ăn' : 'Tên sản phẩm',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         color: Colors.black,
                                         fontSize: 100
                                     ),
@@ -260,7 +260,7 @@ class _XemdanhsachmonanState extends State<Xemdanhsachmonan> {
                                     'Giá tiền(VNĐ)',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal,
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         color: Colors.black,
                                         fontSize: 100
                                     ),
@@ -308,7 +308,7 @@ class _XemdanhsachmonanState extends State<Xemdanhsachmonan> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

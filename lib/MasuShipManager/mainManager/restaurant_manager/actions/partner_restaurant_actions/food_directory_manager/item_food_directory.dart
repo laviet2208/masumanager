@@ -42,7 +42,7 @@ class _item_food_directoryState extends State<item_food_directory> {
                   (widget.index + 1).toString(),
                   style: TextStyle(
                     fontSize: 14,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
                   ),
@@ -75,7 +75,7 @@ class _item_food_directoryState extends State<item_food_directory> {
                             text: 'Tên danh mục: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -83,7 +83,7 @@ class _item_food_directoryState extends State<item_food_directory> {
                             text: widget.directory.mainName, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -120,7 +120,7 @@ class _item_food_directoryState extends State<item_food_directory> {
                             text: 'Số lượng món ăn: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -128,7 +128,7 @@ class _item_food_directoryState extends State<item_food_directory> {
                             text: widget.directory.foodList.length.toString(), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),

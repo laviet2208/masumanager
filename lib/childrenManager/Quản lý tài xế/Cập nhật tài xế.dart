@@ -116,7 +116,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
               child: Text(
                 'Tên trong app',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -158,7 +158,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -166,7 +166,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -184,7 +184,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
               child: Text(
                 'Số dư(VNĐ)',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -226,7 +226,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -234,7 +234,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -252,7 +252,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
               child: Text(
                 'Biển số xe',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -294,7 +294,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -302,7 +302,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                           hintStyle: TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                           ),
                         ),
                       ),
@@ -320,7 +320,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
               child: Text(
                 'Loại phương tiện',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -359,7 +359,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
               child: Text(
                 'Ảnh thông tin',
                 style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.redAccent
@@ -399,7 +399,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                             if (snapshot.hasError) {
                               return Container(
                                 alignment: Alignment.center,
-                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto'),textAlign: TextAlign.center,),
+                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli'),textAlign: TextAlign.center,),
                               );                                                        }
 
                             if (!snapshot.hasData) {
@@ -421,7 +421,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         child: Text(
                           'Mặt sau Giấy phép',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),
@@ -438,7 +438,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         child: Text(
                           'Mặt trước Giấy phép',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),
@@ -468,7 +468,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                             if (snapshot.hasError) {
                               return Container(
                                 alignment: Alignment.center,
-                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto'),textAlign: TextAlign.center,),
+                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli'),textAlign: TextAlign.center,),
                               );                                                        }
 
                             if (!snapshot.hasData) {
@@ -517,7 +517,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                             if (snapshot.hasError) {
                               return Container(
                                 alignment: Alignment.center,
-                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto'),textAlign: TextAlign.center,),
+                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli'),textAlign: TextAlign.center,),
                               );                                                        }
 
                             if (!snapshot.hasData) {
@@ -539,7 +539,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         child: Text(
                           'Mặt sau CCCD',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),
@@ -556,7 +556,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         child: Text(
                           'Mặt trước CCCD',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),
@@ -586,7 +586,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                             if (snapshot.hasError) {
                               return Container(
                                 alignment: Alignment.center,
-                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto'),textAlign: TextAlign.center,),
+                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli'),textAlign: TextAlign.center,),
                               );                                                        }
 
                             if (!snapshot.hasData) {
@@ -635,7 +635,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                             if (snapshot.hasError) {
                               return Container(
                                 alignment: Alignment.center,
-                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto'),textAlign: TextAlign.center,),
+                                child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli'),textAlign: TextAlign.center,),
                               );
                             }
 
@@ -658,7 +658,7 @@ class _UpdateDriverState extends State<UpdateDriver> {
                         child: Text(
                           'Ảnh chân dung',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),

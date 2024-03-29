@@ -2,6 +2,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:masumanager/MasuShipManager/Data/adsData/restaurantAdsData.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:masumanager/MasuShipManager/Data/otherData/Tool.dart';
 import '../../../Data/accountData/shopData/shopAccount.dart';
 import '../../../Data/otherData/utils.dart';
 
@@ -78,7 +79,7 @@ class _edit_adsState extends State<edit_ads> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Thêm quảng cáo mới', style: TextStyle(fontFamily: 'roboto', fontSize: 14),),
+      title: Text('Thêm quảng cáo mới', style: TextStyle(fontFamily: 'muli', fontSize: 14),),
       content: Container(
         width: MediaQuery.of(context).size.width/3,
         height: MediaQuery.of(context).size.height/3*2,
@@ -192,6 +193,7 @@ class _edit_adsState extends State<edit_ads> {
               setState(() {
                 loading = true;
               });
+              widget.data.editTime = getCurrentTime();
               await push_ads();
               setState(() {
                 loading = false;
@@ -204,7 +206,7 @@ class _edit_adsState extends State<edit_ads> {
           child: Text(
             'Cập nhật',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.blueAccent
             ),
           ),
@@ -217,7 +219,7 @@ class _edit_adsState extends State<edit_ads> {
           child: Text(
             'Hủy',
             style: TextStyle(
-                fontFamily: 'roboto',
+                fontFamily: 'muli',
                 color: Colors.redAccent
             ),
           ),

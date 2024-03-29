@@ -72,7 +72,7 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
                       'Loại dịch vụ',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -93,7 +93,7 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
                       'Số km đề pa',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -114,7 +114,7 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
                       'Phí đề pa(đ/km)',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -135,7 +135,7 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
                       'Phí mỗi km(đ/km)',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -156,7 +156,7 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
                       'Chiết khấu(%)',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),
@@ -177,7 +177,7 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
                       'Thao tác',
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
-                          fontFamily: 'roboto',
+                          fontFamily: 'muli',
                           color: Colors.black,
                           fontSize: 13
                       ),

@@ -232,7 +232,7 @@ class _PickLocationInMapState extends State<PickLocationInMap1> {
                         child: Text(
                           'Chọn vị trí',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white,
                               fontWeight: FontWeight.normal

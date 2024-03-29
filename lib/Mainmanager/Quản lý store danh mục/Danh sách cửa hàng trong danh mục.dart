@@ -57,7 +57,7 @@ class _DanhsachnhahangState extends State<Danhsachcuahang> {
                   child: Text(
                     '+ Thêm Cửa hàng',
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 15,
                         color: Colors.white
                     ),
@@ -120,7 +120,7 @@ class _DanhsachnhahangState extends State<Danhsachcuahang> {
                             'Thông tin Cửa hàng',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -143,7 +143,7 @@ class _DanhsachnhahangState extends State<Danhsachcuahang> {
                             'Thao tác',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),

@@ -569,7 +569,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý đơn hàng',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -734,7 +734,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý tài xế',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -899,7 +899,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý Banner',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -1029,7 +1029,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý nhà hàng',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -1128,7 +1128,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý cửa hàng',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -1227,7 +1227,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý khu vực',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
@@ -1360,7 +1360,7 @@ class _SCREENmainState extends State<SCREENmain> {
                                       'Qlý đánh giá',
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        fontFamily: 'roboto',
+                                        fontFamily: 'muli',
                                         fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,

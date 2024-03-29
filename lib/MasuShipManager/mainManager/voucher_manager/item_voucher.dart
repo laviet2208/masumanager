@@ -380,7 +380,7 @@ class _item_voucherState extends State<item_voucher> {
                             text: 'Đã sử dụng : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -388,7 +388,7 @@ class _item_voucherState extends State<item_voucher> {
                             text:  widget.voucher.useCount.toString() + ' Lượt', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -409,7 +409,7 @@ class _item_voucherState extends State<item_voucher> {
                             text: 'Giới hạn : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -417,7 +417,7 @@ class _item_voucherState extends State<item_voucher> {
                             text: widget.voucher.maxCount.toString() + ' Lượt', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -438,7 +438,7 @@ class _item_voucherState extends State<item_voucher> {
                             text: 'Tối đa mỗi khách : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -446,7 +446,7 @@ class _item_voucherState extends State<item_voucher> {
                             text: widget.voucher.perCustom.toString() + ' Lượt', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.purple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),

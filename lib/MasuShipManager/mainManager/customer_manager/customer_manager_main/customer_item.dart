@@ -114,7 +114,7 @@ class _customer_itemState extends State<customer_item> {
                             text: 'Số điện thoại : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -122,7 +122,7 @@ class _customer_itemState extends State<customer_item> {
                             text: (widget.account.phone[0] == '0') ? widget.account.phone : ('0' + widget.account.phone), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -142,7 +142,7 @@ class _customer_itemState extends State<customer_item> {
                             text: 'Tên trong app : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -150,7 +150,7 @@ class _customer_itemState extends State<customer_item> {
                             text: widget.account.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -190,7 +190,7 @@ class _customer_itemState extends State<customer_item> {
                             text: 'Đang ở gần : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -198,7 +198,7 @@ class _customer_itemState extends State<customer_item> {
                             text: widget.account.location.latitude == 0 ? 'Tài khoản chưa đăng nhập lần nào' : locationName, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.deepPurple,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -245,7 +245,7 @@ class _customer_itemState extends State<customer_item> {
                         child: Text(
                           (widget.account.lockStatus == 1) ? 'Đang mở' : 'Đang khóa',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 13,
                               color: widget.account.lockStatus == 0 ? Colors.red : Colors.green,
                               fontWeight: FontWeight.bold
@@ -282,7 +282,7 @@ class _customer_itemState extends State<customer_item> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 13
                   ),
@@ -314,7 +314,7 @@ class _customer_itemState extends State<customer_item> {
                             text: 'Giờ khởi tạo : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -322,7 +322,7 @@ class _customer_itemState extends State<customer_item> {
                             text: widget.account.createTime.hour.toString() + ":" + widget.account.createTime.minute.toString() + ":" + widget.account.createTime.second.toString(),
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -343,7 +343,7 @@ class _customer_itemState extends State<customer_item> {
                             text: 'Ngày : ',
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -351,7 +351,7 @@ class _customer_itemState extends State<customer_item> {
                             text: "Ngày " + widget.account.createTime.day.toString() + "/" + widget.account.createTime.month.toString() + "/" + widget.account.createTime.year.toString(), // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 16,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),

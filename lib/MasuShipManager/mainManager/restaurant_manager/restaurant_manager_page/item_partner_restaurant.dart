@@ -68,7 +68,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                   (widget.index + 1).toString(),
                   style: TextStyle(
                     fontSize: 14,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
                   ),
@@ -101,7 +101,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: 'Tên nhà hàng: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -109,35 +109,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: widget.account.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  Container(height: 8,),
-
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Phân loại: ',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'roboto',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: type_list[widget.account.type], // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -157,7 +129,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: 'Tài khoản: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -165,7 +137,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: widget.account.phone, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -185,7 +157,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: 'Mật khẩu: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -193,7 +165,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: widget.account.password, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -249,7 +221,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                               text: 'Giờ mở cửa: ',
                               style: TextStyle(
                                 fontSize: 14,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -258,7 +230,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                               text: getTimeHour(widget.account.openTime), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 14,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
                             ),
@@ -278,7 +250,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                               text: 'Giờ đóng cửa: ',
                               style: TextStyle(
                                 fontSize: 14,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -287,7 +259,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                               text: getTimeHour(widget.account.closeTime), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 14,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
                             ),
@@ -307,7 +279,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                               text: 'Thời gian tạo: ',
                               style: TextStyle(
                                 fontSize: 14,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -316,7 +288,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                               text: getAllTimeString(widget.account.createTime), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 14,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
                             ),
@@ -372,7 +344,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: 'Địa chỉ: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -381,7 +353,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: widget.account.location.mainText + ' ' + widget.account.location.secondaryText, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -401,7 +373,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: 'Thuộc khu vực: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -410,7 +382,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: area_name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -463,10 +435,38 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                         style: DefaultTextStyle.of(context).style,
                         children: <TextSpan>[
                           TextSpan(
+                            text: 'Phân loại: ',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              fontWeight: FontWeight.bold, // Để in đậm
+                            ),
+                          ),
+                          TextSpan(
+                            text: type_list[widget.account.type], // Phần còn lại viết bình thường
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'muli',
+                              fontWeight: FontWeight.normal, // Để viết bình thường
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Container(height: 8,),
+
+                  Container(
+                    child: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
                             text: 'T.thái t.khoản: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -475,7 +475,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: widget.account.lockStatus == 0 ? 'Đang khóa' : 'Đang mở', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: widget.account.lockStatus == 0 ? Colors.redAccent : Colors.green,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -496,7 +496,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: 'T.thái mở cửa: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -505,7 +505,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             text: widget.account.openStatus == 0 ? 'Đang đóng cửa' : 'Đang mở cửa', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal,
                               color: widget.account.openStatus == 0 ? Colors.red : Colors.green
                             ),
@@ -554,7 +554,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                         child: Text(
                           'Quản lý danh mục',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 12,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -585,7 +585,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                         child: Text(
                           'Quản lý món ăn',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 12,
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
@@ -602,6 +602,8 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                       );
                     },
                   ),
+
+                  Container(height: 8,),
                 ],
               ),
             ),

@@ -139,7 +139,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Tài khoản',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -162,7 +162,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Vị trí được chọn',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -185,7 +185,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Trạng thái',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -208,7 +208,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Online',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -231,7 +231,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Thuộc khu vực',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -254,7 +254,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Ngày khởi tạo',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -277,7 +277,7 @@ class _danhsachtaixeState extends State<danhsachtaixe> {
                             'Thao tác',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),

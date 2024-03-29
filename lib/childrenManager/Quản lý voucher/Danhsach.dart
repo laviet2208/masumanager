@@ -176,7 +176,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                     style: TextStyle(
                         fontWeight: FontWeight.normal,
                         color: Colors.white,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14
                     ),
                   ),
@@ -209,7 +209,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                     style: TextStyle(
                         fontWeight: FontWeight.normal,
                         color: Colors.white,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14
                     ),
                   ),
@@ -240,7 +240,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                   decoration: InputDecoration(
                     hintText: 'Tìm kiếm voucher',
@@ -248,7 +248,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                     hintStyle: TextStyle(
                       color: Colors.grey,
                       fontSize: 16,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                     ),
                   ),
                 ),
@@ -276,7 +276,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                     style: TextStyle(
                         fontWeight: FontWeight.normal,
                         color: (index == 1) ? Colors.white : Colors.blue,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14
                     ),
                   ),
@@ -311,7 +311,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                     style: TextStyle(
                         fontWeight: FontWeight.normal,
                         color: (index == 2) ? Colors.white : Colors.blue,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14
                     ),
                   ),
@@ -347,7 +347,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                     style: TextStyle(
                         fontWeight: FontWeight.normal,
                         color: (index == 3) ? Colors.white : Colors.blue,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14
                     ),
                   ),
@@ -387,7 +387,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                             'Tên sự kiện',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -410,7 +410,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                             'Thời gian',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -433,7 +433,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                             'Giá trị voucher',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -456,7 +456,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                             'Lượt sử dụng',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -479,7 +479,7 @@ class _DanhsachvoucherState extends State<Danhsachvoucher> {
                             'Thao tác',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),

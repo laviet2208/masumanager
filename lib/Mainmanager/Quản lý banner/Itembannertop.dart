@@ -63,7 +63,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),
@@ -106,7 +106,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                   (widget.topbanner.createTime.hour < 10 ?'0' + widget.topbanner.createTime.hour.toString() : widget.topbanner.createTime.hour.toString()) + ":" + (widget.topbanner.createTime.minute < 10 ?'0' + widget.topbanner.createTime.minute.toString() : widget.topbanner.createTime.minute.toString()) + ":" + (widget.topbanner.createTime.second < 10 ?'0' + widget.topbanner.createTime.second.toString() : widget.topbanner.createTime.second.toString()) + " Ngày 0" + widget.topbanner.createTime.day.toString() + "/" + widget.topbanner.createTime.month.toString() + "/" + widget.topbanner.createTime.year.toString(),
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 16
                   ),
@@ -130,7 +130,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                   widget.topbanner.URLimage,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.purple,
                       fontSize: 16
                   ),
@@ -154,7 +154,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                   widget.topbanner.URL,
                   style: TextStyle(
                       fontWeight: FontWeight.normal,
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 16
                   ),
@@ -255,7 +255,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                                       child: Text(
                                         'URL banner top (1920x668) *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -297,7 +297,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -305,7 +305,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),
@@ -323,7 +323,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                                       child: Text(
                                         'URL liên kết của banner *',
                                         style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                             color: Colors.redAccent
@@ -365,7 +365,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                                                 style: TextStyle(
                                                   color: Colors.black,
                                                   fontSize: 16,
-                                                  fontFamily: 'roboto',
+                                                  fontFamily: 'muli',
                                                 ),
                                                 decoration: InputDecoration(
                                                   border: InputBorder.none,
@@ -373,7 +373,7 @@ class _ItembannerTopState extends State<ItembannerTop> {
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontSize: 16,
-                                                    fontFamily: 'roboto',
+                                                    fontFamily: 'muli',
                                                   ),
                                                 ),
                                               ),

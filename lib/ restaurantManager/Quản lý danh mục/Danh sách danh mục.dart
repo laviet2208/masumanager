@@ -97,7 +97,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                   child: AutoSizeText(
                     widget.data == 'Restaurant' ? '+ Thêm danh mục món ăn' : '+ Thêm danh mục sản phẩm',
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 100,
                         color: Colors.white
                     ),
@@ -145,7 +145,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                               child: AutoSizeText(
                                 'ID danh mục',
                                 style: TextStyle(
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontSize: 100
                                 ),
@@ -168,7 +168,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                               child: AutoSizeText(
                                 'Tên danh mục',
                                 style: TextStyle(
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontSize: 100
                                 ),
@@ -191,7 +191,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                               child: AutoSizeText(
                                 widget.data == 'Restaurant' ? 'Số lượng món ăn' : 'Số lượng sản phẩm',
                                 style: TextStyle(
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontSize: 100
                                 ),
@@ -214,7 +214,7 @@ class _DanhsachdanhmucState extends State<Danhsachdanhmuc> {
                               child: AutoSizeText(
                                 'Thao tác',
                                 style: TextStyle(
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontSize: 100
                                 ),

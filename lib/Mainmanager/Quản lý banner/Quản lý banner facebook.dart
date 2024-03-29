@@ -113,7 +113,7 @@ class _quanlybannerfacebookState extends State<quanlybannerfacebook> {
                             'ID của Banner',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -136,7 +136,7 @@ class _quanlybannerfacebookState extends State<quanlybannerfacebook> {
                             'Tên sự kiện',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -159,7 +159,7 @@ class _quanlybannerfacebookState extends State<quanlybannerfacebook> {
                             'Liên kết facebook',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -183,7 +183,7 @@ class _quanlybannerfacebookState extends State<quanlybannerfacebook> {
                             'Thao tác',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),

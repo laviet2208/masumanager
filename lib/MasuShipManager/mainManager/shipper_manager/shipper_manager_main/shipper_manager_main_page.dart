@@ -226,7 +226,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm theo tên và số điện thoại',
@@ -234,7 +234,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -345,7 +345,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                           '',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -369,7 +369,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                             'Tài khoản',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -398,7 +398,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                           'Vị trí được chọn',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -421,7 +421,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                           'Trạng thái',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -444,7 +444,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                           'Thuộc khu vực',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -467,7 +467,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                           'Ngày khởi tạo',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -490,7 +490,7 @@ class _shipper_manager_main_pageState extends State<shipper_manager_main_page> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

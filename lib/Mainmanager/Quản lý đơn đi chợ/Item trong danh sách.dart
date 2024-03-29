@@ -622,7 +622,7 @@ class _ItemdanhsachState extends State<Itemdanhsach> {
                           text: 'Thời gian tạo : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -630,7 +630,7 @@ class _ItemdanhsachState extends State<Itemdanhsach> {
                           text: widget.order.S1time.hour.toString() + ':' + widget.order.S1time.minute.toString(),
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
                         ),
@@ -650,7 +650,7 @@ class _ItemdanhsachState extends State<Itemdanhsach> {
                           text: 'Ngày tạo đơn : ',
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold, // Để in đậm
                           ),
                         ),
@@ -658,7 +658,7 @@ class _ItemdanhsachState extends State<Itemdanhsach> {
                           text: 'Ngày ' + widget.order.S1time.day.toString() + '/' + widget.order.S1time.month.toString() + '/' + widget.order.S1time.year.toString(),
                           style: TextStyle(
                             fontSize: 16,
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.normal, // Để viết bình thường
                           ),
                         ),

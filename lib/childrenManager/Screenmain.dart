@@ -421,7 +421,7 @@ class _ScreenmainState extends State<Screenmainchild> {
                                           'Qlý đơn hàng',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
@@ -586,7 +586,7 @@ class _ScreenmainState extends State<Screenmainchild> {
                                           'Qlý tài xế',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
@@ -751,7 +751,7 @@ class _ScreenmainState extends State<Screenmainchild> {
                                           'Qlý nhà hàng',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
@@ -849,7 +849,7 @@ class _ScreenmainState extends State<Screenmainchild> {
                                           'Qlý cửa hàng',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
@@ -948,7 +948,7 @@ class _ScreenmainState extends State<Screenmainchild> {
                                           'Qlý khu vực',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
@@ -1048,7 +1048,7 @@ class _ScreenmainState extends State<Screenmainchild> {
                                           'Qlý đánh giá',
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
-                                            fontFamily: 'roboto',
+                                            fontFamily: 'muli',
                                             fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,

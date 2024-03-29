@@ -43,7 +43,7 @@ class _view_food_in_directoryState extends State<view_food_in_directory> {
                         child: Text(
                           'Thêm món',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 12,
                               color: Colors.black,
                               fontWeight: FontWeight.bold

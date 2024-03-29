@@ -167,7 +167,7 @@ class _ads_managerState extends State<ads_manager> {
                   child: Text(
                     'Thêm ads mới',
                     style: TextStyle(
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         color: Colors.black,
                         fontSize: 13,
                         fontWeight: FontWeight.bold
@@ -257,7 +257,7 @@ class _ads_managerState extends State<ads_manager> {
                   ),
 
                   Container(
-                    width: (width - 50)/4 - 1,
+                    width: (width - 50)/5 - 1,
                     child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
                         child: AutoSizeText(
@@ -280,7 +280,7 @@ class _ads_managerState extends State<ads_manager> {
                   ),
 
                   Container(
-                    width: (width - 50)/4 - 1,
+                    width: (width - 50)/5 - 1,
                     child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
                         child: AutoSizeText(
@@ -303,7 +303,30 @@ class _ads_managerState extends State<ads_manager> {
                   ),
 
                   Container(
-                    width: (width - 50)/4 - 1,
+                    width: (width - 50)/5 - 1,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
+                        child: AutoSizeText(
+                          'Thời gian',
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'arial',
+                              color: Colors.black,
+                              fontSize: 100
+                          ),
+                        )
+                    ),
+                  ),
+
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+                  Container(
+                    width: (width - 50)/5 - 1,
                     child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
                         child: AutoSizeText(
@@ -326,7 +349,7 @@ class _ads_managerState extends State<ads_manager> {
                   ),
 
                   Container(
-                    width: (width - 50)/4 - 1,
+                    width: (width - 50)/5 - 1,
                     child: Padding(
                         padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
                         child: AutoSizeText(

@@ -61,7 +61,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                   (widget.index + 1).toString(),
                   style: TextStyle(
                     fontSize: 14,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
                   ),
@@ -94,7 +94,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: 'Tên danh mục: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -102,7 +102,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: widget.directory.mainName, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -122,7 +122,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: 'Phụ đề: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -130,7 +130,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: widget.directory.subName, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -167,7 +167,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: 'Thuộc khu vực: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -175,7 +175,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: area_name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -212,7 +212,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: "Số lượng nhà hàng: ",
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -220,7 +220,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: widget.directory.restaurantList.length.toString() + ' Nhà hàng', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -257,7 +257,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: "Trạng thái danh mục: ",
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -265,7 +265,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                             text: widget.directory.status == 0 ? 'Không hiển thị' : 'Đang hiển thị', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: widget.directory.status == 0 ? Colors.red : Colors.green,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -305,7 +305,7 @@ class _item_restaurant_directoryState extends State<item_restaurant_directory> {
                         child: Text(
                           'Xem nhà hàng',
                           style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                             fontSize: 12,

@@ -52,7 +52,7 @@ class _configuration_managerState extends State<configuration_manager> with Sing
         appBar: AppBar(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
-          title: Text('Thông tin cấu hình', style: TextStyle(fontFamily: 'roboto', color: Colors.black),),
+          title: Text('Thông tin cấu hình', style: TextStyle(fontFamily: 'muli', color: Colors.black),),
           bottom: TabBar(
             controller: _tabController,
             labelColor: Colors.blue, // Màu của văn bản khi tab được chọn

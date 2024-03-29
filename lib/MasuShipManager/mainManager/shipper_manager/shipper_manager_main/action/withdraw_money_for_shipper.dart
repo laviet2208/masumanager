@@ -74,7 +74,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
         child: Text(
           'Trừ tiền shipper',
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 13
@@ -114,7 +114,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
                       child: Text(
                         'Số tiền cần trừ *',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -156,7 +156,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -164,7 +164,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),
@@ -182,7 +182,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
                       child: Text(
                         'Nội dung trừ tiền *',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
                             color: Colors.redAccent
@@ -224,7 +224,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -232,7 +232,7 @@ class _withdraw_money_for_shipperState extends State<withdraw_money_for_shipper>
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),

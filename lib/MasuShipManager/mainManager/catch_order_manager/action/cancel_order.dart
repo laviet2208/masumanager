@@ -37,7 +37,7 @@ class _cancel_orderState extends State<cancel_order> {
         child: Text(
           'Hủy đơn',
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 13
@@ -89,7 +89,7 @@ class _cancel_orderState extends State<cancel_order> {
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 16,
-                                  fontFamily: 'roboto',
+                                  fontFamily: 'muli',
                                 ),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -97,7 +97,7 @@ class _cancel_orderState extends State<cancel_order> {
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                   ),
                                 ),
                               ),

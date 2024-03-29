@@ -106,7 +106,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                                   text: 'ID danh mục : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -121,7 +121,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                                   text: widget.directory.id,
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -144,7 +144,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                               text: 'Cập nhật ngày : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -152,7 +152,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                               text: widget.directory.createTime.day.toString() + '/' + widget.directory.createTime.month.toString() + '/' + widget.directory.createTime.year.toString() + ' , ' + widget.directory.createTime.hour.toString() + ':' + widget.directory.createTime.minute.toString(), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -176,7 +176,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                                   text: 'Tên khu vực : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -191,7 +191,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                                   text: aRea.name,
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.purple,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -225,7 +225,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontFamily: 'roboto'
+                    fontFamily: 'muli'
                 ),
               ),
             ),
@@ -249,7 +249,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontFamily: 'roboto'
+                    fontFamily: 'muli'
                 ),
               ),
             ),
@@ -273,7 +273,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
-                    fontFamily: 'roboto'
+                    fontFamily: 'muli'
                 ),
               ),
             ),
@@ -310,7 +310,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                         child: Text(
                           'Cập nhật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 13,
                               fontWeight: FontWeight.normal,
                               color: Colors.white
@@ -337,7 +337,7 @@ class _ITEMdanhmucshopState extends State<ITEMdanhmucshop> {
                         child: Text(
                           'Danh sách cửa hàng',
                           style: TextStyle(
-                              fontFamily: 'Roboto',
+                              fontFamily: 'muli',
                               fontSize: 13,
                               fontWeight: FontWeight.normal,
                               color: Colors.redAccent

@@ -66,7 +66,7 @@ class _ITEMshopState extends State<ITEMshop> {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),
@@ -247,7 +247,7 @@ class _ITEMshopState extends State<ITEMshop> {
                               text: (widget.data == 'Restaurant') ? 'Tên nhà hàng : ' : 'Tên cửa hàng : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -255,7 +255,7 @@ class _ITEMshopState extends State<ITEMshop> {
                               text: widget.shop.name, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -278,7 +278,7 @@ class _ITEMshopState extends State<ITEMshop> {
                               text: 'Số điện thoại(Tài khoản) : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -286,7 +286,7 @@ class _ITEMshopState extends State<ITEMshop> {
                               text: widget.shop.phoneNum, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -329,7 +329,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: 'Ngày tạo : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -344,7 +344,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: (widget.shop.createTime.day >= 10 ? widget.shop.createTime.day.toString() : '0' + widget.shop.createTime.day.toString()) + "/" + (widget.shop.createTime.month >= 10 ? widget.shop.createTime.month.toString() : '0' + widget.shop.createTime.month.toString()) + "/" + widget.shop.createTime.year.toString(),
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -372,7 +372,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: 'Giờ tạo : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -387,7 +387,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: (widget.shop.createTime.hour >= 10 ? widget.shop.createTime.hour.toString() : '0' + widget.shop.createTime.hour.toString()) + ":" + (widget.shop.createTime.minute >= 10 ? widget.shop.createTime.minute.toString() : '0' + widget.shop.createTime.minute.toString()) + ":" + (widget.shop.createTime.second >= 10 ? widget.shop.createTime.second.toString() : '0' + widget.shop.createTime.second.toString()),
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -412,7 +412,7 @@ class _ITEMshopState extends State<ITEMshop> {
                               text: 'Khu vực : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -420,7 +420,7 @@ class _ITEMshopState extends State<ITEMshop> {
                               text: aRea.name, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -463,7 +463,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: 'Giờ mở cửa : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -478,7 +478,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: (widget.shop.openTime.hour >= 10 ? widget.shop.openTime.hour.toString() : '0' + widget.shop.openTime.hour.toString()) + " giờ, " + (widget.shop.openTime.minute >= 10 ? widget.shop.openTime.minute.toString() : '0' + widget.shop.openTime.minute.toString()) + " phút",
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -506,7 +506,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: 'Giờ đóng cửa : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -521,7 +521,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                   text: (widget.shop.closeTime.hour >= 10 ? widget.shop.closeTime.hour.toString() : '0' + widget.shop.closeTime.hour.toString()) + " giờ, " + (widget.shop.closeTime.minute >= 10 ? widget.shop.closeTime.minute.toString() : '0' + widget.shop.closeTime.minute.toString()) + " phút",
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -565,7 +565,7 @@ class _ITEMshopState extends State<ITEMshop> {
                   child: AutoSizeText(
                     status,
                     style: TextStyle(
-                        fontFamily: 'Roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.normal,
                         color: statusColor,
                         fontSize: 100
@@ -706,7 +706,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                           child: AutoSizeText(
                                             widget.data == 'Restaurant' ? '+ Thêm danh mục món ăn' : '+ Thêm danh mục sản phẩm',
                                             style: TextStyle(
-                                                fontFamily: 'roboto',
+                                                fontFamily: 'muli',
                                                 fontSize: 100,
                                                 color: Colors.white
                                             ),
@@ -754,7 +754,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                                       child: AutoSizeText(
                                                         'ID danh mục',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),
@@ -777,7 +777,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                                       child: AutoSizeText(
                                                         'Tên danh mục',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),
@@ -800,7 +800,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                                       child: AutoSizeText(
                                                         widget.data == 'Restaurant' ? 'Số lượng món ăn' : 'Số lượng sản phẩm',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),
@@ -823,7 +823,7 @@ class _ITEMshopState extends State<ITEMshop> {
                                                       child: AutoSizeText(
                                                         'Thao tác',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),

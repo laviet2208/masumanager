@@ -372,7 +372,7 @@ class _SuamonanState extends State<Suasanpham> {
 
           Padding(
               padding: EdgeInsets.only(left: 10,right: 10),
-              child: ButtonType1(Height: 40, Width: 100, color: Colors.redAccent, radiusBorder: 20, title: 'Cập nhật sản phẩm', fontText: 'roboto', colorText: Colors.white,
+              child: ButtonType1(Height: 40, Width: 100, color: Colors.redAccent, radiusBorder: 20, title: 'Cập nhật sản phẩm', fontText: 'muli', colorText: Colors.white,
                 onTap: () async {
                   if(t1.text.isNotEmpty && t2.text.isNotEmpty && t3.text.isNotEmpty) {
                     setState(() {

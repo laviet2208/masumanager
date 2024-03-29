@@ -185,7 +185,7 @@ class _area_itemState extends State<area_item> {
                       child: Text(
                         'Cấu hình khu vực',
                         style: TextStyle(
-                            fontFamily: 'roboto',
+                            fontFamily: 'muli',
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 13

@@ -268,7 +268,7 @@ class _QuanlykhuvucState extends State<Quanlykhuvuc> {
                           'ID khu vực kinh doanh',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -291,7 +291,7 @@ class _QuanlykhuvucState extends State<Quanlykhuvuc> {
                           'Tên khu vực kinh doanh',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -314,7 +314,7 @@ class _QuanlykhuvucState extends State<Quanlykhuvuc> {
                           'Số dư khu vực (đồng)',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -338,7 +338,7 @@ class _QuanlykhuvucState extends State<Quanlykhuvuc> {
                           'Số lượng Admin',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -361,7 +361,7 @@ class _QuanlykhuvucState extends State<Quanlykhuvuc> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

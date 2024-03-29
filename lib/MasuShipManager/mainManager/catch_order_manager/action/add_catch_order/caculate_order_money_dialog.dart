@@ -62,7 +62,7 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Tính toán của đơn', style: TextStyle(fontFamily: 'roboto'),),
+      title: Text('Tính toán của đơn', style: TextStyle(fontFamily: 'muli'),),
       content: Container(
         width: (MediaQuery.of(context).size.width/7),
         child: Column(

@@ -66,7 +66,7 @@ class ITEMstore extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: TextColor,
               fontSize: 13
           ),
@@ -130,7 +130,7 @@ class ITEMstore extends StatelessWidget {
                               text: 'Tên nhà hàng : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -138,7 +138,7 @@ class ITEMstore extends StatelessWidget {
                               text: shop.name, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -161,7 +161,7 @@ class ITEMstore extends StatelessWidget {
                               text: 'Số điện thoại(Tài khoản) : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -169,7 +169,7 @@ class ITEMstore extends StatelessWidget {
                               text: shop.phoneNum, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -212,7 +212,7 @@ class ITEMstore extends StatelessWidget {
                                   text: 'Ngày tạo : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -227,7 +227,7 @@ class ITEMstore extends StatelessWidget {
                                   text: shop.createTime.day.toString() + "/" + shop.createTime.month.toString() + "/" + shop.createTime.year.toString(),
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -255,7 +255,7 @@ class ITEMstore extends StatelessWidget {
                                   text: 'Giờ tạo : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -270,7 +270,7 @@ class ITEMstore extends StatelessWidget {
                                   text: shop.createTime.hour.toString() + ":" + shop.createTime.minute.toString() + ":" + shop.createTime.second.toString(),
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -315,7 +315,7 @@ class ITEMstore extends StatelessWidget {
                                   text: 'Giờ mở cửa : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -330,7 +330,7 @@ class ITEMstore extends StatelessWidget {
                                   text: shop.openTime.hour.toString() + " giờ, " + shop.openTime.minute.toString() + " phút",
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -358,7 +358,7 @@ class ITEMstore extends StatelessWidget {
                                   text: 'Giờ đóng cửa : ',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -373,7 +373,7 @@ class ITEMstore extends StatelessWidget {
                                   text: shop.closeTime.hour.toString() + " giờ, " + shop.closeTime.minute.toString() + " phút",
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontFamily: 'roboto',
+                                    fontFamily: 'muli',
                                     color: Colors.black,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -417,7 +417,7 @@ class ITEMstore extends StatelessWidget {
                   child: AutoSizeText(
                     status,
                     style: TextStyle(
-                        fontFamily: 'Roboto',
+                        fontFamily: 'muli',
                         fontWeight: FontWeight.normal,
                         color: statusColor,
                         fontSize: 100
@@ -539,7 +539,7 @@ class ITEMstore extends StatelessWidget {
                                           child: AutoSizeText(
                                             '+ Thêm danh mục sản phẩm',
                                             style: TextStyle(
-                                                fontFamily: 'roboto',
+                                                fontFamily: 'muli',
                                                 fontSize: 100,
                                                 color: Colors.white
                                             ),
@@ -587,7 +587,7 @@ class ITEMstore extends StatelessWidget {
                                                       child: AutoSizeText(
                                                         'ID danh mục',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),
@@ -610,7 +610,7 @@ class ITEMstore extends StatelessWidget {
                                                       child: AutoSizeText(
                                                         'Tên danh mục',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),
@@ -633,7 +633,7 @@ class ITEMstore extends StatelessWidget {
                                                       child: AutoSizeText(
                                                         'Sô lượng sản phẩm',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),
@@ -656,7 +656,7 @@ class ITEMstore extends StatelessWidget {
                                                       child: AutoSizeText(
                                                         'Thao tác',
                                                         style: TextStyle(
-                                                            fontFamily: 'roboto',
+                                                            fontFamily: 'muli',
                                                             color: Colors.black,
                                                             fontSize: 100
                                                         ),

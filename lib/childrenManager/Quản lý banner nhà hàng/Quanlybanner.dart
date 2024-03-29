@@ -82,7 +82,7 @@ class _QuanlybannerState extends State<Quanlybanner> {
                     style: TextStyle(
                         fontWeight: FontWeight.normal,
                         color: Colors.white,
-                        fontFamily: 'roboto',
+                        fontFamily: 'muli',
                         fontSize: 14
                     ),
                   ),
@@ -123,7 +123,7 @@ class _QuanlybannerState extends State<Quanlybanner> {
                             'ID của Banner',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -146,7 +146,7 @@ class _QuanlybannerState extends State<Quanlybanner> {
                             'Tên sự kiện',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -169,7 +169,7 @@ class _QuanlybannerState extends State<Quanlybanner> {
                             'Nhà hàng liên kết',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -193,7 +193,7 @@ class _QuanlybannerState extends State<Quanlybanner> {
                             'Thao tác',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),

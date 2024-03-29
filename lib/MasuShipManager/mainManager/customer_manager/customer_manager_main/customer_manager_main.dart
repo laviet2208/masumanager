@@ -183,7 +183,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm theo tên và số điện thoại',
@@ -191,7 +191,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -266,7 +266,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                           '',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -290,7 +290,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                             'Tài khoản',
                             style: TextStyle(
                                 fontWeight: FontWeight.normal,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 100
                             ),
@@ -314,7 +314,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                           'Vị trí được chọn',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -337,7 +337,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                           'Trạng thái',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -360,7 +360,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                           'Thuộc khu vực',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -383,7 +383,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                           'Ngày khởi tạo',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -406,7 +406,7 @@ class _customer_manager_mainState extends State<customer_manager_main> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),

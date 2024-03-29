@@ -107,7 +107,7 @@ class _ItemFoodState extends State<ItemFood> {
                               text: 'Tên món: ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -115,7 +115,7 @@ class _ItemFoodState extends State<ItemFood> {
                               text: widget.product.name, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.purple,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -138,7 +138,7 @@ class _ItemFoodState extends State<ItemFood> {
                               text: 'Mô tả : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -146,7 +146,7 @@ class _ItemFoodState extends State<ItemFood> {
                               text: widget.product.content, // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -169,7 +169,7 @@ class _ItemFoodState extends State<ItemFood> {
                               text: 'Cập nhật ngày : ',
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 fontWeight: FontWeight.bold, // Để in đậm
                               ),
                             ),
@@ -177,7 +177,7 @@ class _ItemFoodState extends State<ItemFood> {
                               text: widget.product.createTime.day.toString() + '/' + widget.product.createTime.month.toString() + '/' + widget.product.createTime.year.toString() + ' , ' + widget.product.createTime.hour.toString() + ':' + widget.product.createTime.minute.toString(), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 16,
-                                fontFamily: 'roboto',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal, // Để viết bình thường
                               ),
@@ -211,7 +211,7 @@ class _ItemFoodState extends State<ItemFood> {
                   dataCheckManager.getStringNumber(widget.product.cost),
                   textAlign: TextAlign.end,
                   style: TextStyle(
-                      fontFamily: 'roboto',
+                      fontFamily: 'muli',
                       fontSize: 16
                   ),
                 )
@@ -249,7 +249,7 @@ class _ItemFoodState extends State<ItemFood> {
                         child: Text(
                           'Cập nhật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white
                           ),
@@ -287,7 +287,7 @@ class _ItemFoodState extends State<ItemFood> {
                         child: Text(
                           'Xem ảnh',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.redAccent
                           ),
@@ -317,7 +317,7 @@ class _ItemFoodState extends State<ItemFood> {
                         child: Text(
                           'Xóa sản phẩm',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white
                           ),
@@ -344,7 +344,7 @@ class _ItemFoodState extends State<ItemFood> {
                         child: Text(
                           widget.product.OpenStatus == 0 ? 'Đang tắt' : 'Đang bật',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 14,
                               color: Colors.white
                           ),

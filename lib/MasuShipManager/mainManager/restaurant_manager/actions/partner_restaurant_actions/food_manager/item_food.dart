@@ -51,7 +51,7 @@ class _item_foodState extends State<item_food> {
                   (widget.index + 1).toString(),
                   style: TextStyle(
                     fontSize: 14,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
                   ),
@@ -84,7 +84,7 @@ class _item_foodState extends State<item_food> {
                             text: 'Mã món ăn: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -92,7 +92,7 @@ class _item_foodState extends State<item_food> {
                             text: widget.product.id, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -112,7 +112,7 @@ class _item_foodState extends State<item_food> {
                             text: 'Tên món ăn: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -120,7 +120,7 @@ class _item_foodState extends State<item_food> {
                             text: widget.product.name, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.redAccent,
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
@@ -141,7 +141,7 @@ class _item_foodState extends State<item_food> {
                             text: 'Mô tả món ăn: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -149,7 +149,7 @@ class _item_foodState extends State<item_food> {
                             text: widget.product.describle, // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -197,7 +197,7 @@ class _item_foodState extends State<item_food> {
                 child: Text(
                   widget.product.status == 0 ? 'Đang đóng' : 'Đang mở',
                   style: TextStyle(
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                     color: widget.product.status == 0 ? Colors.redAccent : Colors.green,
                     fontSize: 14,
                     fontWeight: FontWeight.bold
@@ -231,7 +231,7 @@ class _item_foodState extends State<item_food> {
                             text: 'Giá tiền món ăn: ',
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.bold, // Để in đậm
                             ),
                           ),
@@ -239,7 +239,7 @@ class _item_foodState extends State<item_food> {
                             text: getStringNumber(widget.product.cost) + ' VNĐ', // Phần còn lại viết bình thường
                             style: TextStyle(
                               fontSize: 14,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontWeight: FontWeight.normal, // Để viết bình thường
                             ),
                           ),
@@ -304,7 +304,7 @@ class _item_foodState extends State<item_food> {
                           if (snapshot.hasError) {
                             return Container(
                               alignment: Alignment.center,
-                              child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'roboto', fontSize: 13),textAlign: TextAlign.center,),
+                              child: Text('Ảnh lỗi hoặc chưa có ảnh',style: TextStyle(color: Colors.black, fontFamily: 'muli', fontSize: 13),textAlign: TextAlign.center,),
                             );                                                        }
 
                           if (!snapshot.hasData) {
@@ -328,7 +328,7 @@ class _item_foodState extends State<item_food> {
                         child: Text(
                           'Chỉnh sửa ảnh',
                           style: TextStyle(
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               fontSize: 11,
                               color: Colors.blueAccent
                           ),

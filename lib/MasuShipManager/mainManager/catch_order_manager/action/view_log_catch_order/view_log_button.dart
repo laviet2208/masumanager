@@ -28,7 +28,7 @@ class _view_log_buttonState extends State<view_log_button> {
         child: Text(
           'Xem log đơn',
           style: TextStyle(
-              fontFamily: 'roboto',
+              fontFamily: 'muli',
               color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 13

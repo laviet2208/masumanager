@@ -165,7 +165,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontFamily: 'roboto',
+                  fontFamily: 'muli',
                 ),
                 decoration: InputDecoration(
                   hintText: 'Tìm kiếm Đánh giá',
@@ -173,7 +173,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                   hintStyle: TextStyle(
                     color: Colors.grey,
                     fontSize: 16,
-                    fontFamily: 'roboto',
+                    fontFamily: 'muli',
                   ),
                 ),
               ),
@@ -225,7 +225,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                           'Người đánh giá',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -248,7 +248,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                           'Đối tượng nhận đánh giá',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -271,7 +271,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                           'Chi tiết đánh giá',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -294,7 +294,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                           'Thuộc khu vực',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
@@ -327,7 +327,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                                   'Thời gian tạo',
                                   style: TextStyle(
                                       fontWeight: FontWeight.normal,
-                                      fontFamily: 'roboto',
+                                      fontFamily: 'muli',
                                       color: Colors.black,
                                       fontSize: 100
                                   ),
@@ -373,7 +373,7 @@ class _DanhgiataixeState extends State<Danhgiataixe> {
                           'Thao tác',
                           style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontFamily: 'roboto',
+                              fontFamily: 'muli',
                               color: Colors.black,
                               fontSize: 100
                           ),
