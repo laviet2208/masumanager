@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masumanager/MasuShipManager/mainManager/notice_manager/notice_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/voucher_manager/voucher_manager_main_page.dart';
 import 'ads_manager/ads_manager.dart';
 import 'area_manager/area_manager_page.dart';
@@ -20,7 +21,7 @@ class main_screen extends StatefulWidget {
 }
 
 class _main_screenState extends State<main_screen> {
-  int selectButton = 12;
+  int selectButton = 13;
 
   Widget getWidget(int init, double width, double height) {
     if (init == 2) {
@@ -65,6 +66,10 @@ class _main_screenState extends State<main_screen> {
 
     if (init == 12) {
       return voucher_manager_main_page();
+    }
+
+    if (init == 13) {
+      return notice_manager_page();
     }
 
     return Container();
@@ -924,6 +929,72 @@ class _main_screenState extends State<main_screen> {
                                   onTap: () {
                                     setState(() {
                                       selectButton = 12;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+
+                            Container(
+                              height: 1,
+                              decoration: BoxDecoration(
+                                  color: Colors.white
+                              ),
+                            ),
+
+                            ExpansionTile(
+                              leading: Icon(
+                                Icons.notifications_active_outlined,
+                                color: Colors.white,
+                              ),
+                              iconColor: Colors.white,
+                              collapsedIconColor: Colors.white,
+                              title: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child : Padding(
+                                    padding: EdgeInsets.only(top: 15,bottom: 15),
+                                    child: Text(
+                                      'Quản lý thông báo',
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontFamily: 'muli',
+                                        fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  )
+                              ),
+                              children: [
+                                GestureDetector(
+                                  child: Container(
+                                    height: 60,
+                                    color: (selectButton == 13) ? Colors.red : Colors.transparent,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          left: 10,
+                                          top: 0,
+                                          bottom: 0,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              'Danh sách thông báo',
+                                              style: TextStyle(
+                                                  fontFamily: 'arial',
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      selectButton = 13;
                                     });
                                   },
                                 ),
