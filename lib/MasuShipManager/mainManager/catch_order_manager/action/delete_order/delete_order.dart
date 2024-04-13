@@ -27,14 +27,15 @@ class _delete_orderState extends State<delete_order> {
       child: Container(
         height: 30,
         decoration: BoxDecoration(
-          color: Colors.redAccent,
+          color: Colors.white,
+          border: Border.all(color: Colors.black),
         ),
         alignment: Alignment.center,
         child: Text(
           'Xóa đơn',
           style: TextStyle(
               fontFamily: 'muli',
-              color: Colors.white,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 13
           ),

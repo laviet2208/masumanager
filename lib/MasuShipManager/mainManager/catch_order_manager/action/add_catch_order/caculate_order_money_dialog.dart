@@ -30,18 +30,6 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
     }
   }
 
-  int getCost(double distance) {
-    int cost = 0;
-    if (distance >= bikeCost.departKM) {
-      cost += bikeCost.departKM.toInt() * bikeCost.departCost.toInt(); // Giá cước cho km đề pa đầu tiên (10.000 VND/km * 2km)
-      distance -= bikeCost.departKM; // Trừ đi số km đề pa đã tính giá cước
-      cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost).toInt();
-    } else {
-      cost += (distance * bikeCost.departCost).toInt(); // Giá cước cho khoảng cách dưới 2km
-    }
-    return cost;
-  }
-
   Future<void> pushCatchOrder(CatchOrder catchorder) async {
     try {
       DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
@@ -64,7 +52,7 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
     return AlertDialog(
       title: Text('Tính toán của đơn', style: TextStyle(fontFamily: 'muli'),),
       content: Container(
-        width: (MediaQuery.of(context).size.width/7),
+        width: (MediaQuery.of(context).size.width/5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -82,7 +70,7 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
                       ),
                     ),
                     TextSpan(
-                      text: getStringNumber(getCost(widget.distance).toDouble()) + 'đ',
+                      text:  widget.order.locationGet.longitude != 0 ? (getStringNumber(getCost(widget.distance, bikeCost).toDouble()) + 'đ') : 'Hiển thị khi tới nơi',
                       style: TextStyle(
                         fontFamily: 'arial',
                         fontSize: 16,
@@ -109,7 +97,7 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
                       ),
                     ),
                     TextSpan(
-                      text: widget.distance.toStringAsFixed(1).toString() + 'km',
+                      text: widget.order.locationGet.longitude != 0 ? (widget.distance.toStringAsFixed(1).toString() + 'km') : 'Hiển thị khi tới nơi',
                       style: TextStyle(
                         fontFamily: 'arial',
                         fontSize: 16,
@@ -132,9 +120,17 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
             ),
           ),
           onPressed: () async {
-            widget.order.cost = getCost(widget.distance).toDouble();
+            setState(() {
+              loading = true;
+            });
+            widget.order.cost = getCost(widget.distance, bikeCost).toDouble();
             widget.order.costFee = bikeCost;
             await pushCatchOrder(widget.order);
+            setState(() {
+              loading = false;
+            });
+            Navigator.of(context).pop();
+            Navigator.of(context).pop();
           },
         )
       ],

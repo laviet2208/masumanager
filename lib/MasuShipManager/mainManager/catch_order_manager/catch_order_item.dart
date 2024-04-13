@@ -1,10 +1,8 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:masumanager/MasuShipManager/mainManager/ingredient/text_line_in_item.dart';
 import '../catch_order_manager/action/delete_order/delete_order.dart';
 import '../catch_order_manager/action/view_log_catch_order/view_log_button.dart';
-import '../../../dataClass/Time.dart';
 import '../../Data/OrderData/catchOrder.dart';
 import '../../Data/areaData/Area.dart';
 import '../../Data/otherData/Tool.dart';
@@ -23,20 +21,6 @@ class _catch_order_itemState extends State<catch_order_item> {
   double orderDis = 0;
   final Area area = Area(id: '', name: '', money: 0, status: 0);
 
-  Time getCurrentTime() {
-    DateTime now = DateTime.now();
-
-    Time currentTime = Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0);
-    currentTime.second = now.second;
-    currentTime.minute = now.minute;
-    currentTime.hour = now.hour;
-    currentTime.day = now.day;
-    currentTime.month = now.month;
-    currentTime.year = now.year;
-
-    return currentTime;
-  }
-
   void getDataArea() {
     final reference = FirebaseDatabase.instance.reference();
     reference.child("Area/" + widget.order.owner.area).onValue.listen((event) {
@@ -49,36 +33,16 @@ class _catch_order_itemState extends State<catch_order_item> {
     });
   }
 
-  void getDistance(double startLatitude, double startLongitude, double endLatitude, double endLongitude) async {
-    final url = Uri.parse("https://rsapi.goong.io/DistanceMatrix?origins=$startLatitude,$startLongitude&destinations=$endLatitude,$endLongitude&vehicle=bike&api_key=3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf");
-    try {
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        final distance = data['rows'][0]['elements'][0]['distance']['value'];
-        orderDis = distance.toDouble()/1000;
-        setState(() {
-
-        });
-      } else {
-        throw Exception('Lỗi khi gửi yêu cầu tới Goong API: ${response.statusCode}');
-      }
-    } catch (e) {
-      throw Exception('Lỗi khi xử lý dữ liệu: $e');
-    }
-  }
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getDataArea();
-    getDistance(widget.order.locationSet.latitude, widget.order.locationSet.longitude, widget.order.locationGet.latitude, widget.order.locationGet.longitude);
   }
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width - 80;
+    double width = MediaQuery.of(context).size.width - 130;
 
     String status = '';
     if (widget.order.status == 'A') {
@@ -145,182 +109,26 @@ class _catch_order_itemState extends State<catch_order_item> {
           ),
 
           Container(
-            width: width/6-1-50,
+            width: width/5-1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
               child: ListView(
                 children: [
                   Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Mã đơn: ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.order.id, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Mã đơn : ', content: widget.order.id),
 
-                  Container(height: 10,),
+                  Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Khoảng cách : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: orderDis.toStringAsFixed(1).toString() + ' Km',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Khoảng cách: ', content: widget.order.locationGet.longitude == 0 ? 'Chưa tới nơi' : ('~' + getStringNumber(getDistanceByCost(widget.order.cost, widget.order.costFee)) + ' Km')),
 
-                  Container(height: 10,),
+                  Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Khách hàng: ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.order.owner.name, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.red,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Tên khách : ', content: widget.order.owner.name),
 
-                  Container(height: 10,),
+                  Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'SĐT: ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.order.owner.phone, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.red,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  Container(height: 10,),
-
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Trạng thái : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: status, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.red,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  Container(height: 10,),
-
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Khu vực : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: area.name,
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.blueAccent,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Sđt khách hàng : ', content: widget.order.owner.phone),
 
                   Container(height: 20,),
 
@@ -337,164 +145,18 @@ class _catch_order_itemState extends State<catch_order_item> {
           ),
 
           Container(
-            width: width/6-1,
+            width: width/5-1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
               child: ListView(
                 children: [
                   Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Điểm đón khách: ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.order.locationSet.mainText + ' , ' + widget.order.locationSet.secondaryText, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Điểm đón khách : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Điểm trả khách: ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.order.locationGet.mainText + ' , ' + widget.order.locationGet.secondaryText, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-          Container(
-            width: 1,
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 240, 240, 240)
-            ),
-          ),
-
-          Container(
-            width: width/6-1,
-            child: Padding(
-              padding: EdgeInsets.only(left: 10, right: 10),
-              child: ListView(
-                children: [
-                  Container(height: 15,),
-
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Giá trị đơn gốc : ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: getStringNumber(widget.order.cost + widget.order.voucher.Money).toString() + ' VNĐ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  Container(height: 15,),
-
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Giá trị đơn thực tế : ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: getStringNumber(widget.order.cost).toString() + ' VNĐ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  text_line_in_item(title: 'Điểm trả khách : ', content: widget.order.locationGet.longitude != 0 ? widget.order.locationGet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
                 ],
@@ -510,174 +172,28 @@ class _catch_order_itemState extends State<catch_order_item> {
           ),
 
           Container(
-            width: width/6-1,
+            width: width/5-1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
               child: ListView(
                 children: [
                   Container(height: 15,),
 
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Phí đề pa : ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: getStringNumber(widget.order.costFee.departCost).toString() + ' VNĐ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  text_line_in_item(title: 'Giá trị đơn gốc : ', content: widget.order.cost != 0 ? (getStringNumber(widget.order.cost + widget.order.voucher.Money).toString() + ' VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Số km đề pa : ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: widget.order.costFee.departKM.toString() + ' Km',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  text_line_in_item(title: 'Giá trị đơn thực tế : ', content: widget.order.cost != 0 ? (getStringNumber(widget.order.cost).toString() + ' VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Chiết khấu : ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  text_line_in_item(title: 'Chiết khấu : ', content: widget.order.cost != 0 ? (widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'Phí mỗi km : ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: DefaultTextStyle.of(context).style,
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: getStringNumber(widget.order.costFee.perKMcost).toString() + ' VNĐ',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'muli',
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  text_line_in_item(title: 'Phụ thu thời tiết : ', content: getStringNumber(widget.order.subFee) + ' VNĐ'),
+
+                  Container(height: 15,),
                 ],
               ),
             ),
@@ -691,7 +207,7 @@ class _catch_order_itemState extends State<catch_order_item> {
           ),
 
           Container(
-            width: width/6-1,
+            width: width/5-1,
             alignment: Alignment.center,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
@@ -699,59 +215,17 @@ class _catch_order_itemState extends State<catch_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Thời gian tạo : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: (widget.order.S1time.hour >= 10 ? widget.order.S1time.hour.toString() : '0' + widget.order.S1time.hour.toString()) + ':' + (widget.order.S1time.minute >= 10 ? widget.order.S1time.minute.toString() : '0' + widget.order.S1time.minute.toString()),
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Trạng thái : ', content: status),
 
                   Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Ngày tạo đơn : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'Ngày ' + (widget.order.S1time.day >= 10 ? widget.order.S1time.day.toString() : '0' + widget.order.S1time.day.toString()) + '/' + (widget.order.S1time.month >= 10 ? widget.order.S1time.month.toString() : '0' + widget.order.S1time.month.toString()) + '/' + widget.order.S1time.year.toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Tài xế : ', content: widget.order.shipper.id != '' ? widget.order.shipper.name : 'Chưa đẩy cho tài xế'),
+
+                  Container(height: 15,),
+
+                  text_line_in_item(title: 'Khu vực : ', content: area.name),
+
+                  Container(height: 15,),
                 ],
               ),
             ),
@@ -765,7 +239,7 @@ class _catch_order_itemState extends State<catch_order_item> {
           ),
 
           Container(
-            width: width/6-1,
+            width: width/5-1,
             alignment: Alignment.center,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
@@ -781,7 +255,7 @@ class _catch_order_itemState extends State<catch_order_item> {
 
                   Container(height: 4,),
 
-                  cancel_order(id: widget.order.id,),
+                  cancel_order(order: widget.order,),
                 ],
               ),
             ),

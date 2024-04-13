@@ -36,7 +36,7 @@ class _customer_itemState extends State<customer_item> {
   }
 
   void fetchLocationName(double latitude, double longitude) async {
-    final Uri uri = Uri.parse('https://rsapi.goong.io/Geocode?latlng=$latitude,$longitude&api_key=3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf');
+    final Uri uri = Uri.parse('https://rsapi.goong.io/Geocode?latlng=$latitude,$longitude&api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z');
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       setState(() {

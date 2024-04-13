@@ -1,5 +1,13 @@
+import 'dart:convert';
 import 'dart:math';
-
+import 'package:firebase_database/firebase_database.dart';
+import 'package:http/http.dart' as http;
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:masumanager/MasuShipManager/Data/accountData/shopData/cartProduct.dart';
+import 'package:masumanager/MasuShipManager/Data/costData/Cost.dart';
+import '../accountData/shopData/shopAccount.dart';
+import '../locationData/Location.dart';
+import '../voucherData/Voucher.dart';
 import 'Time.dart';
 
 //Tool khởi tạo 1 chuỗi id ngẫu nhiên gồm count ký tự
@@ -134,6 +142,41 @@ Time getCurrentTime() {
   return currentTime;
 }
 
+double getVoucherSale(Voucher voucher, double cost) {
+  double money = 0;
+
+  if(voucher.Money < 100) {
+    double mn = cost/(1-(voucher.Money/100))*(voucher.Money/100);
+    if (mn <= voucher.maxSale) {
+      money = mn;
+    } else {
+      money = voucher.maxSale;
+    }
+  } else {
+    money = voucher.Money;
+  }
+
+  return money;
+}
+
+double get_cost_beforevoucher(Voucher voucher, double cost) {
+  double money = 0;
+
+  if(voucher.Money < 100) {
+    double mn = cost/(1-(voucher.Money/100))*(voucher.Money/100);
+    if (mn <= voucher.maxSale) {
+      money = mn;
+    } else {
+      money = voucher.maxSale;
+    }
+  } else {
+    money = voucher.Money;
+  }
+
+  return money;
+}
+
+
 bool isCurrentTimeInRange(DateTime openTime, DateTime closeTime) {
   DateTime currentTime = DateTime.now();
   openTime = DateTime(2000,1,1,openTime.hour,openTime.minute);
@@ -192,4 +235,82 @@ return number > 0;
 } catch (e) {
 return false;
 }
+}
+
+Future<double> getDistance(Location start, Location end) async {
+  double startLatitude = start.latitude;
+  double startLongitude = start.longitude;
+  double endLatitude = end.latitude;
+  double endLongitude = end.longitude;
+  final url = Uri.parse("https://rsapi.goong.io/DistanceMatrix?origins=$startLatitude,$startLongitude&destinations=$endLatitude,$endLongitude&vehicle=bike&api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z");
+
+
+  try {
+    final response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final distance = data['rows'][0]['elements'][0]['distance']['value'];
+      return distance.toDouble()/1000;
+    } else {
+      throw Exception('Lỗi khi gửi yêu cầu tới Goong API: ${response.statusCode}');
+    }
+  } catch (e) {
+    throw Exception('Lỗi khi xử lý dữ liệu: $e');
+  }
+}
+
+double getCost(double distance, Cost bikeCost) {
+  double cost = 0;
+  if (distance >= bikeCost.departKM) {
+    cost += bikeCost.departKM * bikeCost.departCost; // Giá cước cho km đề pa đầu tiên (10.000 VND/km * 2km)
+    distance -= bikeCost.departKM; // Trừ đi số km đề pa đã tính giá cước
+    cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
+  } else {
+    cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
+  }
+  return cost;
+}
+
+double getDistanceByCost(double cost, Cost bikeCost) {
+  double distance = 0.0;
+  if (cost >= (bikeCost.departKM * bikeCost.departCost)) {
+    distance += bikeCost.departKM; // Đã tính cước cho khoảng cách đề pa đầu tiên
+    double remainingCost = cost - (bikeCost.departKM * bikeCost.departCost);
+    distance += remainingCost / bikeCost.perKMcost; // Tính khoảng cách dựa trên giá cước cho mỗi km
+    distance = distance + bikeCost.departKM;
+  } else {
+    distance = cost / bikeCost.departCost; // Tính khoảng cách dựa trên giá cước cho khoảng cách dưới 2km
+  }
+  return distance;
+}
+
+Future<Cost> getBikecost(String areaID) async {
+  final reference = FirebaseDatabase.instance.reference();
+  DatabaseEvent snapshot = await reference.child('CostFee/' + areaID + '/Bike').once();
+  final dynamic catchOrderData = snapshot.snapshot.value;
+  Cost cost = Cost.fromJson(catchOrderData);
+  return cost;
+}
+
+Future<double> getCostFuture(Location startLocation, Location endLocation, Cost bikeCost) async {
+double cost = 0;
+double distance = await getDistance(startLocation, endLocation);
+if (distance >= bikeCost.departKM) {
+cost += bikeCost.departKM.toInt() * bikeCost.departCost.toInt(); // Giá cước cho 2km đầu tiên (10.000 VND/km * 2km)
+distance -= bikeCost.departKM; // Trừ đi 2km đã tính giá cước
+cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
+} else {
+cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
+}
+//order.cost = cost;
+return cost;
+}
+
+double get_total_cart_money(List<cartProduct> list) {
+  double money = 0;
+  for(int i = 0; i < list.length; i++) {
+    money = money + (list[i].number * list[i].product.cost);
+  }
+  return money;
 }

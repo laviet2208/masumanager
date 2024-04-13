@@ -21,17 +21,8 @@ class location_pick_in_map extends StatefulWidget {
 
 class _location_pick_in_mapState extends State<location_pick_in_map> {
   final locationcontrol = TextEditingController();
-  String buttonText = '20.9826103,105.7087642';
-
-  Location thislocation = Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: '');
-  Completer<GoogleMapController> _controller = Completer();
-  CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(20.9826103,105.7087642),
-    zoom: 13,
-  );
   var uuid = Uuid();
   final textcontroller = TextEditingController();
-  bool loading = false;
   String placeName = '';
 
   Future<double?> getLongti(String placeId) async {
@@ -39,7 +30,7 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
     final path = "/Geocode";
     final queryParams = {
       "place_id": placeId,
-      "api_key": '3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf',
+      "api_key": 'npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z',
     };
 
     final uri = Uri.https(baseUrl, path, queryParams);
@@ -66,7 +57,7 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
     final path = "/Geocode";
     final queryParams = {
       "place_id": placeId,
-      "api_key": '3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf',
+      "api_key": 'npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z',
     };
 
     final uri = Uri.https(baseUrl, path, queryParams);
@@ -90,7 +81,7 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
 
   Future<List<AutocompletePrediction>> placeAutocomplete(String query) async{
     List<AutocompletePrediction> placePredictions = [];
-    final url = Uri.parse('https://rsapi.goong.io/Place/AutoComplete?api_key=3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf&input=$query');
+    final url = Uri.parse('https://rsapi.goong.io/Place/AutoComplete?api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z&input=$query');
 
     var response = await http.get(url);
 
@@ -126,39 +117,13 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
             title: Text('Chọn vị trí'),
             content: Container(
               width: 500,
-              height: 600,
+              height: 60,
               child: Stack(
                 children: <Widget>[
-                  GoogleMap(
-                    mapType: MapType.normal,
-                    myLocationEnabled: false,
-                    myLocationButtonEnabled: false,
-                    zoomControlsEnabled: false,
-                    initialCameraPosition: _kGooglePlex,
-                    onMapCreated: (GoogleMapController controller) {
-                      _controller.complete(controller);
-                    },
-                    onCameraMove: (CameraPosition newPosition) async {
-                      widget.location.longitude = newPosition.target.longitude;
-                      widget.location.latitude = newPosition.target.latitude;
-                      buttonText = widget.location.latitude.toString() + " , " + widget.location.longitude.toString();
-                      setState(() {
-
-                      });
-                    },
-                  ),
-
-                  Center(
-                    child: Icon(
-                      Icons.location_on,
-                      color: Colors.red,
-                      size: 36,
-                    ),
-                  ),
-
                   Positioned(
-                    top: 40,
-                    left: 25,
+                    top: 0,
+                    left: 0,
+                    right: 0,
                     child: Container(
                         height: 60,
                         width: 450,
@@ -197,7 +162,6 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
                             return item_autocomplete(location: suggestion, width: 500,
                               onTap: () async {
                                 setState(() {
-                                  loading = true;
                                   textcontroller.text = suggestion.description.toString();
                                 });
 
@@ -206,23 +170,11 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
                                 widget.location.placeId = suggestion.placeId.toString();
                                 double? la = await getLati(suggestion.placeId.toString());
                                 double? long = await getLongti(suggestion.placeId.toString());
-                                print(la.toString() + ' ' + long.toString());
-                                LatLng _target = LatLng(
-                                    la!,long!
-                                );
-
-                                CameraPosition newcam = CameraPosition(
-                                  target: _target,
-                                  zoom: 14,
-                                );
-
-                                final GoogleMapController controller = await _controller.future;
-                                await controller.animateCamera(CameraUpdate.newCameraPosition(newcam));
-                                setState(() {
-                                  loading = false;
-                                });
-                                TextEditingController().clear();
-                              }, loading: loading,
+                                widget.location.longitude = long!;
+                                widget.location.latitude = la!;
+                                locationcontrol.text = widget.location.mainText + ', ' + widget.location.secondaryText;
+                                Navigator.of(context).pop();
+                              }, loading: false,
                             );
                           },
 
@@ -232,51 +184,6 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
                         )
                     ),
                   ),
-
-                  Positioned(
-                    bottom: 10,
-                    left: 25,
-                    child: GestureDetector(
-                      child: Container(
-                        width: 450,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(1000),
-                            color: Colors.yellow.shade700
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          'Chọn vị trí',
-                          style: TextStyle(
-                              fontFamily: 'muli',
-                              fontSize: 14,
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        if (widget.location.latitude != 0 && widget.location.longitude != 0) {
-                          if (widget.location.mainText != '') {
-                            locationcontrol.text = widget.location.mainText + ' ' + widget.location.secondaryText;
-                            setState(() {
-
-                            });
-                            Navigator.of(context).pop();
-                          } else {
-                            locationcontrol.text = widget.location.latitude.toString() + ',' + widget.location.longitude.toString();
-                            setState(() {
-
-                            });
-                            Navigator.of(context).pop();
-                          }
-
-                        } else {
-                          toastMessage('Bạn chưa chọn vị trí');
-                        }
-                      },
-                    ),
-                  )
                 ],
               ),
             ),
@@ -331,10 +238,11 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
           child: Form(
             child: TextFormField(
               controller: locationcontrol,
+              readOnly: true,
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
-                fontFamily: 'arial',
+                fontFamily: 'muli',
               ),
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -342,7 +250,7 @@ class _location_pick_in_mapState extends State<location_pick_in_map> {
                 hintStyle: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
-                  fontFamily: 'arial',
+                  fontFamily: 'muli',
                 ),
               ),
               onTap: () {

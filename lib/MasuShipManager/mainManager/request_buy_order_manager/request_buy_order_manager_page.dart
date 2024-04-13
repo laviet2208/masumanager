@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:masumanager/MasuShipManager/mainManager/ingredient/heading_title.dart';
 import '../../Data/OrderData/requestBuyOrderData/requestBuyOrder.dart';
 import '../../Data/areaData/Area.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-
-import 'action/add_buy_request_order/add_buy_request_order.dart';
-import 'action/caculate_free_request_order_money/item_buy_request_order.dart';
+import 'ingredient/add_buy_request_order.dart';
+import 'item_buy_request_order.dart';
 
 class request_buy_order_manager_page extends StatefulWidget {
   const request_buy_order_manager_page({Key? key}) : super(key: key);
@@ -18,6 +18,8 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
   List<requestBuyOrder> orderList = [];
   List<requestBuyOrder> chosenList = [];
   List<Area> areaList = [];
+  String chosenStatus = '';
+  List<String> status_list = ['Tất cả','Đơn chưa đẩy', 'Đơn đã đẩy cho tài xế', 'Tài xế đã mua xong', 'Đơn hoàn thành', 'Đơn bị hủy'];
   TextEditingController searchController = TextEditingController();
   Area chosenArea = Area(id: '', name: '', money: 0, status: 0);
 
@@ -31,7 +33,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
       });
       final dynamic orders = event.snapshot.value;
       orders.forEach((key, value) {
-        if (value['productList'] != null) {
+        if (value['buyLocation'] != null) {
           requestBuyOrder order = requestBuyOrder.fromJson(value);
           orderList.add(order);
           chosenList.add(order);
@@ -129,11 +131,109 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
     });
   }
 
+  void drop_down_status_order(String? selectedValue) {
+    if (selectedValue is String) {
+      chosenStatus = selectedValue;
+      if (chosenStatus == 'Tất cả') {
+        chosenList.clear();
+        for(int i = 0 ; i < orderList.length ; i++) {
+          chosenList.add(orderList.elementAt(i));
+          setState(() {
+
+          });
+        }
+        setState(() {
+
+        });
+      }
+
+      if (chosenStatus == 'Đơn chưa đẩy') {
+        chosenList.clear();
+        for(int i = 0 ; i < orderList.length ; i++) {
+          if (orderList.elementAt(i).status == 'A') {
+            chosenList.add(orderList.elementAt(i));
+            setState(() {
+
+            });
+          }
+        }
+        setState(() {
+
+        });
+      }
+
+      if (chosenStatus == 'Đơn đã đẩy cho tài xế') {
+        chosenList.clear();
+        for(int i = 0 ; i < orderList.length ; i++) {
+          if (orderList.elementAt(i).status == 'B') {
+            chosenList.add(orderList.elementAt(i));
+            setState(() {
+
+            });
+          }
+        }
+        setState(() {
+
+        });
+      }
+
+      if (chosenStatus == 'Tài xế đã mua xong') {
+        chosenList.clear();
+        for(int i = 0 ; i < orderList.length ; i++) {
+          if (orderList.elementAt(i).status == 'C') {
+            chosenList.add(orderList.elementAt(i));
+            setState(() {
+
+            });
+          }
+        }
+        setState(() {
+
+        });
+      }
+
+      if (chosenStatus == 'Đơn hoàn thành') {
+        chosenList.clear();
+        for(int i = 0 ; i < orderList.length ; i++) {
+          if (orderList.elementAt(i).status == 'D') {
+            chosenList.add(orderList.elementAt(i));
+            setState(() {
+
+            });
+          }
+        }
+        setState(() {
+
+        });
+      }
+
+      if (chosenStatus == 'Đơn bị hủy') {
+        chosenList.clear();
+        for(int i = 0 ; i < orderList.length ; i++) {
+          if (orderList.elementAt(i).status == 'E' || orderList.elementAt(i).status == 'E1' || orderList.elementAt(i).status == 'E2') {
+            chosenList.add(orderList.elementAt(i));
+            setState(() {
+
+            });
+          }
+        }
+        setState(() {
+
+        });
+      }
+    }
+
+    setState(() {
+
+    });
+  }
+
   @override
   void initState() {
     super.initState();
     getData();
     getDataArea();
+    chosenStatus = status_list.first;
   }
 
   @override
@@ -155,7 +255,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
                 width: 170,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(0),
-                  color: Colors.yellow.shade700,
+                  color: Colors.yellow,
                 ),
                 alignment: Alignment.center,
                 child: Padding(
@@ -163,7 +263,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
                   child: AutoSizeText(
                     'Tạo đơn mới',
                     style: TextStyle(
-                      fontFamily: 'arial',
+                      fontFamily: 'muli',
                       color: Colors.black,
                       fontSize: 100,
                     ),
@@ -178,6 +278,26 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
                   },
                 );
               },
+            ),
+          ),
+
+          Positioned(
+            top: 10,
+            right: 250,
+            child: Container(
+              width: 200,
+              height: 40,
+              child: DropdownButton<String>(
+                items: status_list.map((e) => DropdownMenuItem<String>(
+                  value: e,
+                  child: Text(e),
+                )).toList(),
+                onChanged: (value) { drop_down_status_order(value); },
+                value: chosenStatus,
+                iconEnabledColor: Colors.redAccent,
+                isExpanded: true,
+                iconDisabledColor: Colors.grey,
+              ),
             ),
           ),
 
@@ -215,7 +335,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
             top: 10,
             right: 10,
             child: Container(
-              width: 300,
+              width: 200,
               height: 40,
               child: DropdownButton<Area>(
                 items: areaList.map((e) => DropdownMenuItem<Area>(
@@ -240,164 +360,11 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
               decoration: BoxDecoration(
                   color: Color.fromARGB(255, 247, 250, 255),
                   border: Border.all(
-                      width: 1,
+                       width: 1,
                       color: Color.fromARGB(255, 225, 225, 226)
                   )
               ),
-              child: ListView(
-                physics: NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    width: 29,
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1 - 30,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Mã đơn hàng',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Điểm mua, giao hàng',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Chi tiết đơn',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Chiết khấu',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Ngày tạo',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Thao tác',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 240, 240, 240)
-                    ),
-                  ),
-                ],
-              ),
+              child: heading_title(numberColumn: 5, listTitle: ['Mã đơn hàng', 'Điểm mua, giao hàng', 'Chi tiết đơn', 'Thanh toán', 'Thao tác'], width: width - 20, height: 50),
             ),
           ),
 
@@ -418,7 +385,7 @@ class _request_buy_order_manager_pageState extends State<request_buy_order_manag
                 },
               ),
             ),
-          )
+          ),
         ],
       ),
     );

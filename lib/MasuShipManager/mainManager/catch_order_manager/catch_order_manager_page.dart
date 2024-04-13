@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:auto_size_text/auto_size_text.dart';
+import 'package:masumanager/MasuShipManager/mainManager/ingredient/heading_title.dart';
 import '../catch_order_manager/action/add_catch_order/add_catch_order_dialog.dart';
 import '../catch_order_manager/catch_order_item.dart';
 import '../../Data/areaData/Area.dart';
@@ -32,7 +32,7 @@ class _catch_order_manager_page_State extends State<catch_order_manager_page_> {
       });
       final dynamic orders = event.snapshot.value;
       orders.forEach((key, value) {
-        if (value['productList'] == null) {
+        if (value['type'] == null && value['orderList'] == null && value['resCost'] == null  && value['buyLocation'] == null) {
           CatchOrder order = CatchOrder.fromJson(value);
           orderList.add(order);
           chosenList.add(order);
@@ -373,187 +373,11 @@ class _catch_order_manager_page_State extends State<catch_order_manager_page_> {
               ),
             ),
           ),
-
+          
           Positioned(
             top: 80,
             left: 10,
-            child: Container(
-              width: width - 20,
-              height: 50,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 247, 250, 255),
-                  border: Border.all(
-                      width: 1,
-                      color: Color.fromARGB(255, 225, 225, 226)
-                  )
-              ),
-              child: ListView(
-                physics: NeverScrollableScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    width: 49,
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  GestureDetector(
-                    child: Container(
-                      width: (width - 20)/6 - 1 - 50,
-                      child: Padding(
-                          padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                          child: AutoSizeText(
-                            'Mã đơn đặt xe',
-                            style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontFamily: 'arial',
-                                color: Colors.black,
-                                fontSize: 100
-                            ),
-                          )
-                      ),
-                    ),
-                    // onTap: () async {
-                    //   for(int i = 0; i < orderList.length; i++) {
-                    //     orderList[i].status = 'A';
-                    //     orderList[i].shipper.id = '';
-                    //     await pushCatchOrder(orderList[i]);
-                    //     setState(() {
-                    //
-                    //     });
-                    //   }
-                    // },
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Điểm đón, trả khách',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Chi tiết đơn',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Chi tiết chiết khấu',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Ngày tạo',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 225, 225, 226)
-                    ),
-                  ),
-
-                  Container(
-                    width: (width - 20)/6 - 1,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10, top: 15, bottom: 15),
-                        child: AutoSizeText(
-                          'Thao tác',
-                          style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontFamily: 'arial',
-                              color: Colors.black,
-                              fontSize: 100
-                          ),
-                        )
-                    ),
-                  ),
-
-                  Container(
-                    width: 1,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 240, 240, 240)
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            child: heading_title(numberColumn: 5, listTitle: ['Mã đơn đặt xe', 'Điểm đón, trả khách', 'Chi tiết đơn', 'Trạng thái đơn', 'Thao tác'], width: width - 20, height: 50),
           ),
 
           Positioned(
@@ -573,7 +397,7 @@ class _catch_order_manager_page_State extends State<catch_order_manager_page_> {
                 },
               ),
             ),
-          )
+          ),
         ],
       ),
     );

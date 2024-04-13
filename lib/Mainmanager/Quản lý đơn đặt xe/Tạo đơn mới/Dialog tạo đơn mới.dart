@@ -51,7 +51,7 @@ class _DialogAddcatchOrderState extends State<DialogAddcatchOrder> {
   }
 
   Future<double> getDistance(double startLatitude, double startLongitude, double endLatitude, double endLongitude) async {
-    final url = Uri.parse("https://rsapi.goong.io/DistanceMatrix?origins=$startLatitude,$startLongitude&destinations=$endLatitude,$endLongitude&vehicle=bike&api_key=3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf");
+    final url = Uri.parse("https://rsapi.goong.io/DistanceMatrix?origins=$startLatitude,$startLongitude&destinations=$endLatitude,$endLongitude&vehicle=bike&api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z");
 
 
     try {

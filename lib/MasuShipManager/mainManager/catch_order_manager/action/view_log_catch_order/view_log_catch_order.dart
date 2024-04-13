@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:masumanager/MasuShipManager/Data/OrderData/catchOrder.dart';
+import 'package:masumanager/MasuShipManager/Data/otherData/Tool.dart';
 
 class view_log_catch_order extends StatefulWidget {
   final CatchOrder order;
@@ -45,7 +46,7 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
               child: AutoSizeText(
                 'Xem log đơn',
                 style: TextStyle(
-                    fontFamily: 'arial',
+                    fontFamily: 'muli',
                     color: Colors.black,
                     fontSize: 200,
                     fontWeight: FontWeight.bold
@@ -93,9 +94,9 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           height: 16,
                           width: screenWidth - 40 - 30 - 30,
                           child: AutoSizeText(
-                            'Đang đợi tài xế nhận đơn',
+                            'Đang đợi đẩy đơn shipper',
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'A') ?  FontWeight.bold : FontWeight.normal
@@ -112,10 +113,10 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           width: screenWidth - 40 - 30 - 30,
                           alignment: Alignment.centerRight,
                           child: AutoSizeText(
-                            ((widget.order. S1time.hour < 10) ? '0' + widget.order. S1time.hour.toString() : widget.order. S1time.hour.toString()) + ':' + ((widget.order. S1time.minute < 10) ? '0' + widget.order. S1time.minute.toString() : widget.order. S1time.minute.toString()) + ' , ngày ' + ((widget.order.S1time.day < 10) ? '0' + widget.order. S1time.day.toString() : widget.order. S1time.day.toString()) + '/' + ((widget.order.S1time.month < 10) ? '0' + widget.order. S1time.month.toString() : widget.order. S1time.month.toString()),
+                            getAllTimeString(widget.order.S1time),
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'A') ?  FontWeight.bold : FontWeight.normal
@@ -191,7 +192,7 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           child: AutoSizeText(
                             'Tài xế ' + widget.order.shipper.name + ' đang đến',
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'B') ?  FontWeight.bold : FontWeight.normal
@@ -208,10 +209,10 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           width: screenWidth - 40 - 30 - 30,
                           alignment: Alignment.centerRight,
                           child: AutoSizeText(
-                            ((widget.order. S2time.hour < 10) ? '0' + widget.order. S2time.hour.toString() : widget.order. S2time.hour.toString()) + ':' + ((widget.order. S2time.minute < 10) ? '0' + widget.order. S2time.minute.toString() : widget.order. S2time.minute.toString()) + ' , ngày ' + ((widget.order.S2time.day < 10) ? '0' + widget.order. S2time.day.toString() : widget.order. S2time.day.toString()) + '/' + ((widget.order.S2time.month < 10) ? '0' + widget.order. S2time.month.toString() : widget.order. S2time.month.toString()),
+                            getAllTimeString(widget.order.S2time),
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'B') ?  FontWeight.bold : FontWeight.normal
@@ -286,7 +287,7 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           child: AutoSizeText(
                             'Hành trình bắt đầu',
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'C') ?  FontWeight.bold : FontWeight.normal
@@ -303,10 +304,10 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           width: screenWidth - 40 - 30 - 30,
                           alignment: Alignment.centerRight,
                           child: AutoSizeText(
-                            ((widget.order. S3time.hour < 10) ? '0' + widget.order. S3time.hour.toString() : widget.order. S3time.hour.toString()) + ':' + ((widget.order. S3time.minute < 10) ? '0' + widget.order. S3time.minute.toString() : widget.order. S3time.minute.toString()) + ' , ngày ' + ((widget.order.S3time.day < 10) ? '0' + widget.order. S3time.day.toString() : widget.order. S3time.day.toString()) + '/' + ((widget.order.S3time.month < 10) ? '0' + widget.order. S3time.month.toString() : widget.order. S3time.month.toString()),
+                            getAllTimeString(widget.order.S3time),
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'C') ?  FontWeight.bold : FontWeight.normal
@@ -381,7 +382,7 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           child: AutoSizeText(
                             finalStatus,
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'E' || widget.order.status == 'F' || widget.order.status == 'G' || widget.order.status == 'D' || widget.order.status == 'H1' || widget.order.status == 'H2') ?  FontWeight.bold : FontWeight.normal
@@ -398,10 +399,10 @@ class _view_log_catch_orderState extends State<view_log_catch_order> {
                           width: screenWidth - 40 - 30 - 30,
                           alignment: Alignment.centerRight,
                           child: AutoSizeText(
-                            ((widget.order.S4time.hour < 10) ? '0' + widget.order.S4time.hour.toString() : widget.order.S4time.hour.toString()) + ':' + ((widget.order.S4time.minute < 10) ? '0' + widget.order.S4time.minute.toString() : widget.order.S4time.minute.toString()) + ' , ngày ' + ((widget.order.S4time.day < 10) ? '0' + widget.order.S4time.day.toString() : widget.order.S4time.day.toString()) + '/' + ((widget.order.S4time.month < 10) ? '0' + widget.order.S4time.month.toString() : widget.order.S4time.month.toString()),
+                            getAllTimeString(widget.order.S4time),
                             textAlign: TextAlign.end,
                             style: TextStyle(
-                                fontFamily: 'arial',
+                                fontFamily: 'muli',
                                 color: Colors.black,
                                 fontSize: 200,
                                 fontWeight: (widget.order.status == 'C') ?  FontWeight.bold : FontWeight.normal

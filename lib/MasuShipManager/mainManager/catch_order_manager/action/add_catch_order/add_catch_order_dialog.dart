@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import '../../../../Data/models/area_search/search_page_area.dart';
 import '../../../../../dataClass/FinalClass.dart';
@@ -27,39 +25,22 @@ class _add_catch_order_dialogState extends State<add_catch_order_dialog> {
   final CusPhoneControl = TextEditingController();
   bool loading = false;
   CatchOrder order = CatchOrder(id: '',
-      locationSet: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),
-      locationGet: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),
-      cost: 0, owner: UserAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),),
-      shipper: shipperAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), onlineStatus: 0, money: 0, license: '', orderHaveStatus: 0),
-      status: 'A',
-      voucher: Voucher(id: '', Money: 0, mincost: 0, startTime: getCurrentTime(), endTime: getCurrentTime(), useCount: 0, maxCount: 0, eventName: '', LocationId: '', type: 0, Otype: '', perCustom: 0, CustomList: [], maxSale: 0, area: ''),
-      S1time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
-      S2time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
-      S3time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
-      S4time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
-      costFee: Cost(departKM: 0, departCost: 0, perKMcost: 0, discount: 0)
+    locationSet: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),
+    locationGet: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),
+    cost: 0,
+    owner: UserAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),),
+    shipper: shipperAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), onlineStatus: 0, money: 0, license: '', orderHaveStatus: 0),
+    status: 'A',
+    voucher: Voucher(id: '', Money: 0, mincost: 0, startTime: getCurrentTime(), endTime: getCurrentTime(), useCount: 0, maxCount: 0, eventName: '', LocationId: '', type: 0, Otype: '', perCustom: 0, CustomList: [], maxSale: 0, area: ''),
+    S1time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
+    S2time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
+    S3time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
+    S4time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
+    costFee: Cost(departKM: 0, departCost: 0, perKMcost: 0, discount: 0),
+    subFee: 0,
   );
 
   Area area = Area(id: '', name: '', money: 0, status: 0);
-
-  Future<double> getDistance(double startLatitude, double startLongitude, double endLatitude, double endLongitude) async {
-    final url = Uri.parse("https://rsapi.goong.io/DistanceMatrix?origins=$startLatitude,$startLongitude&destinations=$endLatitude,$endLongitude&vehicle=bike&api_key=3u7W0CAOa9hi3SLC6RI3JWfBf6k8uZCSUTCHKOLf");
-
-
-    try {
-      final response = await http.get(url);
-
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        final distance = data['rows'][0]['elements'][0]['distance']['value'];
-        return distance.toDouble()/1000;
-      } else {
-        throw Exception('Lỗi khi gửi yêu cầu tới Goong API: ${response.statusCode}');
-      }
-    } catch (e) {
-      throw Exception('Lỗi khi xử lý dữ liệu: $e');
-    }
-  }
 
   @override
   void initState() {
@@ -243,7 +224,7 @@ class _add_catch_order_dialogState extends State<add_catch_order_dialog> {
             Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text(
-                'Chọn điểm trả khách *',
+                'Chọn điểm trả khách(Không chọn mục này nếu là đơn tự chỉ đường) *',
                 style: TextStyle(
                     fontFamily: 'arial',
                     fontSize: 14,
@@ -298,8 +279,8 @@ class _add_catch_order_dialogState extends State<add_catch_order_dialog> {
       actions: <Widget>[
         (loading ? CircularProgressIndicator(color: Colors.black,) : TextButton(
           onPressed: () async {
-            if (CusNameControl.text.isNotEmpty && CusPhoneControl.text.isNotEmpty && order.locationSet.latitude != 0 && order.locationGet.latitude != 0 && order.locationSet.longitude != 0 && order.locationGet.longitude != 0 && area.id != '') {
-              order.id = generateID(15);
+            if (CusNameControl.text.isNotEmpty && CusPhoneControl.text.isNotEmpty && order.locationSet.latitude != 0 && order.locationSet.longitude != 0 && area.id != '') {
+              order.id = generateID(25);
               order.shipper.area = area.id;
               order.owner.area = area.id;
               order.owner.name = CusNameControl.text.toString();
@@ -308,14 +289,17 @@ class _add_catch_order_dialogState extends State<add_catch_order_dialog> {
               setState(() {
                 loading = true;
               });
-              double distance = await getDistance(order.locationSet.latitude, order.locationSet.longitude, order.locationGet.latitude, order.locationGet.longitude);
+              double distance = 0;
+              if (order.locationGet.longitude != 0) {
+                distance = await getDistance(order.locationSet, order.locationGet);
+              }
               setState(() {
                 loading = false;
               });
               showDialog(
                 context: context,
                 builder: (context) {
-                  return caculate_order_money_dialog(order: order, distance: distance);
+                  return caculate_order_money_dialog(order: order, distance: distance,);
                 },
               );
             }
