@@ -138,11 +138,11 @@ class _item_child_orderState extends State<item_child_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Mã đơn con : ', content: order.id),
+                  text_line_in_item(color: Colors.black,title: 'Mã đơn con : ', content: order.id),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm đến: ', content: order.locationGet.mainText),
+                  text_line_in_item(color: Colors.black,title: 'Điểm đến: ', content: order.locationGet.mainText),
 
                   Container(height: 20,),
                 ],
@@ -165,15 +165,15 @@ class _item_child_orderState extends State<item_child_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Loại đơn : ', content: order.type == 1 ? 'Chở người' : 'Lái xe hộ'),
+                  text_line_in_item(color: Colors.black,title: 'Loại đơn : ', content: order.type == 1 ? 'Chở người' : 'Lái xe hộ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Trạng thái : ', content: status),
+                  text_line_in_item(color: Colors.black,title: 'Trạng thái : ', content: status),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Tài xế : ', content: order.shipper.id != '' ? order.shipper.name : 'Chưa đẩy cho tài xế'),
+                  text_line_in_item(color: Colors.black,title: 'Tài xế : ', content: order.shipper.id != '' ? order.shipper.name : 'Chưa đẩy cho tài xế'),
 
                   Container(height: 20,),
                 ],
@@ -196,19 +196,19 @@ class _item_child_orderState extends State<item_child_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Giá trị đơn gốc : ', content: order.cost != 0 ? (getStringNumber(order.cost + order.voucher.Money).toString() + ' VNĐ') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Giá trị đơn gốc : ', content: order.cost != 0 ? (getStringNumber(order.cost).toString() + ' VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Giá trị đơn thực tế : ', content: order.cost != 0 ? (getStringNumber(order.cost).toString() + ' VNĐ') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Giá trị đơn thực tế : ', content: order.cost != 0 ? (getStringNumber(order.cost - getVoucherSale(order.voucher, order.cost)).toString() + ' VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chiết khấu : ', content: order.cost != 0 ? (order.costFee.discount.toString() + '% (' + getStringNumber(order.costFee.discount/100 * order.cost).toString() + 'VNĐ)') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: order.cost != 0 ? (order.costFee.discount.toString() + '% (' + getStringNumber(order.costFee.discount/100 * order.cost).toString() + 'VNĐ)') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phụ thu thời tiết : ', content: getStringNumber(order.subFee) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phụ thu thời tiết : ', content: getStringNumber(order.subFee) + ' VNĐ'),
 
                   Container(height: 15,),
                 ],

@@ -120,23 +120,23 @@ class _item_food_orderState extends State<item_food_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'ID: ', content: widget.order.id),
+                  text_line_in_item(color: Colors.black,title: 'ID: ', content: widget.order.id),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Quãng đường: ', content: getDistanceByCost(widget.order.cost, widget.order.costFee).toStringAsFixed(1).toString() + ' Km'),
+                  text_line_in_item(color: Colors.black,title: 'Quãng đường: ', content: getDistanceOfBike(widget.order.cost, widget.order.costFee).toStringAsFixed(1).toString() + ' Km'),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Khách hàng: ', content: widget.order.owner.name),
+                  text_line_in_item(color: Colors.black,title: 'Khách hàng: ', content: widget.order.owner.name),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Sđt: ', content: widget.order.owner.phone),
+                  text_line_in_item(color: Colors.black,title: 'Sđt: ', content: widget.order.owner.phone),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Trạng thái: ', content: status),
+                  text_line_in_item(color: Colors.black,title: 'Trạng thái: ', content: status),
 
                   Container(height: 20,),
                 ],
@@ -159,15 +159,15 @@ class _item_food_orderState extends State<item_food_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm giao hàng: ', content: widget.order.locationGet.mainText),
+                  text_line_in_item(color: Colors.black,title: 'Điểm giao hàng: ', content: widget.order.locationGet.mainText),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Điểm mua hàng: ', content: widget.order.shopList.length.toString() + ' Điểm'),
+                  text_line_in_item(color: Colors.black,title: 'Điểm mua hàng: ', content: widget.order.shopList.length.toString() + ' Điểm'),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Phí mua thêm điểm: ', content: getStringNumber((widget.order.shopList.length - 1) * 5000) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí mua thêm điểm: ', content: getStringNumber((widget.order.shopList.length - 1) * 5000) + ' VNĐ'),
 
                   Container(height: 20,),
                 ],
@@ -190,11 +190,11 @@ class _item_food_orderState extends State<item_food_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Số lượng món: ', content: widget.order.productList.length.toString() + ' Món'),
+                  text_line_in_item(color: Colors.black,title: 'Số lượng món: ', content: widget.order.productList.length.toString() + ' Món'),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Tổng tiền món ăn: ', content: getStringNumber(get_total_cart_money(widget.order.productList)) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Tổng tiền món ăn: ', content: getStringNumber(get_total_cart_money(widget.order.productList)) + ' VNĐ'),
 
                   Container(height: 10,),
 
@@ -226,32 +226,32 @@ class _item_food_orderState extends State<item_food_order> {
 
                   Container(height: 10,),
 
-                  Container(
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 0, left: 0),
-                      child: GestureDetector(
-                        child: Container(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Xem dsách nhà hàng',
-                            style: TextStyle(
-                                color: Colors.blueAccent,
-                                fontFamily: 'muli'
-                            ),
-                          ),
-                        ),
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return delete_food_dialog(order: widget.order, index: widget.index);
-                              }
-                          );
-
-                        },
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   child: Padding(
+                  //     padding: EdgeInsets.only(right: 0, left: 0),
+                  //     child: GestureDetector(
+                  //       child: Container(
+                  //         alignment: Alignment.centerLeft,
+                  //         child: Text(
+                  //           'Xem dsách nhà hàng',
+                  //           style: TextStyle(
+                  //               color: Colors.blueAccent,
+                  //               fontFamily: 'muli'
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       onTap: () {
+                  //         showDialog(
+                  //             context: context,
+                  //             builder: (context) {
+                  //               return delete_food_dialog(order: widget.order, index: widget.index);
+                  //             }
+                  //         );
+                  //
+                  //       },
+                  //     ),
+                  //   ),
+                  // ),
 
                   Container(height: 20,),
                 ],
@@ -274,23 +274,23 @@ class _item_food_orderState extends State<item_food_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phí vận chuyển: ', content: getStringNumber(widget.order.cost) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí vận chuyển: ', content: getStringNumber(widget.order.cost) + ' VNĐ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phí thời tiết: ', content: getStringNumber(widget.order.weatherFee) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí thời tiết: ', content: getStringNumber(widget.order.weatherFee) + ' VNĐ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phí chờ món: ', content: getStringNumber(widget.order.waitFee) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí chờ món: ', content: getStringNumber(widget.order.waitFee) + ' VNĐ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chiết khấu tài xế: ', content: getStringNumber(widget.order.cost * widget.order.costFee.discount/100) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu tài xế: ', content: getStringNumber(widget.order.cost * widget.order.costFee.discount/100) + ' VNĐ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chiết khấu quán: ', content: getStringNumber(get_total_cart_money(widget.order.productList) * widget.order.resCost.discount/100) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu quán: ', content: getStringNumber(get_total_cart_money(widget.order.productList) * widget.order.resCost.discount/100) + ' VNĐ'),
 
                   Container(height: 15,),
                 ],

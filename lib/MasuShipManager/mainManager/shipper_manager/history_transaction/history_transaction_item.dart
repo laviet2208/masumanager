@@ -228,12 +228,12 @@ class _history_transaction_itemState extends State<history_transaction_item> {
                             ),
                           ),
                           TextSpan(
-                            text: (widget.transaction.type == 1) ? ('+ ' + getStringNumber(widget.transaction.money) + 'VNĐ') : ('- ' + getStringNumber(widget.transaction.money) + 'VNĐ'),
+                            text: (widget.transaction.type == 1 || widget.transaction.type == 10) ? ('+ ' + getStringNumber(widget.transaction.money) + 'VNĐ') : ('- ' + getStringNumber(widget.transaction.money) + 'VNĐ'),
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'muli',
                               fontWeight: FontWeight.normal,
-                              color: (widget.transaction.type == 1) ? Colors.green : Colors.redAccent,
+                              color: (widget.transaction.type == 1 || widget.transaction.type == 10) ? Colors.green : Colors.redAccent,
                             ),
                           ),
                         ],

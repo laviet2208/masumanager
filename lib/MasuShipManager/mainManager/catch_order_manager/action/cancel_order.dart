@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:masumanager/MasuShipManager/Data/OrderData/catchOrder.dart';
+import 'package:masumanager/MasuShipManager/Data/firebase_interact/firebase_interact.dart';
 import '../../../../dataClass/FinalClass.dart';
+import '../../../Data/accountData/shipperAccount.dart';
+import '../../../Data/historyData/historyTransactionData.dart';
 import '../../../Data/otherData/Tool.dart';
 import '../../../Data/otherData/utils.dart';
 
@@ -16,12 +19,25 @@ class cancel_order extends StatefulWidget {
 class _cancel_orderState extends State<cancel_order> {
   final passControl = TextEditingController();
 
-  Future<void> change_order_data(String id, String status) async {
-    DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
-    await databaseRef.child('Order').child(id).child('status').set(status);
-    databaseRef = FirebaseDatabase.instance.reference();
-    await databaseRef.child('Order').child(id).child('S4time').set(getCurrentTime().toJson());
-    toastMessage('Hủy thành công');
+  Future<void> cancel_order(CatchOrder order) async {
+    DatabaseReference reference = FirebaseDatabase.instance.reference();
+    if (order.status == 'B' || order.status == 'C') {
+      shipperAccount account = await firebase_interact.get_shipper_account(order.shipper.id);
+      await cancel_catch_order_discount(order, account);
+    }
+    order.status = 'E1';
+    order.S4time = getCurrentTime();
+    await reference.child('Order').child(order.id).set(order.toJson());
+  }
+
+  static Future<void> cancel_catch_order_discount(CatchOrder order, shipperAccount shipper_account) async {
+    double money = order.cost * (order.costFee.discount/100);
+    shipper_account.money = shipper_account.money + money;
+    shipper_account.orderHaveStatus = shipper_account.orderHaveStatus - 1;
+    final reference = FirebaseDatabase.instance.reference();
+    await reference.child('Account').child(shipper_account.id).set(shipper_account.toJson());
+    historyTransactionData data = historyTransactionData(id: generateID(30), senderId: '', receiverId: shipper_account.id, transactionTime: getCurrentTime(), type: 6, content: 'Hoàn chiết khấu đơn: ' + order.id, money: money, area: shipper_account.area);
+    await firebase_interact.push_history_data(data);
   }
 
   @override
@@ -120,7 +136,7 @@ class _cancel_orderState extends State<cancel_order> {
                   TextButton(
                     onPressed: () async {
                       if (passControl.text.toString() == currentAccount.password) {
-                        await change_order_data(widget.order.id, 'E1');
+                        await cancel_order(widget.order);
                         toastMessage('Hủy thành công');
                         Navigator.of(context).pop();
                       } else {

@@ -116,19 +116,19 @@ class _catch_order_itemState extends State<catch_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Mã đơn : ', content: widget.order.id),
+                  text_line_in_item(color: Colors.black,title: 'Mã đơn : ', content: widget.order.id),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Khoảng cách: ', content: widget.order.locationGet.longitude == 0 ? 'Chưa tới nơi' : ('~' + getStringNumber(getDistanceByCost(widget.order.cost, widget.order.costFee)) + ' Km')),
+                  text_line_in_item(color: Colors.black,title: 'Khoảng cách: ', content: widget.order.locationGet.longitude == 0 ? 'Chưa tới nơi' : ('~' + getStringNumber(getDistanceOfBike(widget.order.cost, widget.order.costFee)) + ' Km')),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Tên khách : ', content: widget.order.owner.name),
+                  text_line_in_item(color: Colors.black,title: 'Tên khách : ', content: widget.order.owner.name),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Sđt khách hàng : ', content: widget.order.owner.phone),
+                  text_line_in_item(color: Colors.black,title: 'Sđt khách hàng : ', content: widget.order.owner.phone),
 
                   Container(height: 20,),
 
@@ -152,11 +152,11 @@ class _catch_order_itemState extends State<catch_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm đón khách : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Điểm đón khách : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm trả khách : ', content: widget.order.locationGet.longitude != 0 ? widget.order.locationGet.mainText : 'Hiện chưa đến nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Điểm trả khách : ', content: widget.order.locationGet.longitude != 0 ? widget.order.locationGet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
                 ],
@@ -179,19 +179,19 @@ class _catch_order_itemState extends State<catch_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Giá trị đơn gốc : ', content: widget.order.cost != 0 ? (getStringNumber(widget.order.cost + widget.order.voucher.Money).toString() + ' VNĐ') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Giá trị đơn gốc : ', content: widget.order.cost != 0 ? (getStringNumber(widget.order.cost) + ' VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Giá trị đơn thực tế : ', content: widget.order.cost != 0 ? (getStringNumber(widget.order.cost).toString() + ' VNĐ') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Giá trị đơn thực tế : ', content: widget.order.cost != 0 ? (getStringNumber(widget.order.cost - getVoucherSale(widget.order.voucher, widget.order.cost)).toString() + ' VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chiết khấu : ', content: widget.order.cost != 0 ? (widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: widget.order.cost != 0 ? (widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phụ thu thời tiết : ', content: getStringNumber(widget.order.subFee) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phụ thu thời tiết : ', content: getStringNumber(widget.order.subFee) + ' VNĐ'),
 
                   Container(height: 15,),
                 ],
@@ -215,15 +215,15 @@ class _catch_order_itemState extends State<catch_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Trạng thái : ', content: status),
+                  text_line_in_item(color: Colors.black,title: 'Trạng thái : ', content: status),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Tài xế : ', content: widget.order.shipper.id != '' ? widget.order.shipper.name : 'Chưa đẩy cho tài xế'),
+                  text_line_in_item(color: Colors.black,title: 'Tài xế : ', content: widget.order.shipper.id != '' ? widget.order.shipper.name : 'Chưa đẩy cho tài xế'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Khu vực : ', content: area.name),
+                  text_line_in_item(color: Colors.black,title: 'Khu vực : ', content: area.name),
 
                   Container(height: 15,),
                 ],

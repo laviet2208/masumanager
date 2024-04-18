@@ -135,7 +135,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -203,7 +203,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -271,7 +271,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(0),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.3),
@@ -294,6 +294,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                       fontSize: 16,
                       fontFamily: 'muli',
                     ),
+                    readOnly: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Nhấn chọn ngày bắt đầu',
@@ -339,7 +340,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -364,6 +365,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                           fontSize: 16,
                           fontFamily: 'muli',
                         ),
+                        readOnly: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Nhấn chọn ngày kết thúc',
@@ -410,7 +412,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -478,7 +480,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -546,7 +548,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -650,7 +652,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -718,7 +720,7 @@ class _add_new_voucherState extends State<add_new_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),

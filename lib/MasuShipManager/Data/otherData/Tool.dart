@@ -1,14 +1,14 @@
-import 'dart:convert';
 import 'dart:math';
-import 'package:firebase_database/firebase_database.dart';
+import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:masumanager/MasuShipManager/Data/accountData/shopData/cartProduct.dart';
-import 'package:masumanager/MasuShipManager/Data/costData/Cost.dart';
-import '../accountData/shopData/shopAccount.dart';
+import 'package:masumanager/MasuShipManager/Data/finalData/finalData.dart';
+import '../accountData/shopData/cartProduct.dart';
+import '../costData/Cost.dart';
 import '../locationData/Location.dart';
 import '../voucherData/Voucher.dart';
 import 'Time.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
 
 //Tool khởi tạo 1 chuỗi id ngẫu nhiên gồm count ký tự
 String generateID(int count) {
@@ -30,14 +30,117 @@ String getTimeString(Time time) {
   return time.day.toString() + "/" + time.month.toString() + "/" + time.year.toString();
 }
 
-//chuyển 1 biến time qua String dưới dạng giờ phút giây
-String getTimeHour(Time time) {
+String getTimeStringType1(Time time) {
   return (time.hour >= 10 ? time.hour.toString() : '0' + time.hour.toString()) + ":" + (time.minute >= 10 ? time.minute.toString() : '0' + time.minute.toString()) + ":" + (time.second >= 10 ? time.second.toString() : '0' + time.second.toString());
 }
 
 //chuyển 1 biến time qua String dưới dạng giờ phút giây ngày tháng năm
 String getAllTimeString(Time time) {
-  return (time.hour >= 10 ? time.hour.toString() : '0' + time.hour.toString()) + ":" + (time.minute >= 10 ? time.minute.toString() : '0' + time.minute.toString()) + ":" + (time.second >= 10 ? time.second.toString() : '0' + time.second.toString()) + " " + (time.day >= 10 ? time.day.toString() : '0' + time.day.toString()) + "/" + (time.month >= 10 ? time.month.toString() : '0' + time.month.toString()) + "/" + time.year.toString();
+  return (time.hour >= 10 ? time.hour.toString() : '0' + time.hour.toString()) + ":" + (time.minute >= 10 ? time.minute.toString() : '0' + time.minute.toString()) + " " + (time.day >= 10 ? time.day.toString() : '0' + time.day.toString()) + "/" + (time.month >= 10 ? time.month.toString() : '0' + time.month.toString()) + "/" + time.year.toString();
+}
+
+double getVoucherSale(Voucher voucher, double cost) {
+  double money = 0;
+
+  if(voucher.Money < 100) {
+    double mn = cost * voucher.Money/100;
+    if (mn <= voucher.maxSale) {
+      money = mn;
+    } else {
+      money = voucher.maxSale;
+    }
+  } else {
+    money = voucher.Money;
+  }
+
+  return money;
+}
+
+double getCosOfBike(double distance) {
+  double cost = 0;
+  if (distance >= finalData.bikeCost.departKM) {
+    cost += finalData.bikeCost.departKM.toInt() * finalData.bikeCost.departCost.toInt(); // Giá cước cho 2km đầu tiên (10.000 VND/km * 2km)
+    distance -= finalData.bikeCost.departKM; // Trừ đi 2km đã tính giá cước
+    cost = cost + ((distance - finalData.bikeCost.departKM) * finalData.bikeCost.perKMcost);
+  } else {
+    cost += (distance * finalData.bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
+  }
+  return cost;
+}
+
+bool isPositiveDouble(String input) {
+  if (input == null) {
+    return false;
+  }
+
+// Sử dụng try-catch để kiểm tra xem chuỗi có thể chuyển thành double không
+  try {
+    double.parse(input);
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+bool isPositiveInteger(String input) {
+  if (input == null || input.isEmpty) {
+    return false;
+  }
+
+// Sử dụng try-catch để kiểm tra xem chuỗi có thể chuyển thành số nguyên dương không
+  try {
+    int number = int.parse(input);
+    return number > 0;
+  } catch (e) {
+    return false;
+  }
+}
+
+double getDistanceOfBike(double cost, Cost bikeCost) {
+  double distance = 0.0;
+  if (cost >= (bikeCost.departKM * bikeCost.departCost)) {
+    distance += bikeCost.departKM;
+    double remainingCost = cost - (bikeCost.departKM * bikeCost.departCost);
+    distance += remainingCost / bikeCost.perKMcost;
+    distance = distance + bikeCost.departKM;
+  } else {
+    distance = cost / bikeCost.departCost;
+  }
+  return distance;
+}
+
+double get_total_cart_money(List<cartProduct> list) {
+  double money = 0;
+  for(int i = 0; i < list.length; i++) {
+    money = money + (list[i].number * list[i].product.cost);
+  }
+  return money;
+}
+
+Future<double> getCostFuture(Location startLocation, Location endLocation, Cost bikeCost) async {
+  double cost = 0;
+  double distance = await getDistance(startLocation, endLocation);
+  if (distance >= bikeCost.departKM) {
+    cost += bikeCost.departKM.toInt() * bikeCost.departCost.toInt(); // Giá cước cho 2km đầu tiên (10.000 VND/km * 2km)
+    distance -= bikeCost.departKM; // Trừ đi 2km đã tính giá cước
+    cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
+  } else {
+    cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
+  }
+//order.cost = cost;
+  return cost;
+}
+
+double getCost(double distance, Cost bikeCost) {
+  double cost = 0;
+  if (distance >= bikeCost.departKM) {
+    cost += bikeCost.departKM * bikeCost.departCost; // Giá cước cho km đề pa đầu tiên (10.000 VND/km * 2km)
+    distance -= bikeCost.departKM; // Trừ đi số km đề pa đã tính giá cước
+    cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
+  } else {
+    cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
+  }
+  return cost;
 }
 
 //chuyển 1 biến double qua string , phân tách hàng nghìn
@@ -142,41 +245,6 @@ Time getCurrentTime() {
   return currentTime;
 }
 
-double getVoucherSale(Voucher voucher, double cost) {
-  double money = 0;
-
-  if(voucher.Money < 100) {
-    double mn = cost/(1-(voucher.Money/100))*(voucher.Money/100);
-    if (mn <= voucher.maxSale) {
-      money = mn;
-    } else {
-      money = voucher.maxSale;
-    }
-  } else {
-    money = voucher.Money;
-  }
-
-  return money;
-}
-
-double get_cost_beforevoucher(Voucher voucher, double cost) {
-  double money = 0;
-
-  if(voucher.Money < 100) {
-    double mn = cost/(1-(voucher.Money/100))*(voucher.Money/100);
-    if (mn <= voucher.maxSale) {
-      money = mn;
-    } else {
-      money = voucher.maxSale;
-    }
-  } else {
-    money = voucher.Money;
-  }
-
-  return money;
-}
-
-
 bool isCurrentTimeInRange(DateTime openTime, DateTime closeTime) {
   DateTime currentTime = DateTime.now();
   openTime = DateTime(2000,1,1,openTime.hour,openTime.minute);
@@ -187,55 +255,43 @@ bool isCurrentTimeInRange(DateTime openTime, DateTime closeTime) {
   return currentTime.isAfter(openTime) && currentTime.isBefore(closeTime);
 }
 
-double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
-const double earthRadius = 6371; // Bán kính trái đất (đơn vị: km)
+int get_number_restaurant(List<cartProduct> list) {
+  Set<String> uniqueNames = Set<String>();
 
-// Chuyển đổi độ từ độ sang radian
-final double lat1Rad = lat1 * (pi / 180);
-final double lon1Rad = lon1 * (pi / 180);
-final double lat2Rad = lat2 * (pi / 180);
-final double lon2Rad = lon2 * (pi / 180);
+  for (cartProduct product in list) {
+    uniqueNames.add(product.product.owner);
+  }
 
-// Tính chênh lệch giữa kinh độ và vĩ độ
-final double dLat = lat2Rad - lat1Rad;
-final double dLon = lon2Rad - lon1Rad;
-
-// Sử dụng công thức Haversine để tính khoảng cách
-final double a = pow(sin(dLat / 2), 2) +
-cos(lat1Rad) * cos(lat2Rad) * pow(sin(dLon / 2), 2);
-final double c = 2 * atan2(sqrt(a), sqrt(1 - a));
-final double distance = earthRadius * c;
-
-return distance;
+  return uniqueNames.length;
 }
 
-bool isPositiveDouble(String input) {
-if (input == null) {
-return false;
+Future<String> fetchLocationName(Location location) async {
+  double latitude = location.latitude;
+  double longitude = location.longitude;
+  final Uri uri = Uri.parse('https://rsapi.goong.io/Geocode?latlng=$latitude,$longitude&api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z');
+  print('Url lỗi: ' + 'https://rsapi.goong.io/Geocode?latlng=$latitude,$longitude&api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z');
+  try {
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      location.mainText = data['results'][0]['formatted_address'];
+      return data['results'][0]['formatted_address'];
+    } else {
+      throw Exception('Failed to load location');
+    }
+  } catch (e) {
+    throw Exception('Lỗi khi xử lý dữ liệu: $e');
+  }
 }
 
-// Sử dụng try-catch để kiểm tra xem chuỗi có thể chuyển thành double không
-try {
-double.parse(input);
-return true;
-} catch (e) {
-return false;
-}
-}
-
-bool isPositiveInteger(String input) {
-if (input == null || input.isEmpty) {
-return false;
+Future<Cost> getBikecostFee(String areaID) async {
+  final reference = FirebaseDatabase.instance.reference();
+  DatabaseEvent snapshot = await reference.child('CostFee/' + areaID + '/Bike').once();
+  final dynamic catchOrderData = snapshot.snapshot.value;
+  Cost cost = Cost.fromJson(catchOrderData);
+  return cost;
 }
 
-// Sử dụng try-catch để kiểm tra xem chuỗi có thể chuyển thành số nguyên dương không
-try {
-int number = int.parse(input);
-return number > 0;
-} catch (e) {
-return false;
-}
-}
 
 Future<double> getDistance(Location start, Location end) async {
   double startLatitude = start.latitude;
@@ -260,57 +316,40 @@ Future<double> getDistance(Location start, Location end) async {
   }
 }
 
-double getCost(double distance, Cost bikeCost) {
-  double cost = 0;
-  if (distance >= bikeCost.departKM) {
-    cost += bikeCost.departKM * bikeCost.departCost; // Giá cước cho km đề pa đầu tiên (10.000 VND/km * 2km)
-    distance -= bikeCost.departKM; // Trừ đi số km đề pa đã tính giá cước
-    cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
-  } else {
-    cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
-  }
-  return cost;
+BoxDecoration get_usually_decoration() {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(25),
+    color: Colors.white,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.grey.withOpacity(0.4), // màu của shadow
+        spreadRadius: 2, // bán kính của shadow
+        blurRadius: 7, // độ mờ của shadow
+        offset: Offset(0, 3), // vị trí của shadow
+      ),
+    ],
+  );
 }
 
-double getDistanceByCost(double cost, Cost bikeCost) {
-  double distance = 0.0;
-  if (cost >= (bikeCost.departKM * bikeCost.departCost)) {
-    distance += bikeCost.departKM; // Đã tính cước cho khoảng cách đề pa đầu tiên
-    double remainingCost = cost - (bikeCost.departKM * bikeCost.departCost);
-    distance += remainingCost / bikeCost.perKMcost; // Tính khoảng cách dựa trên giá cước cho mỗi km
-    distance = distance + bikeCost.departKM;
-  } else {
-    distance = cost / bikeCost.departCost; // Tính khoảng cách dựa trên giá cước cho khoảng cách dưới 2km
-  }
-  return distance;
+BoxDecoration get_usually_decoration_gradient() {
+  return BoxDecoration(
+    gradient: LinearGradient(
+      colors: [Colors.yellow.shade700 , Colors.white],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      stops: [0.0, 1.0],
+    ),
+  );
 }
 
-Future<Cost> getBikecost(String areaID) async {
-  final reference = FirebaseDatabase.instance.reference();
-  DatabaseEvent snapshot = await reference.child('CostFee/' + areaID + '/Bike').once();
-  final dynamic catchOrderData = snapshot.snapshot.value;
-  Cost cost = Cost.fromJson(catchOrderData);
-  return cost;
+BoxDecoration get_usually_decoration_type_2_gradient() {
+  return BoxDecoration(
+    gradient: LinearGradient(
+      colors: [Colors.yellow , Colors.white],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      stops: [0.0, 1.0],
+    ),
+  );
 }
 
-Future<double> getCostFuture(Location startLocation, Location endLocation, Cost bikeCost) async {
-double cost = 0;
-double distance = await getDistance(startLocation, endLocation);
-if (distance >= bikeCost.departKM) {
-cost += bikeCost.departKM.toInt() * bikeCost.departCost.toInt(); // Giá cước cho 2km đầu tiên (10.000 VND/km * 2km)
-distance -= bikeCost.departKM; // Trừ đi 2km đã tính giá cước
-cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
-} else {
-cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
-}
-//order.cost = cost;
-return cost;
-}
-
-double get_total_cart_money(List<cartProduct> list) {
-  double money = 0;
-  for(int i = 0; i < list.length; i++) {
-    money = money + (list[i].number * list[i].product.cost);
-  }
-  return money;
-}

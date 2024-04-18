@@ -27,10 +27,7 @@ class _edit_voucherState extends State<edit_voucher> {
 
   List<String> TypeList = ['Giảm theo phần trăm', 'Giảm theo tiền cứng',];
   String chosenType = '';
-
   bool loading = false;
-  Voucher voucher = Voucher(id: '', Money: 0, mincost: 0, startTime: getCurrentTime(), endTime: getCurrentTime(), useCount: 0, maxCount: 0, eventName: '', LocationId: '', type: 0, Otype: '', perCustom: 1, CustomList: [], maxSale: 0, area: '');
-
   //Sự kiện chọn loại voucher
   int typeIndex = 0;
   void dropdownCallback(String? selectedValue) {
@@ -142,7 +139,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -210,7 +207,7 @@ class _edit_voucherState extends State<edit_voucher> {
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(0),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.3),
@@ -233,6 +230,7 @@ class _edit_voucherState extends State<edit_voucher> {
                       fontSize: 16,
                       fontFamily: 'muli',
                     ),
+                    readOnly: true,
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Nhấn chọn ngày bắt đầu',
@@ -243,7 +241,7 @@ class _edit_voucherState extends State<edit_voucher> {
                       ),
                     ),
                     onTap: () {
-                      _selectDate(context, ngaybatdaucontrol, voucher.startTime);
+                      _selectDate(context, ngaybatdaucontrol, widget.voucher.startTime);
                     },
                   ),
                 ),
@@ -278,7 +276,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -298,6 +296,7 @@ class _edit_voucherState extends State<edit_voucher> {
                     child: Form(
                       child: TextFormField(
                         controller: ngayketthuccontrol,
+                        readOnly: true,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16,
@@ -313,7 +312,7 @@ class _edit_voucherState extends State<edit_voucher> {
                           ),
                         ),
                         onTap: () {
-                          _selectDate(context, ngayketthuccontrol, voucher.endTime);
+                          _selectDate(context, ngayketthuccontrol, widget.voucher.endTime);
                         },
                       ),
                     ),
@@ -349,7 +348,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -417,7 +416,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -485,7 +484,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -589,7 +588,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -657,7 +656,7 @@ class _edit_voucherState extends State<edit_voucher> {
                   alignment: Alignment.centerLeft,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(0),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.3),
@@ -706,30 +705,26 @@ class _edit_voucherState extends State<edit_voucher> {
       actions: <Widget>[
         loading ? CircularProgressIndicator(color: Colors.blueAccent,) : TextButton(
           onPressed: () async {
-            if (tenchuongtrinhcontrol.text.isNotEmpty && macodecontrol.text.isNotEmpty && ngaybatdaucontrol.text.isNotEmpty && ngayketthuccontrol.text.isNotEmpty && sotiengiamcontrol.text.isNotEmpty && toithieugiamcontrol.text.isNotEmpty && toidacontrol.text.isNotEmpty && moikhachcontrol.text.isNotEmpty) {
-              if (isPositiveDouble(toithieugiamcontrol.text.toString()) && isPositiveDouble(sotiengiamcontrol.text.toString()) && isPositiveInteger(toidacontrol.text.toString())) {
-                setState(() {
-                  loading = true;
-                });
-                voucher.eventName = tenchuongtrinhcontrol.text.toString();
-                voucher.type = typeIndex;
-                voucher.Money = double.parse(sotiengiamcontrol.text.toString());
-                voucher.mincost = double.parse(toithieugiamcontrol.text.toString());
-                if (toidatiencontrol.text.isNotEmpty) {
-                  voucher.maxSale = double.parse(toidatiencontrol.text.toString());
-                }
-                voucher.perCustom = int.parse(moikhachcontrol.text.toString());
-                voucher.maxCount = int.parse(toidacontrol.text.toString());
-                await push_voucher_data(voucher);
-                setState(() {
-                  loading = false;
-                });
-                Navigator.of(context).pop();
-              } else {
-                toastMessage('Chú ý đúng định dạng');
+            if (tenchuongtrinhcontrol.text.isNotEmpty && ngaybatdaucontrol.text.isNotEmpty && ngayketthuccontrol.text.isNotEmpty && sotiengiamcontrol.text.isNotEmpty && toithieugiamcontrol.text.isNotEmpty && toidacontrol.text.isNotEmpty && moikhachcontrol.text.isNotEmpty) {
+              setState(() {
+                loading = true;
+              });
+              widget.voucher.eventName = tenchuongtrinhcontrol.text.toString();
+              widget.voucher.type = typeIndex;
+              widget.voucher.Money = double.parse(sotiengiamcontrol.text.toString());
+              widget.voucher.mincost = double.parse(toithieugiamcontrol.text.toString());
+              if (toidatiencontrol.text.isNotEmpty) {
+                widget.voucher.maxSale = double.parse(toidatiencontrol.text.toString());
               }
+              widget.voucher.perCustom = int.parse(moikhachcontrol.text.toString());
+              widget.voucher.maxCount = int.parse(toidacontrol.text.toString());
+              await push_voucher_data(widget.voucher);
+              setState(() {
+                loading = false;
+              });
+              Navigator.of(context).pop();
             } else {
-              toastMessage('Chú ý đúng định dạng');
+              toastMessage('Nhập đủ thông tin nhé');
             }
 
           },

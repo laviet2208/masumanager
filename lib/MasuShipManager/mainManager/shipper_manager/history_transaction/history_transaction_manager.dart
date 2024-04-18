@@ -15,7 +15,7 @@ class history_transaction_manager extends StatefulWidget {
 class _history_transaction_managerState extends State<history_transaction_manager> {
   List<historyTransactionData> transactionList = [];
   List<historyTransactionData> chosenList = [];
-  List<String> type_list = ['Tất cả','Nạp tiền', 'Rút tiền',];
+  List<String> type_list = ['Tất cả','Nạp tiền', 'Trừ tiền',];
   String chosenType = '';
   List<Area> areaList = [];
   TextEditingController searchController = TextEditingController();
@@ -28,7 +28,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
       chosenList.clear();
       final dynamic orders = event.snapshot.value;
       orders.forEach((key, value) {
-        if (int.parse(value['type'].toString()) == 1 || int.parse(value['type'].toString()) == 2) {
+        if (int.parse(value['type'].toString()) == 1 || int.parse(value['type'].toString()) == 2 || int.parse(value['type'].toString()) == 10 || int.parse(value['type'].toString()) == 11) {
           historyTransactionData account = historyTransactionData.fromJson(value);
           transactionList.add(account);
           chosenList.add(account);
@@ -136,7 +136,7 @@ class _history_transaction_managerState extends State<history_transaction_manage
       if (chosenType == 'Nạp tiền') {
         chosenList.clear();
         for(int i = 0 ; i < transactionList.length ; i++) {
-          if (transactionList.elementAt(i).type == 1) {
+          if (transactionList.elementAt(i).type == 1 || transactionList.elementAt(i).type == 10) {
             chosenList.add(transactionList.elementAt(i));
             setState(() {
 
@@ -148,10 +148,10 @@ class _history_transaction_managerState extends State<history_transaction_manage
         });
       }
 
-      if (chosenType == 'Rút tiền') {
+      if (chosenType == 'Trừ tiền') {
         chosenList.clear();
         for(int i = 0 ; i < transactionList.length ; i++) {
-          if (transactionList.elementAt(i).type == 2) {
+          if (transactionList.elementAt(i).type == 2 || transactionList.elementAt(i).type == 11) {
             chosenList.add(transactionList.elementAt(i));
             setState(() {
 

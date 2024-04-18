@@ -95,15 +95,15 @@ class _item_view_foodState extends State<item_view_food> {
               children: [
                 Container(height: 5,),
 
-                text_line_in_item(title: 'Tên món ăn: ', content: widget.order.productList[widget.index].product.name),
+                text_line_in_item(color: Colors.black,title: 'Tên món ăn: ', content: widget.order.productList[widget.index].product.name),
 
                 Container(height: 8,),
 
-                text_line_in_item(title: 'Số lượng: ', content: widget.order.productList[widget.index].number.toString()),
+                text_line_in_item(color: Colors.black,title: 'Số lượng: ', content: widget.order.productList[widget.index].number.toString()),
 
                 Container(height: 8,),
 
-                text_line_in_item(title: 'Đơn giá: ', content: getStringNumber(widget.order.productList[widget.index].product.cost) + '.đ'),
+                text_line_in_item(color: Colors.black,title: 'Đơn giá: ', content: getStringNumber(widget.order.productList[widget.index].product.cost) + '.đ'),
               ],
             ),
           ),

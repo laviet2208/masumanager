@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import '../../../../Data/areaData/Area.dart';
 import '../../../../Data/costData/Cost.dart';
+import '../../../../Data/otherData/Tool.dart';
+import 'change_order_fee.dart';
 import 'item_order_fee.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class order_fee_manager_page extends StatefulWidget {
   final String id;
@@ -13,20 +16,13 @@ class order_fee_manager_page extends StatefulWidget {
 }
 
 class _order_fee_manager_pageState extends State<order_fee_manager_page> {
-  final Area area = Area(id: '', name: '', money: 0, status: 0);
-  final List<Cost> listCost = [];
-
+  Cost cost = Cost(departKM: 0, departCost: 0, perKMcost: 0, discount: 0);
+  
   void get_cost_data() {
     final reference = FirebaseDatabase.instance.reference();
-    reference.child("CostFee/" + widget.id).onValue.listen((event) {
-      listCost.clear();
-      final dynamic orders = event.snapshot.value;
-      orders.forEach((key, value) {
-        if (value['weatherTitle'] == null) {
-          Cost cost= Cost.fromJson(value);
-          listCost.add(cost);
-        }
-      });
+    reference.child("CostFee/" + widget.id).child('Bike').onValue.listen((event) {
+      final dynamic costw = event.snapshot.value;
+      cost = Cost.fromJson(costw);
       setState(() {
 
       });
@@ -192,13 +188,165 @@ class _order_fee_manager_pageState extends State<order_fee_manager_page> {
             top: 52,
             left: 0,
             right: 0,
-            bottom: 0,
             child: Container(
-              child: ListView.builder(
-                itemCount: listCost.length,
-                itemBuilder: (context, index) {
-                  return item_configuration(index: index, width: width, id: widget.id, cost: listCost[index]);
-                },
+              width: width,
+              height: 60,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Color.fromARGB(255, 240, 240, 240),
+                    width: 1.0,
+                  ),
+                ),
+              ),
+              child: ListView(
+                physics: NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+
+                  Container(
+                    width: width/6 - 1,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+                        child: AutoSizeText(
+                          'Phí tài xế',
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'arial',
+                              color: Colors.black,
+                              fontSize: 100
+                          ),
+                        )
+                    ),
+                  ),
+
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+                  Container(
+                    width: width/6 - 1,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+                        child: AutoSizeText(
+                          cost.departKM.toString() + ' Km',
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'arial',
+                              color: Colors.black,
+                              fontSize: 100
+                          ),
+                        )
+                    ),
+                  ),
+
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+                  Container(
+                    width: width/6 - 1,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+                        child: AutoSizeText(
+                          getStringNumber(cost.departCost),
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'arial',
+                              color: Colors.black,
+                              fontSize: 100
+                          ),
+                        )
+                    ),
+                  ),
+
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+                  Container(
+                    width: width/6 - 1,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+                        child: AutoSizeText(
+                          getStringNumber(cost.perKMcost),
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'arial',
+                              color: Colors.black,
+                              fontSize: 100
+                          ),
+                        )
+                    ),
+                  ),
+
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+                  Container(
+                    width: width/6 - 1,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 20),
+                        child: AutoSizeText(
+                          cost.discount.toString(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: 'arial',
+                              color: Colors.black,
+                              fontSize: 100
+                          ),
+                        )
+                    ),
+                  ),
+
+                  Container(
+                    width: 1,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 225, 225, 226)
+                    ),
+                  ),
+
+                  Container(
+                    width: width/6 - 1,
+                    decoration: BoxDecoration(
+                        border: Border(
+                            right: BorderSide(
+                                width: 0.5,
+                                color: Colors.grey
+                            )
+                        )
+                    ),
+                    alignment: Alignment.center,
+                    child: TextButton(
+                      child: Text('Cập nhật', style: TextStyle(fontFamily: 'muli', color: Colors.blueAccent, fontSize: 13),),
+                      onPressed: () {
+                        showDialog(context: context, builder: (context) {
+                          return change_configuration(id: widget.id, cost: cost);
+                        });
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
           )

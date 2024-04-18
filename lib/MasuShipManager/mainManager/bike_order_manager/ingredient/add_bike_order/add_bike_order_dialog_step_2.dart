@@ -5,7 +5,6 @@ import 'package:masumanager/MasuShipManager/Data/locationData/Location.dart';
 import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/ingredient/add_bike_order/add_bike_order_controller.dart';
 import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/ingredient/add_bike_order/add_bike_order_dialog_step_3.dart';
 import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/ingredient/add_bike_order/location_item.dart';
-
 import '../../../../../dataClass/FinalClass.dart';
 import '../../../../Data/OrderData/catch_order_type_3_data/motherOrder.dart';
 import '../../../../Data/accountData/shipperAccount.dart';
@@ -36,7 +35,7 @@ class _add_bike_order_dialog_step_2State extends State<add_bike_order_dialog_ste
       locationGet: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),
       cost: 0,
       owner: UserAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),),
-      shipper: shipperAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), onlineStatus: 0, money: 0, license: '', orderHaveStatus: 0),
+      shipper: shipperAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), onlineStatus: 0, money: 0, license: '', orderHaveStatus: 0, debt: 0),
       status: 'UC',
       voucher: Voucher(id: '', Money: 0, mincost: 0, startTime: getCurrentTime(), endTime: getCurrentTime(), useCount: 0, maxCount: 0, eventName: '', LocationId: '', type: 0, Otype: '', perCustom: 0, CustomList: [], maxSale: 0, area: ''),
       orderList: [],
@@ -334,7 +333,7 @@ class _add_bike_order_dialog_step_2State extends State<add_bike_order_dialog_ste
                 order.owner.name = CusNameControl.text.toString();
                 order.owner.phone = CusPhoneControl.text.toString();
                 order.owner.area = area.id;
-                Cost costFee = await getBikecost(area.id);
+                Cost costFee = await getBikecostFee(area.id);
                 setState(() {
                   loading = false;
                 });

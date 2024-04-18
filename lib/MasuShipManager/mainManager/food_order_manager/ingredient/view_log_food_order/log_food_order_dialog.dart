@@ -590,7 +590,7 @@ class _log_food_order_dialogState extends State<log_food_order_dialog> {
                           width: screenWidth - 40 - 30 - 30,
                           alignment: Alignment.centerRight,
                           child: AutoSizeText(
-                            getAllTimeString(widget.order.timeList[4]),
+                            getAllTimeString(widget.order.timeList[5]),
                             textAlign: TextAlign.end,
                             style: TextStyle(
                                 fontFamily: 'muli',

@@ -22,7 +22,7 @@ class _add_new_driver_dialogState extends State<add_new_driver_dialog> {
   final WalletController = TextEditingController();
   Area area = Area(id: '', name: '', money: 0, status: 0);
 
-  final shipperAccount account = shipperAccount(id: generateID(15), createTime: getCurrentTime(), lockStatus: 1, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 105.791731, latitude: 21.006259, mainText: '', secondaryText: ''), onlineStatus: 0, money: 10000000, license: '', orderHaveStatus: 0);
+  final shipperAccount account = shipperAccount(id: generateID(15), createTime: getCurrentTime(), lockStatus: 1, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 105.791731, latitude: 21.006259, mainText: '', secondaryText: ''), onlineStatus: 0, money: 10000000, license: '', orderHaveStatus: 0, debt: 0);
 
   Future<void> push_new_driver() async {
     try {

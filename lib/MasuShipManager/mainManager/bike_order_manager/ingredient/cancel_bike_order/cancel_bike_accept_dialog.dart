@@ -92,7 +92,7 @@ class _cancel_bike_accept_dialogState extends State<cancel_bike_accept_dialog> {
               setState(() {
                 loading = true;
               });
-              await cancel_bike_order_controller.cancel_child_order_data(widget.orderType3.id, 'E1', widget.order);
+              await cancel_bike_order_controller.cancel_child_order_data(widget.orderType3, widget.order);
               toastMessage('Hủy thành công');
               setState(() {
                 loading = false;

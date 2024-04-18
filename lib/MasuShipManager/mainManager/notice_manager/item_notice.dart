@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:masumanager/Mainmanager/Qu%E1%BA%A3n%20l%C3%BD%20khu%20v%E1%BB%B1c%20v%C3%A0%20t%C3%A0i%20kho%E1%BA%A3n%20admin/Area.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:masumanager/MasuShipManager/Data/otherData/Tool.dart';
+import 'package:masumanager/MasuShipManager/mainManager/ingredient/text_line_in_item.dart';
 import 'package:masumanager/MasuShipManager/mainManager/notice_manager/actions/delete_notice.dart';
 import 'package:masumanager/MasuShipManager/mainManager/notice_manager/actions/edit_notice.dart';
+import 'package:masumanager/MasuShipManager/mainManager/notice_manager/actions/start_stop_notice.dart';
 import '../../Data/noticeData/noticeData.dart';
 
 class item_notice extends StatefulWidget {
@@ -279,60 +282,15 @@ class _item_noticeState extends State<item_notice> {
                 children: [
                   Container(height: 15,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Ngày khởi tạo : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          TextSpan(
-                            text: (widget.notice.create.hour >= 10 ? widget.notice.create.hour.toString() : '0' + widget.notice.create.hour.toString()) + " giờ " + (widget.notice.create.minute >= 10 ? widget.notice.create.minute.toString() : '0' + widget.notice.create.minute.toString()) + ", " + "Ngày " + (widget.notice.create.day >= 10 ? widget.notice.create.day.toString() : '0' + widget.notice.create.day.toString()) + "/" + (widget.notice.create.month >= 10 ? widget.notice.create.month.toString() : '0' + widget.notice.create.month.toString()) + "/" + widget.notice.create.year.toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Ngày khởi tạo: ', content: getAllTimeString(widget.notice.create), color: Colors.black),
 
                   Container(height: 10,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Gửi lần cuối lúc : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          TextSpan(
-                            text: (widget.notice.send.hour >= 10 ? widget.notice.send.hour.toString() : '0' + widget.notice.send.hour.toString()) + " giờ " + (widget.notice.send.minute >= 10 ? widget.notice.send.minute.toString() : '0' + widget.notice.send.minute.toString()) + ", " + "Ngày " + (widget.notice.send.day >= 10 ? widget.notice.send.day.toString() : '0' + widget.notice.send.day.toString()) + "/" + (widget.notice.send.month >= 10 ? widget.notice.send.month.toString() : '0' + widget.notice.send.month.toString()) + "/" + widget.notice.send.year.toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Gửi lần cuối: ', content: getAllTimeString(widget.notice.send), color: Colors.black),
+
+                  Container(height: 10,),
+
+                  text_line_in_item(title: 'Trạng thái: ', content: widget.notice.status == 1 ? 'Chưa đẩy' : 'Đang thông báo', color: widget.notice.status == 1 ? Colors.redAccent : Colors.green),
 
                   Container(height: 20,),
 
@@ -446,6 +404,14 @@ class _item_noticeState extends State<item_notice> {
                         ),
                       ),
                     ),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return start_stop_notice(data: widget.notice);
+                        },
+                      );
+                    },
                   ),
 
                   Container(height: 10,),

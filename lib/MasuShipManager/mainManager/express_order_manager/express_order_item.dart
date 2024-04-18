@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:masumanager/MasuShipManager/Data/OrderData/expressOrder/expressOrder.dart';
 import 'package:masumanager/MasuShipManager/Data/otherData/Tool.dart';
+import 'package:masumanager/MasuShipManager/mainManager/catch_order_manager/action/view_express_order_image.dart';
 import 'package:masumanager/MasuShipManager/mainManager/express_order_manager/ingredient/cancel_express_order/cancel_express_button.dart';
 import 'package:masumanager/MasuShipManager/mainManager/express_order_manager/ingredient/delete_express_order/delete_express_button.dart';
 import 'package:masumanager/MasuShipManager/mainManager/express_order_manager/ingredient/view_express_log/view_express_log_button.dart';
-import 'package:masumanager/MasuShipManager/mainManager/food_order_manager/ingredient/cancel_food_order/cancel_food_order_button.dart';
-
 import '../ingredient/text_line_in_item.dart';
 
 class express_order_item extends StatefulWidget {
@@ -94,15 +93,15 @@ class _express_order_itemState extends State<express_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Mã đơn : ', content: widget.order.id),
+                  text_line_in_item(color: Colors.black,title: 'Mã đơn : ', content: widget.order.id),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Người gửi : ', content: widget.order.sender.name + '-' + widget.order.sender.phone ),
+                  text_line_in_item(color: Colors.black,title: 'Người gửi : ', content: widget.order.sender.name + '-' + widget.order.sender.phone ),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Người nhận : ', content: widget.order.receiver.name + '-' + widget.order.receiver.phone),
+                  text_line_in_item(color: Colors.black,title: 'Người nhận : ', content: widget.order.receiver.name + '-' + widget.order.receiver.phone),
 
                   Container(height: 20,),
 
@@ -126,46 +125,11 @@ class _express_order_itemState extends State<express_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm nhận hàng : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Điểm nhận hàng : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm trả hàng : ', content: widget.order.locationGet.longitude != 0 ? widget.order.locationGet.mainText : 'Hiện chưa đến nơi'),
-
-                  Container(height: 15,),
-                ],
-              ),
-            ),
-          ),
-
-          Container(
-            width: 1,
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 240, 240, 240)
-            ),
-          ),
-
-          Container(
-            width: width/5-1,
-            child: Padding(
-              padding: EdgeInsets.only(left: 10, right: 10),
-              child: ListView(
-                children: [
-                  Container(height: 15,),
-
-                  text_line_in_item(title: 'Tên hàng hóa : ', content: widget.order.item),
-
-                  Container(height: 15,),
-
-                  text_line_in_item(title: 'Khối lượng : ', content: widget.order.weightType == 1 ? 'Từ 10-20Kg' : (widget.order.weightType == 2 ? 'Trên 20Kg' : 'Dưới 10Kg')),
-
-                  Container(height: 15,),
-
-                  text_line_in_item(title: 'Người trả cước : ', content: widget.order.payer == 1 ? 'Người gửi' : 'Người nhận'),
-
-                  Container(height: 15,),
-
-                  text_line_in_item(title: 'Phí thu hộ : ', content: widget.order.codMoney == 0 ? 'Không có' : (getStringNumber(widget.order.codMoney) + '.đ')),
+                  text_line_in_item(color: Colors.black,title: 'Điểm trả hàng : ', content: widget.order.locationGet.longitude != 0 ? widget.order.locationGet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
                 ],
@@ -188,23 +152,58 @@ class _express_order_itemState extends State<express_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chi phí vận chuyển : ', content: getStringNumber(widget.order.cost) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Tên hàng hóa : ', content: widget.order.item),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phụ thu cân nặng : ', content: getStringNumber(widget.order.weightType == 1 ? 10000 : (widget.order.weightType == 2 ? 20000 : 0)) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Khối lượng : ', content: widget.order.weightType == 1 ? 'Từ 10-20Kg' : (widget.order.weightType == 2 ? 'Trên 20Kg' : 'Dưới 10Kg')),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phụ thu thời tiết : ', content: getStringNumber(widget.order.subFee) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Người trả cước : ', content: widget.order.payer == 1 ? 'Người gửi' : 'Người nhận'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chiết khấu : ', content: getStringNumber(widget.order.cost * widget.order.costFee.discount/100) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí thu hộ : ', content: widget.order.codMoney == 0 ? 'Không có' : (getStringNumber(widget.order.codMoney) + '.đ')),
+
+                  Container(height: 15,),
+                ],
+              ),
+            ),
+          ),
+
+          Container(
+            width: 1,
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 240, 240, 240)
+            ),
+          ),
+
+          Container(
+            width: width/5-1,
+            child: Padding(
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: ListView(
+                children: [
+                  Container(height: 15,),
+
+                  text_line_in_item(color: Colors.black,title: 'Chi phí vận chuyển : ', content: getStringNumber(widget.order.cost) + '.đ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Trạng thái : ', content: status),
+                  text_line_in_item(color: Colors.black,title: 'Phụ thu cân nặng : ', content: getStringNumber(widget.order.weightType == 1 ? 10000 : (widget.order.weightType == 2 ? 20000 : 0)) + '.đ'),
+
+                  Container(height: 15,),
+
+                  text_line_in_item(color: Colors.black,title: 'Phụ thu thời tiết : ', content: getStringNumber(widget.order.subFee) + '.đ'),
+
+                  Container(height: 15,),
+
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: getStringNumber(widget.order.cost * widget.order.costFee.discount/100) + '.đ'),
+
+                  Container(height: 15,),
+
+                  text_line_in_item(color: Colors.black,title: 'Trạng thái : ', content: status),
 
                   Container(height: 15,),
                 ],
@@ -236,6 +235,10 @@ class _express_order_itemState extends State<express_order_item> {
                   Container(height: 8,),
 
                   view_express_log_button(order: widget.order),
+
+                  Container(height: 8,),
+
+                  view_express_order_image(order: widget.order),
 
                   Container(height: 15,),
                 ],

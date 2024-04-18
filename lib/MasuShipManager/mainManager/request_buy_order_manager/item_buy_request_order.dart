@@ -131,23 +131,23 @@ class _item_buy_request_orderState extends State<item_buy_request_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'ID: ', content: widget.order.id),
+                  text_line_in_item(color: Colors.black,title: 'ID: ', content: widget.order.id),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Quãng đường: ', content: getDistanceByCost(widget.order.cost, widget.order.costFee).toStringAsFixed(1).toString() + ' Km'),
+                  text_line_in_item(color: Colors.black,title: 'Quãng đường: ', content: getDistanceOfBike(widget.order.cost, widget.order.costFee).toStringAsFixed(1).toString() + ' Km'),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Khách hàng: ', content: widget.order.owner.name),
+                  text_line_in_item(color: Colors.black,title: 'Khách hàng: ', content: widget.order.owner.name),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Sđt: ', content: widget.order.owner.phone),
+                  text_line_in_item(color: Colors.black,title: 'Sđt: ', content: widget.order.owner.phone),
 
                   Container(height: 10,),
 
-                  text_line_in_item(title: 'Trạng thái: ', content: status),
+                  text_line_in_item(color: Colors.black,title: 'Trạng thái: ', content: status),
 
                   Container(height: 20,),
                 ],
@@ -170,11 +170,11 @@ class _item_buy_request_orderState extends State<item_buy_request_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Địa chỉ mua hàng: ', content: widget.order.buyLocation.length.toString() + ' Điểm'),
+                  text_line_in_item(color: Colors.black,title: 'Địa chỉ mua hàng: ', content: widget.order.buyLocation.length.toString() + ' Điểm'),
 
                   Container(height: 5,),
 
-                  text_line_in_item(title: 'Địa chỉ giao hàng: ', content: widget.order.locationGet.mainText),
+                  text_line_in_item(color: Colors.black,title: 'Địa chỉ giao hàng: ', content: widget.order.locationGet.mainText),
 
                   Container(height: 15,),
                 ],
@@ -197,11 +197,11 @@ class _item_buy_request_orderState extends State<item_buy_request_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Số lượng sản phẩm: ', content: widget.order.productList.length.toString() + ' Món'),
+                  text_line_in_item(color: Colors.black,title: 'Số lượng sản phẩm: ', content: widget.order.productList.length.toString() + ' Món'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phụ phí số lượng: ', content: getStringNumber((10000 * ((widget.order.productList.length/3).toInt()).toDouble())) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phụ phí số lượng: ', content: getStringNumber((10000 * ((widget.order.productList.length/3).toInt()).toDouble())) + ' VNĐ'),
 
                   Container(height: 10,),
 
@@ -252,15 +252,15 @@ class _item_buy_request_orderState extends State<item_buy_request_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Chiết khấu: ', content: widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu: ', content: widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phí ship gốc: ', content: getStringNumber(widget.order.cost + getVoucherSale(widget.order.voucher, widget.order.cost)).toString() + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí ship gốc: ', content: getStringNumber(widget.order.cost).toString() + ' VNĐ'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Phí ship sau KM: ', content: getStringNumber(widget.order.cost).toString() + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Phí ship sau KM: ', content: getStringNumber(widget.order.cost - getVoucherSale(widget.order.voucher, widget.order.cost)).toString() + ' VNĐ'),
 
                   Container(height: 15,),
 

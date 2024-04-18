@@ -3,8 +3,6 @@ import 'package:masumanager/MasuShipManager/Data/OrderData/catch_order_type_3_da
 import 'package:masumanager/MasuShipManager/Data/OrderData/catch_order_type_3_data/motherOrder.dart';
 import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/ingredient/delete_bike_order/delete_bike_order_dialog.dart';
 
-import '../../../../Data/otherData/utils.dart';
-
 class delete_bike_order_button extends StatefulWidget {
   final catchOrderType3 orderType3;
   final motherOrder order;

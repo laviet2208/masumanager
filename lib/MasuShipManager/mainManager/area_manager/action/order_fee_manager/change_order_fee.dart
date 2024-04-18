@@ -6,16 +6,14 @@ import '../../../../Data/otherData/utils.dart';
 
 class change_configuration extends StatefulWidget {
   final String id;
-  final int index;
   final Cost cost;
-  const change_configuration({Key? key, required this.id, required this.index, required this.cost}) : super(key: key);
+  const change_configuration({Key? key, required this.id, required this.cost}) : super(key: key);
 
   @override
   State<change_configuration> createState() => _change_configurationState();
 }
 
 class _change_configurationState extends State<change_configuration> {
-  String cost_type = '';
   bool loading = false;
   final departKM = TextEditingController();
   final departCost = TextEditingController();
@@ -25,7 +23,7 @@ class _change_configurationState extends State<change_configuration> {
   Future<void> pushData(Cost cost) async{
     try {
       DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
-      await databaseRef.child('CostFee').child(widget.id).child(cost_type).set(cost.toJson());
+      await databaseRef.child('CostFee').child(widget.id).child('Bike').set(cost.toJson());
       toastMessage('Thêm danh mục thành công');
     } catch (error) {
       print('Đã xảy ra lỗi khi đẩy catchOrder: $error');
@@ -37,21 +35,6 @@ class _change_configurationState extends State<change_configuration> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    if (widget.index == 0) {
-      cost_type = 'Bike';
-    }
-    if (widget.index == 1) {
-      cost_type = 'BuyRequestCost';
-    }
-    if (widget.index == 2) {
-      cost_type = 'Car';
-    }
-    if (widget.index == 3) {
-      cost_type = 'Food';
-    }
-    if (widget.index == 4) {
-      cost_type = 'Item';
-    }
     departKM.text = widget.cost.departKM.toStringAsFixed(0);
     departCost.text = widget.cost.departCost.toStringAsFixed(0);
     perKmCost.text = widget.cost.perKMcost.toStringAsFixed(0);

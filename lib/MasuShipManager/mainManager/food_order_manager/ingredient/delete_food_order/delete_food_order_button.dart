@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masumanager/MasuShipManager/mainManager/food_order_manager/ingredient/delete_food_order/delete_food_order_dialog.dart';
 
 import '../../../../Data/OrderData/foodOrder/foodOrder.dart';
 import '../cancel_food_order/cancel_food_order_dialog.dart';
@@ -34,7 +35,7 @@ class delete_food_order_button extends StatelessWidget {
         showDialog(
           context: context,
           builder: (context) {
-            return cancel_food_order_dialog(order: order);
+            return delete_food_order_dialog(order: order);
           },
         );
       },

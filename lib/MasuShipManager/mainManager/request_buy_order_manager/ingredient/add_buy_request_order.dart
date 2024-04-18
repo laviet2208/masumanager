@@ -42,7 +42,7 @@ class _add_buy_request_orderState extends State<add_buy_request_order> {
       locationGet: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),
       cost: 0,
       owner: UserAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''),),
-      shipper: shipperAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), onlineStatus: 0, money: 0, license: '', orderHaveStatus: 0),
+      shipper: shipperAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', area: '', phone: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), onlineStatus: 0, money: 0, license: '', orderHaveStatus: 0, debt: 0),
       status: 'A',
       voucher: Voucher(id: '', Money: 0, mincost: 0, startTime: getCurrentTime(), endTime: getCurrentTime(), useCount: 0, maxCount: 0, eventName: '', LocationId: '', type: 0, Otype: '', perCustom: 0, CustomList: [], maxSale: 0, area: ''),
       S1time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
@@ -51,7 +51,8 @@ class _add_buy_request_orderState extends State<add_buy_request_order> {
       S4time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
       productList: [],
       costFee: Cost(departKM: 0, departCost: 0, perKMcost: 0, discount: 0),
-      buyLocation: []
+      buyLocation: [],
+    subFee: 0,
   );
 
   //Hàm tổng hợp các mặt hàng
@@ -256,7 +257,7 @@ class _add_buy_request_orderState extends State<add_buy_request_order> {
                 loading = true;
               });
               double distance = await getDistance(order.buyLocation[0], order.locationGet);
-              order.costFee = await getBikecost(area.id);
+              order.costFee = await getBikecostFee(area.id);
               order.owner.area = area.id;
               order.cost = getCost(distance, order.costFee);
               order.S1time = getCurrentTime();

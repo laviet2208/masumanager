@@ -3,8 +3,14 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_database/firebase_database.dart';
+import 'package:masumanager/MasuShipManager/mainManager/ingredient/text_line_in_item.dart';
 import '../../../Data/accountData/userAccount.dart';
 import '../../../Data/areaData/Area.dart';
+import '../../../Data/locationData/Location.dart';
+import '../../../Data/otherData/Tool.dart';
+import '../../../Data/otherData/utils.dart';
+import '../../shipper_manager/shipper_manager_main/ingredient/view_current_location_details.dart';
+import '../ingredient/lock_open_user_dialog.dart';
 
 class customer_item extends StatefulWidget {
   final UserAccount account;
@@ -17,7 +23,6 @@ class customer_item extends StatefulWidget {
 
 class _customer_itemState extends State<customer_item> {
   final Area area = Area(id: '', name: '', money: 0, status: 0);
-  String locationName = '';
 
   void get_area_info() {
     if (widget.account.area != "") {
@@ -35,50 +40,33 @@ class _customer_itemState extends State<customer_item> {
     }
   }
 
-  void fetchLocationName(double latitude, double longitude) async {
-    final Uri uri = Uri.parse('https://rsapi.goong.io/Geocode?latlng=$latitude,$longitude&api_key=npcYThxwWdlxPTuGGZ8Tu4QAF7IyO3u2vYyWlV5Z');
-    final response = await http.get(uri);
-    if (response.statusCode == 200) {
-      setState(() {
-        final data = jsonDecode(response.body);
-        locationName = data['results'][0]['formatted_address'];
-        setState(() {
-
-        });
-      });
-    } else {
-      throw Exception('Failed to load location');
-    }
-  }
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     get_area_info();
-    fetchLocationName(widget.account.location.latitude, widget.account.location.longitude);
   }
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width - 60;
+    double width = MediaQuery.of(context).size.width - 80;
 
     return Container(
       width: width,
       height: 130,
       decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-              color: Colors.grey,
-              width: 1
-          )
+        color: widget.index % 2 == 0 ? Colors.white : Color.fromARGB(255, 247, 250, 255),
+        border: Border.all(
+          color: Color.fromARGB(255, 240, 240, 240),
+          width: 1.0,
+        ),
       ),
       child: ListView(
         physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: [
           Container(
-            width: 29,
+            width: 49,
             alignment: Alignment.center,
             child: Text(
               (widget.index + 1).toString(),
@@ -98,69 +86,20 @@ class _customer_itemState extends State<customer_item> {
           ),
 
           Container(
-            width: (width - 20)/6 - 1 - 30 + 80,
+            width: (width - 50)/4 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10,),
               child: ListView(
                 children: [
                   Container(height: 8,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Số điện thoại : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: (widget.account.phone[0] == '0') ? widget.account.phone : ('0' + widget.account.phone), // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Số điện thoại: ', content: '0' + widget.account.phone, color: Colors.black),
 
                   Container(height: 8,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Tên trong app : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.account.name, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.deepPurple,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Tên khách hàng: ', content: widget.account.name, color: Colors.black),
 
-                  Container(height: 20,),
+                  Container(height: 8,),
                 ],
               ),
             ),
@@ -174,38 +113,50 @@ class _customer_itemState extends State<customer_item> {
           ),
 
           Container(
-            width: (width - 20)/6 - 1 + 50,
+            width: (width - 50)/4 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10,),
               child: ListView(
                 children: [
                   Container(height: 8,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Đang ở gần : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.account.location.latitude == 0 ? 'Tài khoản chưa đăng nhập lần nào' : locationName, // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.deepPurple,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
+                  text_line_in_item(title: 'Kinh độ: ', content: widget.account.location.longitude.toString(), color: Colors.black),
+
+                  Container(height: 8,),
+
+                  text_line_in_item(title: 'Vĩ độ: ', content: widget.account.location.latitude.toString(), color: Colors.black),
+
+                  Container(height: 8,),
+
+                  text_line_in_item(title: 'Khu vực: ', content: area.name, color: Colors.purple),
+
+                  Container(height: 8,),
+
+                  GestureDetector(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Xem vị trí cụ thể',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: 'muli',
+                          color: Colors.blueAccent,
+                        ),
                       ),
                     ),
+                    onTap: () async {
+                      Location location = Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: '');
+                      location.longitude = widget.account.location.longitude;
+                      location.latitude = widget.account.location.latitude;
+                      toastMessage('Vui lòng chờ');
+                      location.mainText = await fetchLocationName(location);
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return view_current_location_details(location: location);
+                        },
+                      );
+                    },
                   ),
 
                   Container(height: 20,),
@@ -223,148 +174,48 @@ class _customer_itemState extends State<customer_item> {
           ),
 
           Container(
-              width: (width - 20)/6 - 1 - 70,
-              alignment: Alignment.center,
-              child: ListView(
-                children: [
-                  Container(height: 5,),
-
-                  Padding(
-                      padding: EdgeInsets.only(left: 5, right: 5),
-                      child: Container(
-                        height: 30,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(0),
-                            border: Border.all(
-                              width: 0.5,
-                              color: widget.account.lockStatus == 0 ? Colors.red : Colors.green,
-                            )
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          (widget.account.lockStatus == 1) ? 'Đang mở' : 'Đang khóa',
-                          style: TextStyle(
-                              fontFamily: 'muli',
-                              fontSize: 13,
-                              color: widget.account.lockStatus == 0 ? Colors.red : Colors.green,
-                              fontWeight: FontWeight.bold
-                          ),
-                        ),
-                      )
-                  ),
-
-                  Container(height: 5,),
-                ],
-              )
-          ),
-
-          Container(
-            width: 1,
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 225, 225, 226)
-            ),
-          ),
-
-          Container(
-            width: 1,
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 225, 225, 226)
-            ),
-          ),
-
-          Container(
-            width: (width - 20)/6 - 1 - 60,
+            width: (width - 50)/4 - 1,
             child: Padding(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 50, bottom: 50),
-                child: Text(
-                  widget.account.area == "" ? 'Tài khoản chưa chọn khu vực' : area.name,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'muli',
-                      color: Colors.black,
-                      fontSize: 13
-                  ),
-                )
-            ),
-          ),
-
-          Container(
-            width: 1,
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 225, 225, 226)
-            ),
-          ),
-
-          Container(
-            width: (width - 20)/6 - 1,
-            child: Padding(
-              padding: EdgeInsets.only(left: 10, right: 10),
+              padding: EdgeInsets.only(left: 10, right: 10,),
               child: ListView(
                 children: [
                   Container(height: 8,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Giờ khởi tạo : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: widget.account.createTime.hour.toString() + ":" + widget.account.createTime.minute.toString() + ":" + widget.account.createTime.second.toString(),
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  text_line_in_item(title: 'Trạng thái: ', content: widget.account.lockStatus == 0 ? 'Đang khóa' : 'Đang mở', color: widget.account.lockStatus == 0 ? Colors.red : Colors.green),
 
                   Container(height: 8,),
 
-                  Container(
-                    child: RichText(
-                      text: TextSpan(
-                        style: DefaultTextStyle.of(context).style,
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: 'Ngày : ',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              fontWeight: FontWeight.bold, // Để in đậm
-                            ),
-                          ),
-                          TextSpan(
-                            text: "Ngày " + widget.account.createTime.day.toString() + "/" + widget.account.createTime.month.toString() + "/" + widget.account.createTime.year.toString(), // Phần còn lại viết bình thường
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'muli',
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal, // Để viết bình thường
-                            ),
-                          ),
-                        ],
+                  text_line_in_item(title: 'Ngày tạo: ', content: getAllTimeString(widget.account.createTime), color: Colors.black),
+
+                  Container(height: 8,),
+
+                  GestureDetector(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Khóa/mở tài khoản',
+                        style: TextStyle(
+                          fontFamily: 'muli',
+                          fontSize: 14,
+                          color: Colors.blueAccent,
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return lock_open_user_dialog(account: widget.account);
+                        },
+                      );
+                    },
                   ),
 
                   Container(height: 20,),
                 ],
               ),
             ),
+
           ),
 
           Container(
@@ -375,7 +226,7 @@ class _customer_itemState extends State<customer_item> {
           ),
 
           Container(
-            width: (width - 20)/6 - 1,
+            width: (width - 20)/4 - 1,
             child: Padding(
               padding: EdgeInsets.only(left: 10, right: 10),
               child: ListView(

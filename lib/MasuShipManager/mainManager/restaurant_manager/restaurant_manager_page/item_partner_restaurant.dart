@@ -227,7 +227,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             ),
 
                             TextSpan(
-                              text: getTimeHour(widget.account.openTime), // Phần còn lại viết bình thường
+                              text: getTimeStringType1(widget.account.openTime), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: 'muli',
@@ -256,7 +256,7 @@ class _item_partner_restaurantState extends State<item_partner_restaurant> {
                             ),
 
                             TextSpan(
-                              text: getTimeHour(widget.account.closeTime), // Phần còn lại viết bình thường
+                              text: getTimeStringType1(widget.account.closeTime), // Phần còn lại viết bình thường
                               style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: 'muli',

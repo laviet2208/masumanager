@@ -87,15 +87,15 @@ class _bike_order_itemState extends State<bike_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Mã đơn : ', content: widget.order.id),
+                  text_line_in_item(color: Colors.black,title: 'Mã đơn : ', content: widget.order.id),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Tên khách đặt: ', content: widget.order.owner.name),
+                  text_line_in_item(color: Colors.black,title: 'Tên khách đặt: ', content: widget.order.owner.name),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Sđt khách đặt đơn : 0', content: widget.order.owner.phone),
+                  text_line_in_item(color: Colors.black,title: 'Sđt khách đặt đơn : 0', content: widget.order.owner.phone),
 
                   Container(height: 20,),
 
@@ -119,7 +119,7 @@ class _bike_order_itemState extends State<bike_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Điểm đón khách : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Điểm đón khách : ', content: widget.order.locationSet.longitude != 0 ? widget.order.locationSet.mainText : 'Hiện chưa đến nơi'),
 
                   Container(height: 15,),
                 ],
@@ -142,15 +142,15 @@ class _bike_order_itemState extends State<bike_order_item> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Tạo đơn lúc : ', content: getAllTimeString(widget.order.createTime)),
+                  text_line_in_item(color: Colors.black,title: 'Tạo đơn lúc : ', content: getAllTimeString(widget.order.createTime)),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Số lượng đơn đẩy : ', content: widget.order.orderList.length.toString() + ' Đơn'),
+                  text_line_in_item(color: Colors.black,title: 'Số lượng đơn đẩy : ', content: widget.order.orderList.length.toString() + ' Đơn'),
 
                   Container(height: 15,),
 
-                  text_line_in_item(title: 'Trạng thái đơn : ', content: widget.order.status == 'UC' ? 'Còn đơn chưa hoàn thành' : 'Đã hoàn thành mọi đơn'),
+                  text_line_in_item(color: Colors.black,title: 'Trạng thái đơn : ', content: widget.order.status == 'UC' ? 'Còn đơn chưa hoàn thành' : 'Đã hoàn thành mọi đơn'),
 
                   Container(height: 15,),
                 ],

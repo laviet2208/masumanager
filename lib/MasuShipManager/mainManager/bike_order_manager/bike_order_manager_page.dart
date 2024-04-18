@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:masumanager/MasuShipManager/Data/OrderData/catch_order_type_3_data/motherOrder.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/ingredient/add_bike_order/add_bike_order_dialog_step_1.dart';
-import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/ingredient/add_bike_order/add_bike_order_dialog_step_2.dart';
 import '../../Data/areaData/Area.dart';
 import '../ingredient/heading_title.dart';
 import 'bike_order_item.dart';

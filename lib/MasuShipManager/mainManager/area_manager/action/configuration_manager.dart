@@ -3,6 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:masumanager/MasuShipManager/mainManager/area_manager/action/order_fee_manager/item_order_fee.dart';
 import 'package:masumanager/MasuShipManager/mainManager/area_manager/action/order_fee_manager/order_fee_manager_page.dart';
+import 'package:masumanager/MasuShipManager/mainManager/area_manager/action/restaurant_fee_manager/restaurant_fee_manager.dart';
 import 'package:masumanager/MasuShipManager/mainManager/area_manager/action/weather_manager/weather_fee_manager.dart';
 import '../../../Data/costData/Cost.dart';
 import '../../../Data/areaData/Area.dart';
@@ -22,7 +23,7 @@ class _configuration_managerState extends State<configuration_manager> with Sing
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this); // Thiết lập số lượng tab
+    _tabController = TabController(length: 3, vsync: this); // Thiết lập số lượng tab
   }
 
   @override
@@ -37,6 +38,9 @@ class _configuration_managerState extends State<configuration_manager> with Sing
       return order_fee_manager_page(id: widget.id);
     }
     if (current_page == 1) {
+      return restaurant_fee_manager(id: widget.id);
+    }
+    if (current_page == 2) {
       return weather_fee_manager(id: widget.id);
     }
     return Container();
@@ -52,6 +56,7 @@ class _configuration_managerState extends State<configuration_manager> with Sing
         appBar: AppBar(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
+          elevation: 0,
           title: Text('Thông tin cấu hình', style: TextStyle(fontFamily: 'muli', color: Colors.black),),
           bottom: TabBar(
             controller: _tabController,
@@ -64,6 +69,7 @@ class _configuration_managerState extends State<configuration_manager> with Sing
             },
             tabs: [
               Tab(text: 'Chiết khấu', icon: Icon(Icons.percent, size: 20,),),
+              Tab(text: 'Nhà hàng', icon: Icon(Icons.restaurant, size: 20,),),
               Tab(text: 'Thời tiết', icon: Icon(Icons.sunny_snowing, size: 20,),),
             ],
           ),

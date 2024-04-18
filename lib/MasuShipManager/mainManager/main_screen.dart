@@ -3,6 +3,7 @@ import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/bike_
 import 'package:masumanager/MasuShipManager/mainManager/express_order_manager/express_order_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/food_order_manager/food_order_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/notice_manager/notice_manager_page.dart';
+import 'package:masumanager/MasuShipManager/mainManager/shipper_manager/shipper_time_keeping/shipper_time_keeping_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/voucher_manager/voucher_manager_main_page.dart';
 import 'ads_manager/ads_manager.dart';
 import 'area_manager/area_manager_page.dart';
@@ -24,7 +25,7 @@ class main_screen extends StatefulWidget {
 }
 
 class _main_screenState extends State<main_screen> {
-  int selectButton = 15;
+  int selectButton = 12;
 
   Widget getWidget(int init, double width, double height) {
     if (init == 2) {
@@ -36,7 +37,7 @@ class _main_screenState extends State<main_screen> {
     }
 
     if (init == 4) {
-      return food_order_manager_page();
+      return partner_restaurant_manager();
     }
 
     if (init == 5) {
@@ -81,6 +82,14 @@ class _main_screenState extends State<main_screen> {
 
     if (init == 15) {
       return express_order_manager_page();
+    }
+
+    if (init == 16) {
+      return food_order_manager_page();
+    }
+
+    if (init == 17) {
+      return shipper_time_keeping_page();
     }
 
     return Container();
@@ -419,7 +428,7 @@ class _main_screenState extends State<main_screen> {
                                 GestureDetector(
                                   child: Container(
                                     height: 60,
-                                    color: (selectButton == 4) ? Colors.red : Colors.transparent,
+                                    color: (selectButton == 16) ? Colors.red : Colors.transparent,
                                     child: Stack(
                                       children: <Widget>[
                                         Positioned(
@@ -444,7 +453,7 @@ class _main_screenState extends State<main_screen> {
                                   ),
                                   onTap: () {
                                     setState(() {
-                                      selectButton = 4;
+                                      selectButton = 16;
                                     });
                                   },
                                 ),
@@ -577,6 +586,39 @@ class _main_screenState extends State<main_screen> {
                                   onTap: () {
                                     setState(() {
                                       selectButton = 9;
+                                    });
+                                  },
+                                ),
+
+                                GestureDetector(
+                                  child: Container(
+                                    height: 60,
+                                    color: (selectButton == 17) ? Colors.red : Colors.transparent,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          left: 10,
+                                          top: 0,
+                                          bottom: 0,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              'Lịch xin nghỉ',
+                                              style: TextStyle(
+                                                  fontFamily: 'arial',
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      selectButton = 17;
                                     });
                                   },
                                 ),

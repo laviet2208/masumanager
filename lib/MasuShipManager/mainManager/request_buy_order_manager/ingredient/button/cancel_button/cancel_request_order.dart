@@ -113,7 +113,7 @@ class _cancel_request_orderState extends State<cancel_request_order> {
                   !loading ? TextButton(
                     onPressed: () async {
                       if (passControl.text.toString() == currentAccount.password) {
-                        await cancel_delete_request_order_controller.cancel_request_order(widget.order.id);
+                        await cancel_delete_request_order_controller.cancel_request_order(widget.order);
                         toastMessage('Hủy thành công');
                         Navigator.of(context).pop();
                       } else {

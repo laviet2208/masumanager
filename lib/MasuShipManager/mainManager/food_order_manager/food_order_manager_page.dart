@@ -36,6 +36,9 @@ class _food_order_manager_pageState extends State<food_order_manager_page> {
           foodOrder order = foodOrder.fromJson(value);
           orderList.add(order);
           chosenList.add(order);
+          setState(() {
+            sortChosenListByCreateTime(chosenList);
+          });
         }
       });
       setState(() {
