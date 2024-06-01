@@ -96,7 +96,8 @@ class _catch_order_itemState extends State<catch_order_item> {
                     fontFamily: 'muli',
                     color: Colors.black,
                     fontWeight: FontWeight.bold, // Để in đậm
-                  ),                ),
+                  ),
+                ),
               ),
             ),
           ),

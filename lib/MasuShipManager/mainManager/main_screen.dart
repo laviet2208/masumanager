@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:masumanager/MasuShipManager/mainManager/bike_order_manager/bike_order_manager_page.dart';
+import 'package:masumanager/MasuShipManager/mainManager/dashboard_manager/dashboard_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/express_order_manager/express_order_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/food_order_manager/food_order_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/notice_manager/notice_manager_page.dart';
@@ -25,9 +26,13 @@ class main_screen extends StatefulWidget {
 }
 
 class _main_screenState extends State<main_screen> {
-  int selectButton = 12;
+  int selectButton = 1;
 
   Widget getWidget(int init, double width, double height) {
+    if (init == 1) {
+      return dashboard_page();
+    }
+
     if (init == 2) {
       return catch_order_manager_page_();
     }
@@ -257,7 +262,7 @@ class _main_screenState extends State<main_screen> {
                       child: Container(
                         height: screenHeight - (screenHeight/12 + 10),
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 0, 21, 41)
+                            color: Color.fromARGB(255, 0, 21, 41),
                         ),
                         child: ListView(
                           children: [

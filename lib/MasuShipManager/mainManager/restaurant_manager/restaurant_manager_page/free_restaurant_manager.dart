@@ -451,7 +451,7 @@ class _free_restaurant_managerState extends State<free_restaurant_manager> {
                 return item_partner_restaurant(account: chosenList[index], index: index);
               },
             ),
-          )
+          ),
         ],
       ),
     );

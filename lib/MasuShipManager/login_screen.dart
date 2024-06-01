@@ -19,7 +19,7 @@ class _login_screenState extends State<login_screen> {
   final usernamecontroller = TextEditingController();
   final passcontroller = TextEditingController();
 
-  String? name = ' ';
+  String? name = '';
   String? pass = '';
   bool loading = false;
   bool loading1 = false;
