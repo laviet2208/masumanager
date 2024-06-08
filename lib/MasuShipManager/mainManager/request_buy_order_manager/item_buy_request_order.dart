@@ -252,7 +252,7 @@ class _item_buy_request_orderState extends State<item_buy_request_order> {
                 children: [
                   Container(height: 15,),
 
-                  text_line_in_item(color: Colors.black,title: 'Chiết khấu: ', content: widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu: ', content: widget.order.costFee.discountPercent.toString() + '% (' + getStringNumber(getShipDiscount(widget.order.cost, widget.order.costFee)).toString() + 'VNĐ)'),
 
                   Container(height: 15,),
 

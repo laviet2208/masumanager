@@ -56,18 +56,6 @@ double getVoucherSale(Voucher voucher, double cost) {
   return money;
 }
 
-double getCosOfBike(double distance) {
-  double cost = 0;
-  if (distance >= finalData.bikeCost.departKM) {
-    cost += finalData.bikeCost.departKM.toInt() * finalData.bikeCost.departCost.toInt(); // Giá cước cho 2km đầu tiên (10.000 VND/km * 2km)
-    distance -= finalData.bikeCost.departKM; // Trừ đi 2km đã tính giá cước
-    cost = cost + ((distance - finalData.bikeCost.departKM) * finalData.bikeCost.perKMcost);
-  } else {
-    cost += (distance * finalData.bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
-  }
-  return cost;
-}
-
 bool isPositiveDouble(String input) {
   if (input == null) {
     return false;
@@ -96,16 +84,31 @@ bool isPositiveInteger(String input) {
   }
 }
 
+double getShipCost(double distance, Cost cost) {
+  double costrt = 0;
+  List<double> milestones = cost.calculateMilestones(distance);
+  costrt = costrt + cost.departCost + cost.perKMcost1 * milestones[1] + cost.perKMcost2 * milestones[2] + cost.perKMcost3 * milestones[3];
+  return costrt;
+}
+
+double getShipDiscount(double cost, Cost fee) {
+  double discount = 0;
+  if (cost <= fee.discountLimit) {
+    return fee.discountMoney;
+  }
+  return cost * (fee.discountPercent/100);
+}
+
 double getDistanceOfBike(double cost, Cost bikeCost) {
   double distance = 0.0;
-  if (cost >= (bikeCost.departKM * bikeCost.departCost)) {
-    distance += bikeCost.departKM;
-    double remainingCost = cost - (bikeCost.departKM * bikeCost.departCost);
-    distance += remainingCost / bikeCost.perKMcost;
-    distance = distance + bikeCost.departKM;
-  } else {
-    distance = cost / bikeCost.departCost;
-  }
+  // if (cost >= (bikeCost.departKM * bikeCost.departCost)) {
+  //   distance += bikeCost.departKM;
+  //   double remainingCost = cost - (bikeCost.departKM * bikeCost.departCost);
+  //   distance += remainingCost / bikeCost.perKMcost;
+  //   distance = distance + bikeCost.departKM;
+  // } else {
+  //   distance = cost / bikeCost.departCost;
+  // }
   return distance;
 }
 
@@ -120,26 +123,8 @@ double get_total_cart_money(List<cartProduct> list) {
 Future<double> getCostFuture(Location startLocation, Location endLocation, Cost bikeCost) async {
   double cost = 0;
   double distance = await getDistance(startLocation, endLocation);
-  if (distance >= bikeCost.departKM) {
-    cost += bikeCost.departKM.toInt() * bikeCost.departCost.toInt(); // Giá cước cho 2km đầu tiên (10.000 VND/km * 2km)
-    distance -= bikeCost.departKM; // Trừ đi 2km đã tính giá cước
-    cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
-  } else {
-    cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
-  }
+  cost = getShipCost(distance, bikeCost);
 //order.cost = cost;
-  return cost;
-}
-
-double getCost(double distance, Cost bikeCost) {
-  double cost = 0;
-  if (distance >= bikeCost.departKM) {
-    cost += bikeCost.departKM * bikeCost.departCost; // Giá cước cho km đề pa đầu tiên (10.000 VND/km * 2km)
-    distance -= bikeCost.departKM; // Trừ đi số km đề pa đã tính giá cước
-    cost = cost + ((distance - bikeCost.departKM) * bikeCost.perKMcost);
-  } else {
-    cost += (distance * bikeCost.departCost); // Giá cước cho khoảng cách dưới 2km
-  }
   return cost;
 }
 
@@ -284,9 +269,9 @@ Future<String> fetchLocationName(Location location) async {
   }
 }
 
-Future<Cost> getBikecostFee(String areaID) async {
+Future<Cost> getBikecostFee(String areaID, String type) async {
   final reference = FirebaseDatabase.instance.reference();
-  DatabaseEvent snapshot = await reference.child('CostFee/' + areaID + '/Bike').once();
+  DatabaseEvent snapshot = await reference.child('CostFee/' + areaID + '/' + type).once();
   final dynamic catchOrderData = snapshot.snapshot.value;
   Cost cost = Cost.fromJson(catchOrderData);
   return cost;

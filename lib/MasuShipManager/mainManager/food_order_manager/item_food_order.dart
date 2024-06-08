@@ -286,7 +286,7 @@ class _item_food_orderState extends State<item_food_order> {
 
                   Container(height: 15,),
 
-                  text_line_in_item(color: Colors.black,title: 'Chiết khấu tài xế: ', content: getStringNumber(widget.order.cost * widget.order.costFee.discount/100) + ' VNĐ'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu tài xế: ', content: getStringNumber(getShipDiscount(widget.order.cost, widget.order.costFee)) + ' VNĐ'),
 
                   Container(height: 15,),
 

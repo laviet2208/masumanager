@@ -333,7 +333,7 @@ class _add_bike_order_dialog_step_2State extends State<add_bike_order_dialog_ste
                 order.owner.name = CusNameControl.text.toString();
                 order.owner.phone = CusPhoneControl.text.toString();
                 order.owner.area = area.id;
-                Cost costFee = await getBikecostFee(area.id);
+                Cost costFee = await getBikecostFee(area.id,'bikeShipCost');
                 setState(() {
                   loading = false;
                 });

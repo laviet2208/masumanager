@@ -153,7 +153,7 @@ class _add_bike_order_dialog_step_3State extends State<add_bike_order_dialog_ste
 
                                       Container(
                                         alignment: Alignment.centerLeft,
-                                        child: getRichText('Thành tiền: ', getStringNumber(getCost(snapshot.data!, widget.costFee)) + '.đ', Colors.redAccent),
+                                        child: getRichText('Thành tiền: ', getStringNumber(getShipCost(snapshot.data!, widget.costFee)) + '.đ', Colors.redAccent),
                                       )
                                     ],
                                   );
@@ -265,7 +265,7 @@ class _add_bike_order_dialog_step_3State extends State<add_bike_order_dialog_ste
 
                                       Container(
                                         alignment: Alignment.centerLeft,
-                                        child: getRichText('Thành tiền: ', getStringNumber(getCost(snapshot.data!, widget.costFee)) + '.đ', Colors.redAccent),
+                                        child: getRichText('Thành tiền: ', getStringNumber(getShipCost(snapshot.data!, widget.costFee)) + '.đ', Colors.redAccent),
                                       ),
                                     ],
                                   );

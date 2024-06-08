@@ -48,10 +48,10 @@ class _configuration_managerState extends State<configuration_manager> with Sing
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width/2;
+    double width = MediaQuery.of(context).size.width/4*3;
     return Container(
       width: width,
-      height: MediaQuery.of(context).size.height/3*2,
+      height: MediaQuery.of(context).size.height/5*4,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,

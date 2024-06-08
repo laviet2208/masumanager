@@ -19,7 +19,7 @@ class _cancel_express_dialogState extends State<cancel_express_dialog> {
   bool loading = false;
 
   Future<void> cancel_express_order_discount(expressOrder order, shipperAccount shipper_account) async {
-    double money = order.cost * (order.costFee.discount/100);
+    double money = getShipDiscount(order.cost, order.costFee);
     shipper_account.money = shipper_account.money + money;
     shipper_account.orderHaveStatus = shipper_account.orderHaveStatus - 1;
     final reference = FirebaseDatabase.instance.reference();

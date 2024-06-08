@@ -34,7 +34,7 @@ class _restaurant_fee_managerState extends State<restaurant_fee_manager> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width/2;
+    double width = MediaQuery.of(context).size.width/4*3;
     return Container(
       width: width,
       child: Stack(

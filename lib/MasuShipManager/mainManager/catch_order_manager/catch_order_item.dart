@@ -188,7 +188,7 @@ class _catch_order_itemState extends State<catch_order_item> {
 
                   Container(height: 15,),
 
-                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: widget.order.cost != 0 ? (widget.order.costFee.discount.toString() + '% (' + getStringNumber(widget.order.costFee.discount/100 * widget.order.cost).toString() + 'VNĐ)') : 'Chưa tới nơi'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: widget.order.cost != 0 ? (getStringNumber(getShipDiscount(widget.order.cost, widget.order.costFee)) + 'VNĐ') : 'Chưa tới nơi'),
 
                   Container(height: 15,),
 

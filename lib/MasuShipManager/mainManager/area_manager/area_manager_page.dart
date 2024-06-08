@@ -50,7 +50,7 @@ class _area_manager_pageState extends State<area_manager_page> {
 
   Future<void> push_fee_data(String id, String type) async{
     try {
-      Cost cost = Cost(departKM: 2, departCost: 25000, perKMcost: 15000, discount: 20);
+      Cost cost = Cost(departKM: 4, departCost: 15000, milestoneKM1: 15, milestoneKM2: 10, perKMcost1: 6000, perKMcost2: 7000, perKMcost3: 8000, discountLimit: 20000, discountMoney: 3000, discountPercent: 20);
       DatabaseReference databaseRef = FirebaseDatabase.instance.reference();
       await databaseRef.child('CostFee/' + id).child(type).set(cost.toJson());
       setState(() {
@@ -216,11 +216,10 @@ class _area_manager_pageState extends State<area_manager_page> {
 
                             if (tenkhuvuccontrol.text.isNotEmpty) {
                               Area newArea = Area(id: generateID(20), name: tenkhuvuccontrol.text.toString(), money: 0, status: 0);
-                              await push_fee_data(newArea.id, 'Car');
-                              await push_fee_data(newArea.id, 'Bike');
-                              await push_fee_data(newArea.id, 'Item');
-                              await push_fee_data(newArea.id, 'Food');
-                              await push_fee_data(newArea.id, 'BuyRequestCost');
+                              await push_fee_data(newArea.id, 'bikeShipCost');
+                              await push_fee_data(newArea.id, 'expressShipCost');
+                              await push_fee_data(newArea.id, 'requestBuyShipCost');
+                              await push_fee_data(newArea.id, 'foodShipCost');
                               await push_area_data(newArea);
                               setState(() {
                                 loading = false;

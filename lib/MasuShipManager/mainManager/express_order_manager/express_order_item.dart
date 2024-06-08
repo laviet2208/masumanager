@@ -199,7 +199,7 @@ class _express_order_itemState extends State<express_order_item> {
 
                   Container(height: 15,),
 
-                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: getStringNumber(widget.order.cost * widget.order.costFee.discount/100) + '.đ'),
+                  text_line_in_item(color: Colors.black,title: 'Chiết khấu : ', content: getStringNumber(getShipDiscount(widget.order.cost, widget.order.costFee)) + '.đ'),
 
                   Container(height: 15,),
 

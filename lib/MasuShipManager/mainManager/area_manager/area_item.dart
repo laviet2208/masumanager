@@ -197,6 +197,9 @@ class _area_itemState extends State<area_item> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
+                            insetPadding: EdgeInsets.zero,
+                            contentPadding: EdgeInsets.all(10),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
                             content: configuration_manager(id: widget.area.id),
                           );
                         },

@@ -50,7 +50,7 @@ class _add_buy_request_orderState extends State<add_buy_request_order> {
       S3time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
       S4time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
       productList: [],
-      costFee: Cost(departKM: 0, departCost: 0, perKMcost: 0, discount: 0),
+      costFee: Cost(departKM: 0, departCost: 0, milestoneKM1: 0, milestoneKM2: 0, perKMcost1: 0, perKMcost2: 0, perKMcost3: 0, discountLimit: 0, discountMoney: 0, discountPercent: 0),
       buyLocation: [],
     subFee: 0,
   );
@@ -257,9 +257,9 @@ class _add_buy_request_orderState extends State<add_buy_request_order> {
                 loading = true;
               });
               double distance = await getDistance(order.buyLocation[0], order.locationGet);
-              order.costFee = await getBikecostFee(area.id);
+              order.costFee = await getBikecostFee(area.id, 'requestBuyShipCost');
               order.owner.area = area.id;
-              order.cost = getCost(distance, order.costFee);
+              order.cost = getShipCost(distance, order.costFee);
               order.S1time = getCurrentTime();
               order.owner.name = CusNameControl.text.toString();
               order.owner.phone = CusPhoneControl.text.toString();

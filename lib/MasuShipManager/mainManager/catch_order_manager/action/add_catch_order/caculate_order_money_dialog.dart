@@ -14,19 +14,15 @@ class caculate_order_money_dialog extends StatefulWidget {
 }
 
 class _caculate_order_money_dialogState extends State<caculate_order_money_dialog> {
-  Cost bikeCost = Cost(departKM: 2, departCost: 25000, perKMcost: 15000, discount: 20);
+  Cost bikeCost = Cost(departKM: 0, departCost: 0, milestoneKM1: 0, milestoneKM2: 0, perKMcost1: 0, perKMcost2: 0, perKMcost3: 0, discountLimit: 0, discountMoney: 0, discountPercent: 0);
   bool loading = false;
 
   getBikecost() async {
     final reference = FirebaseDatabase.instance.reference();
-    DatabaseEvent snapshot = await reference.child('CostFee/' + widget.order.shipper.area + '/Bike').once();
+    DatabaseEvent snapshot = await reference.child('CostFee/' + widget.order.shipper.area + '/bikeShipCost').once();
     final dynamic catchOrderData = snapshot.snapshot.value;
     if (catchOrderData != null) {
-      Cost cost = Cost.fromJson(catchOrderData);
-      bikeCost.discount = cost.discount;
-      bikeCost.perKMcost = cost.perKMcost;
-      bikeCost.departCost = cost.departCost;
-      bikeCost.departKM = cost.departKM;
+      bikeCost = Cost.fromJson(catchOrderData);
     }
   }
 
@@ -70,7 +66,7 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
                       ),
                     ),
                     TextSpan(
-                      text:  widget.order.locationGet.longitude != 0 ? (getStringNumber(getCost(widget.distance, bikeCost).toDouble()) + 'đ') : 'Hiển thị khi tới nơi',
+                      text:  widget.order.locationGet.longitude != 0 ? (getStringNumber(getShipCost(widget.distance, bikeCost)) + 'đ') : 'Hiển thị khi tới nơi',
                       style: TextStyle(
                         fontFamily: 'arial',
                         fontSize: 16,
@@ -123,7 +119,7 @@ class _caculate_order_money_dialogState extends State<caculate_order_money_dialo
             setState(() {
               loading = true;
             });
-            widget.order.cost = getCost(widget.distance, bikeCost).toDouble();
+            widget.order.cost = getShipCost(widget.distance, bikeCost);
             widget.order.costFee = bikeCost;
             await pushCatchOrder(widget.order);
             setState(() {

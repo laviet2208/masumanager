@@ -36,7 +36,7 @@ class _add_catch_order_dialogState extends State<add_catch_order_dialog> {
     S2time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
     S3time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
     S4time: Time(second: 0, minute: 0, hour: 0, day: 0, month: 0, year: 0),
-    costFee: Cost(departKM: 0, departCost: 0, perKMcost: 0, discount: 0),
+    costFee: Cost(departKM: 0, departCost: 0, milestoneKM1: 0, milestoneKM2: 0, perKMcost1: 0, perKMcost2: 0, perKMcost3: 0, discountLimit: 0, discountMoney: 0, discountPercent: 0),
     subFee: 0,
   );
 

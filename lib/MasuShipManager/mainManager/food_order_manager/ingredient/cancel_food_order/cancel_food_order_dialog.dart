@@ -21,7 +21,7 @@ class _cancel_food_order_dialogState extends State<cancel_food_order_dialog> {
   bool loading = false;
 
   Future<void> cancel_food_order_discount(foodOrder order) async {
-    double money = order.cost * (order.costFee.discount/100);
+    double money = getShipDiscount(order.cost, order.costFee);
     double res_discount_money = get_discount_cost_of_restaurant(order.shopList, order.productList, order.resCost.discount);
     shipperAccount account = await firebase_interact.get_shipper_account(order.shipper.id);
     account.money = account.money + money + res_discount_money;
