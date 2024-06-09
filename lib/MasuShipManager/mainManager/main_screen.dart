@@ -5,6 +5,9 @@ import 'package:masumanager/MasuShipManager/mainManager/express_order_manager/ex
 import 'package:masumanager/MasuShipManager/mainManager/food_order_manager/food_order_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/notice_manager/notice_manager_page.dart';
 import 'package:masumanager/MasuShipManager/mainManager/shipper_manager/shipper_time_keeping/shipper_time_keeping_page.dart';
+import 'package:masumanager/MasuShipManager/mainManager/store_manager/store_directory_manager/store_directory_manager.dart';
+import 'package:masumanager/MasuShipManager/mainManager/store_manager/store_manager_page/free_store_manager.dart';
+import 'package:masumanager/MasuShipManager/mainManager/store_manager/store_manager_page/partner_store_manager.dart';
 import 'package:masumanager/MasuShipManager/mainManager/voucher_manager/voucher_manager_main_page.dart';
 import 'ads_manager/ads_manager.dart';
 import 'area_manager/area_manager_page.dart';
@@ -95,6 +98,18 @@ class _main_screenState extends State<main_screen> {
 
     if (init == 17) {
       return shipper_time_keeping_page();
+    }
+
+    if (init == 18) {
+      return partner_store_manager();
+    }
+
+    if (init == 19) {
+      return free_store_manager();
+    }
+
+    if (init == 20) {
+      return store_directory_manager();
     }
 
     return Container();
@@ -888,6 +903,138 @@ class _main_screenState extends State<main_screen> {
                                   onTap: () {
                                     setState(() {
                                       selectButton = 10;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+
+                            Container(
+                              height: 1,
+                              decoration: BoxDecoration(
+                                  color: Colors.white
+                              ),
+                            ),
+
+                            ExpansionTile(
+                              leading: Icon(
+                                Icons.shop_outlined,
+                                color: Colors.white,
+                              ),
+                              iconColor: Colors.white,
+                              collapsedIconColor: Colors.white,
+                              title: Container(
+                                  alignment: Alignment.centerLeft,
+                                  child : Padding(
+                                    padding: EdgeInsets.only(top: 15,bottom: 15),
+                                    child: Text(
+                                      'Quản lý shop',
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontFamily: 'muli',
+                                        fontSize: 13, // Điều chỉnh kích thước phù hợp với bạn
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                    ),
+                                  )
+                              ),
+                              children: [
+                                GestureDetector(
+                                  child: Container(
+                                    height: 60,
+                                    color: (selectButton == 18) ? Colors.red : Colors.transparent,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          left: 10,
+                                          top: 0,
+                                          bottom: 0,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              'Shop đối tác',
+                                              style: TextStyle(
+                                                  fontFamily: 'arial',
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      selectButton = 18;
+                                    });
+                                  },
+                                ),
+
+                                GestureDetector(
+                                  child: Container(
+                                    height: 60,
+                                    color: (selectButton == 19) ? Colors.red : Colors.transparent,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          left: 10,
+                                          top: 0,
+                                          bottom: 0,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              'Shop tự do',
+                                              style: TextStyle(
+                                                  fontFamily: 'arial',
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      selectButton = 19;
+                                    });
+                                  },
+                                ),
+
+                                GestureDetector(
+                                  child: Container(
+                                    height: 60,
+                                    color: (selectButton == 20) ? Colors.red : Colors.transparent,
+                                    child: Stack(
+                                      children: <Widget>[
+                                        Positioned(
+                                          left: 10,
+                                          top: 0,
+                                          bottom: 0,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            child: Text(
+                                              'Danh mục Shop',
+                                              style: TextStyle(
+                                                  fontFamily: 'arial',
+                                                  fontSize: 13,
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    setState(() {
+                                      selectButton = 20;
                                     });
                                   },
                                 ),
