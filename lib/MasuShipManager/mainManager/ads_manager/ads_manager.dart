@@ -14,7 +14,7 @@ class ads_manager extends StatefulWidget {
 }
 
 class _ads_managerState extends State<ads_manager> {
-  List<String> direction_list = ['Tất cả','Bật ra khi mở app','Trên đầu trang chính','Trong mục đồ ăn',];
+  List<String> direction_list = ['Tất cả','Bật ra khi mở app','Trên đầu trang chính','Trong mục đồ ăn','Trong mục shop',];
   List<restaurantAdsData> ads_list = [];
   List<restaurantAdsData> chosenList = [];
   List<Area> areaList = [];

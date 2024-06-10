@@ -25,7 +25,7 @@ class _add_new_adsState extends State<add_new_ads> {
   final List<ShopAccount> list_shop = [];
   Uint8List? registrationImage;
   String chosenDirection = "";
-  List<String> direction_list = ['Bật ra khi mở app','Trên đầu trang chính','Trong mục đồ ăn',];
+  List<String> direction_list = ['Bật ra khi mở app','Trên đầu trang chính','Trong mục đồ ăn','Trong mục shop',];
   restaurantAdsData data = restaurantAdsData(id: '', account: ShopAccount(id: '', createTime: getCurrentTime(), lockStatus: 0, name: '', phone: '', money: 0, type: 0, password: '', closeTime: getCurrentTime(), openTime: getCurrentTime(), openStatus: 0, discount_type: 0, area: '', location: Location(placeId: '', description: '', longitude: 0, latitude: 0, mainText: '', secondaryText: ''), listDirectory: []), area: '', status: 0, direction: 1, editTime: getCurrentTime(), pushTime: getCurrentTime(), endTime: getCurrentTime());
 
   void get_shop_data() {

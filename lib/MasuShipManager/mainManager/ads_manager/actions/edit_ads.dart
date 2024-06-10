@@ -21,7 +21,7 @@ class _edit_adsState extends State<edit_ads> {
   List<ShopAccount> filteredList = [];
   final List<ShopAccount> list_shop = [];
   String chosenDirection = "";
-  List<String> direction_list = ['Bật ra khi mở app','Trên đầu trang chính','Trong mục đồ ăn',];
+  List<String> direction_list = ['Bật ra khi mở app','Trên đầu trang chính','Trong mục đồ ăn','Trong mục shop',];
 
   void get_shop_data() {
     final reference = FirebaseDatabase.instance.reference();
